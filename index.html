@@ -852,7 +852,7 @@
         <div class="section-head">
           <div class="section-label" data-i18n="serve_label">Who We Work With</div>
           <h2 class="section-title" data-i18n="serve_title">Built for Buyers Who Acquire at Scale</h2>
-          <p class="section-sub" data-i18n="serve_sub" style="max-width: 900px; white-space: nowrap; overflow: visible;">We work exclusively with professional acquirers who have a clear mandate and the capacity to close.</p>
+          <p class="section-sub" data-i18n="serve_sub" style="max-width: 900px;">We work exclusively with professional acquirers who have a clear mandate and the capacity to close.</p>
         </div>
         <div class="serve-grid" style="grid-template-columns: repeat(3, 1fr);">
           <div class="serve-card">
@@ -1247,7 +1247,7 @@
       <div class="section-inner">
 
         <div class="section-head">
-          <div class="section-label" data-i18n="team_label">Founding Team</div>
+          <div class="section-label" data-i18n="team_label">Contact Persons</div>
           <h2 class="section-title" data-i18n="team_title">Diverse Expertise Across Finance, Technology & Strategy</h2>
         </div>
 
@@ -1276,6 +1276,7 @@
               <span class="tag">Hong Kong</span>
               <span class="tag">UK</span>
               <span class="tag">Netherlands</span>
+              <span class="tag">Germany</span>
             </div>
           </div>
           <div class="info-box">
@@ -1818,11 +1819,11 @@
     <div class="footer-col">
       <h4 data-i18n="footer_company">Company</h4>
       <ul>
-        <li><a onclick="navigate('home')" style="cursor:pointer;">Home</a></li>
-        <li><a onclick="navigate('services')" style="cursor:pointer;" data-i18n="nav_services">Services</a></li>
-        <li><a onclick="navigate('calculator')" style="cursor:pointer;" data-i18n="nav_calculator">Calculator</a></li>
-        <li><a onclick="navigate('about')" style="cursor:pointer;" data-i18n="nav_about">About</a></li>
-        <li><a onclick="navigate('contact')" style="cursor:pointer;" data-i18n="nav_contact">Contact</a></li>
+        <li><a onclick="navigate('home')" style="cursor:pointer;" data-i18n="nav_home">HOME</a></li>
+        <li><a onclick="navigate('services')" style="cursor:pointer;" data-i18n="nav_services">SERVICES</a></li>
+        <li><a onclick="navigate('calculator')" style="cursor:pointer;" data-i18n="nav_calculator">CALCULATOR</a></li>
+        <li><a onclick="navigate('about')" style="cursor:pointer;" data-i18n="nav_about">ABOUT</a></li>
+        <li><a onclick="navigate('contact')" style="cursor:pointer;" data-i18n="nav_contact">CONTACT</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1849,7 +1850,7 @@
 // ── TRANSLATIONS ──────────────────────────────────────────────
 const t = {
   en: {
-    nav_services: 'SERVICES', nav_calculator: 'CALCULATOR', nav_pricing: 'ACADEMY', nav_about: 'ABOUT',
+    nav_home: 'HOME', nav_services: 'SERVICES', nav_calculator: 'CALCULATOR', nav_pricing: 'ACADEMY', nav_about: 'ABOUT',
     nav_contact: 'CONTACT', nav_cta: 'Book a Call',
     home_eyebrow: 'M&A Deal Origination · Europe',
     home_h1: 'We Source the Deals <span>You Can\'t Find.</span>',
@@ -1918,7 +1919,7 @@ const t = {
     l6_title: 'From First Call to Deal', l6_desc: 'Handling objections, qualifying leads, and handing them to advisors.',
     not_sure: 'Not sure if MDH is right for you?', book_nick: 'Book a 15-min Call with Nick →',
     about_hero_title: 'About MDH', about_hero_sub: 'International M&A services team with a proven track record across European markets.',
-    team_label: 'Founding Team', team_title: 'Diverse Expertise Across Finance, Technology & Strategy',
+    team_label: 'Contact Persons', team_title: 'Diverse Expertise Across Finance, Technology & Strategy',
     team1_title: 'Tech Founders', team1_desc: 'Serial entrepreneurs with deep technology expertise and operator mindsets.',
     team2_title: 'Investment Bankers', team2_desc: 'Mid-market M&A experience across Europe, with deep transaction exposure.',
     team3_title: 'BCG Consultants', team3_desc: 'Strategic advisory and operational excellence from one of the world\'s top firms.',
@@ -1947,7 +1948,7 @@ const t = {
     copyright: '© 2026 Kaitsar Capital Ltd. All rights reserved.'
   },
   de: {
-    nav_services: 'LEISTUNGEN', nav_calculator: 'KALKULATOR', nav_pricing: 'AKADEMIE', nav_about: 'ÜBER UNS',
+    nav_home: 'HOME', nav_services: 'LEISTUNGEN', nav_calculator: 'KALKULATOR', nav_pricing: 'AKADEMIE', nav_about: 'ÜBER UNS',
     nav_contact: 'KONTAKT', nav_cta: 'Gespräch Buchen',
     home_h1: 'Wir Finden die Deals, <span>Die Sie Nicht Finden.</span>',
     home_sub: 'Off-Market Deal-Flow für Unternehmenskäufer. Wir sourcen, Sie schließen.',
@@ -2016,7 +2017,7 @@ const t = {
     l6_title: 'Vom Ersten Anruf zum Deal', l6_desc: 'Umgang mit Einwänden, Qualifizierung von Leads und Übergabe an Berater.',
     not_sure: 'Nicht sicher, ob MDH das Richtige für Sie ist?', book_nick: '15-min Gespräch mit Nick Buchen →',
     about_hero_title: 'Über MDH', about_hero_sub: 'Internationales M&A-Dienstleistungsteam mit nachgewiesener Erfolgsbilanz in europäischen Märkten.',
-    team_label: 'Gründungsteam', team_title: 'Vielfältige Expertise in Finanzen, Technologie & Strategie',
+    team_label: 'Kontaktpersonen', team_title: 'Vielfältige Expertise in Finanzen, Technologie & Strategie',
     team1_title: 'Tech-Gründer', team1_desc: 'Serienunternehmer mit tiefer Technologieexpertise und Operator-Mentalität.',
     team2_title: 'Investment-Banker', team2_desc: 'Mittelstands-M&A-Erfahrung in ganz Europa, mit tiefer Transaktionsexposition.',
     team3_title: 'BCG-Berater', team3_desc: 'Strategische Beratung und operative Exzellenz von einer der weltweit führenden Firmen.',
