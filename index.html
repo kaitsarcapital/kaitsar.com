@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MDH – Making Deals Happen | Kaitsar Capital</title>
+  <title>Kaitsar Capital | M&A Deal Origination Europe</title>
   <meta name="description" content="Off-market M&A deal flow for private equity, strategic buyers, and search funds across Europe." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -53,9 +53,12 @@
     }
 
     .nav-logo {
-      font-size: 20px; font-weight: 800; letter-spacing: -0.5px;
-      color: var(--white); text-decoration: none;
-      cursor: pointer;
+      display: flex; align-items: center;
+      text-decoration: none; cursor: pointer;
+    }
+    .nav-logo img {
+      height: 20px; width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -110,6 +113,7 @@
     /* ── HERO (HOME) ── */
     .hero {
       position: relative; overflow: hidden;
+      isolation: isolate;
       min-height: calc(100vh - 60px);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
@@ -121,9 +125,10 @@
 
     .hero-grid {
       position: absolute; inset: 0; pointer-events: none;
+      z-index: -1;
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        linear-gradient(rgba(120,140,200,0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120,140,200,0.09) 1px, transparent 1px);
       background-size: 60px 60px;
     }
 
@@ -443,18 +448,33 @@
     .confidentiality-box h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
     .confidentiality-box p { font-size: 15px; color: var(--gray); line-height: 1.7; }
 
-    /* ── MAP PLACEHOLDER ── */
-    .europe-coverage {
-      background: var(--gray2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 40px; margin-bottom: 48px;
-      display: flex; align-items: center; justify-content: space-between; gap: 40px;
-      flex-wrap: wrap;
+    /* ── ABOUT HERO WITH MAP ── */
+    .about-hero {
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      min-height: 340px;
+      display: flex; align-items: center; justify-content: center;
     }
-
-    .coverage-text h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
-    .coverage-markets { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
-    .coverage-market { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.8); }
-    .coverage-market::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+    .about-hero-map {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0.48;
+      pointer-events: none;
+    }
+    .about-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.65) 100%);
+      pointer-events: none;
+    }
+    .about-hero-content {
+      position: relative; z-index: 1;
+      padding: 96px 40px 72px;
+      text-align: center; width: 100%;
+    }
+    @media (max-width: 768px) {
+      .about-hero-content { padding: 72px 24px 52px; }
+    }
 
     /* ── CONTACT ── */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -561,7 +581,7 @@
       display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
     }
 
-    .footer-brand .logo { font-size: 22px; font-weight: 900; margin-bottom: 12px; }
+    .footer-brand .logo { margin-bottom: 16px; }
     .footer-brand p { font-size: 13px; color: var(--gray); line-height: 1.7; max-width: 280px; }
     .footer-brand .disclaimer { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.6; }
 
@@ -595,7 +615,28 @@
     /* ── MOBILE ── */
     .hamburger {
       display: none; background: none; border: none; cursor: pointer;
-      color: var(--white); font-size: 24px;
+      color: var(--white); font-size: 22px; padding: 4px 8px;
+      line-height: 1;
+    }
+
+    .nav-links.open {
+      display: flex !important;
+      flex-direction: column;
+      position: fixed;
+      top: 60px; left: 0; right: 0;
+      background: rgba(10,10,10,0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px 24px;
+      gap: 4px;
+      z-index: 99;
+    }
+
+    .nav-links.open li a {
+      display: block;
+      padding: 12px 8px;
+      font-size: 15px;
+      border-bottom: 1px solid var(--border);
     }
 
     @media (max-width: 768px) {
@@ -616,6 +657,130 @@
       nav .nav-cta { display: none; }
     }
 
+    /* ── CALCULATOR ── */
+    .calc-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+    @media (max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
+
+    .calc-card {
+      background: var(--gray2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 30px;
+      position: relative;
+    }
+
+    .calc-eyebrow {
+      font-size: 10px; letter-spacing: 4px; color: rgba(255,255,255,0.3);
+      text-transform: uppercase; margin-bottom: 28px;
+    }
+
+    .calc-sub {
+      font-size: 11px; color: rgba(255,255,255,0.12);
+      margin-top: -20px; margin-bottom: 22px;
+    }
+
+    .calc-slider-block { margin-bottom: 26px; }
+    .calc-slider-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+    .calc-s-name { font-size: 10px; color: rgba(255,255,255,0.55); letter-spacing: 3px; text-transform: uppercase; }
+    .calc-s-val { font-size: 20px; font-weight: 800; color: var(--white); }
+
+    .calc-range {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 5px; border-radius: 999px;
+      background: rgba(255,255,255,0.12); outline: none; cursor: pointer;
+    }
+    .main-range::-webkit-slider-runnable-track { height: 5px; border-radius: 999px; }
+    .main-range::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 20px; height: 20px; margin-top: -7.5px;
+      border-radius: 50%; background: var(--orange);
+      box-shadow: 0 0 14px rgba(232,93,4,0.55); cursor: pointer;
+    }
+    .main-range::-moz-range-track { height: 5px; border-radius: 999px; background: rgba(255,255,255,0.12); }
+    .main-range::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; border: none; background: var(--orange); }
+    .soft-range::-webkit-slider-runnable-track { height: 5px; border-radius: 999px; }
+    .soft-range::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 16px; height: 16px; margin-top: -5.5px;
+      border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer;
+    }
+    .soft-range::-moz-range-track { height: 5px; border-radius: 999px; background: rgba(255,255,255,0.08); }
+    .soft-range::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; border: none; background: rgba(255,255,255,0.4); }
+
+    .calc-s-range { display: flex; justify-content: space-between; margin-top: 6px; }
+    .calc-s-range span { font-size: 10px; color: rgba(255,255,255,0.15); }
+
+    .calc-insight {
+      margin-top: 12px; padding: 13px 17px;
+      background: rgba(0,0,0,0.3); border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.7;
+    }
+    .calc-insight .hot { color: var(--orange); font-weight: 700; }
+
+    .calc-right { display: flex; flex-direction: column; gap: 18px; }
+
+    .calc-result-wrap { position: relative; overflow: hidden; }
+
+    .calc-tier-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 13px 0; border-bottom: 1px solid var(--border);
+      transition: opacity 0.25s;
+    }
+    .calc-tier-row.last { border-bottom: none; }
+    .calc-tier-row.inactive { opacity: 0.15; }
+    .calc-t-name { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 3px; }
+    .calc-t-rate { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.4); }
+    .calc-t-fee { font-size: 19px; font-weight: 800; color: var(--white); }
+
+    .calc-total-block {
+      margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .calc-total-label { font-size: 11px; color: rgba(255,255,255,0.55); }
+    .calc-eff-rate { font-size: 10px; color: rgba(255,255,255,0.25); margin-top: 3px; }
+    .calc-total-amt { font-size: 26px; font-weight: 900; }
+
+    .calc-summary { background: linear-gradient(135deg, rgba(232,93,4,0.06) 0%, var(--gray2) 60%); border-color: var(--border-orange); }
+    .calc-badge { display: inline-block; padding: 3px 12px; border: 1px solid var(--border); border-radius: 999px; font-size: 10px; letter-spacing: 1px; color: rgba(255,255,255,0.55); margin-bottom: 18px; }
+    .calc-sum-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .calc-sum-row span:first-child { color: rgba(255,255,255,0.55); font-size: 13px; }
+    .calc-sum-row span:last-child { color: var(--white); font-size: 13px; }
+    .calc-grand-row { border-top: 1px solid var(--border); padding-top: 18px; display: flex; justify-content: space-between; align-items: center; }
+    .calc-grand-label { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.25); }
+    .calc-grand-amt { font-size: 34px; font-weight: 900; }
+
+    /* ── GATE OVERLAY ── */
+    .calc-gate {
+      position: absolute; inset: 0;
+      background: rgba(10,10,10,0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      border-radius: var(--radius);
+      transition: opacity 0.4s;
+    }
+    .calc-gate.unlocked { opacity: 0; pointer-events: none; }
+
+    .calc-gate-inner { text-align: center; padding: 24px; }
+    .calc-gate-icon { font-size: 28px; margin-bottom: 12px; }
+    .calc-gate-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .calc-gate-sub { font-size: 13px; color: var(--gray); margin-bottom: 20px; line-height: 1.6; }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--bg2); border: 1px solid var(--border-orange);
+      border-radius: var(--radius); padding: 40px 36px;
+      width: 100%; max-width: 420px; margin: 20px;
+    }
+    .modal-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .modal-sub { font-size: 14px; color: var(--gray); margin-bottom: 28px; line-height: 1.6; }
+
     /* ── PAGE TRANSITIONS ── */
     #app { animation: fadeIn 0.3s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -627,12 +792,12 @@
 <body>
 
 <nav>
-  <a class="nav-logo" onclick="navigate('home')">MDH</a>
+  <a class="nav-logo" onclick="navigate('home')"><img src="Kaitsar_Logo_1.png" alt="Kaitsar Capital" /></a>
   <ul class="nav-links" id="navLinks">
-    <li><a onclick="navigate('services')" data-page="services" data-i18n="nav_services">SERVICES</a></li>
-    <li><a onclick="navigate('pricing')" data-page="pricing" data-i18n="nav_pricing">PRICING</a></li>
-    <li><a onclick="navigate('about')" data-page="about" data-i18n="nav_about">ABOUT</a></li>
-    <li><a onclick="navigate('contact')" data-page="contact" data-i18n="nav_contact">CONTACT</a></li>
+    <li><a onclick="navigate('services');closeMenu()" data-page="services" data-i18n="nav_services">SERVICES</a></li>
+    <li><a onclick="navigate('calculator');closeMenu()" data-page="calculator" data-i18n="nav_calculator">CALCULATOR</a></li>
+    <li><a onclick="navigate('about');closeMenu()" data-page="about" data-i18n="nav_about">ABOUT</a></li>
+    <li><a onclick="navigate('contact');closeMenu()" data-page="contact" data-i18n="nav_contact">CONTACT</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -641,6 +806,7 @@
       <button class="lang-btn" id="btnDE" onclick="setLang('de')">DE</button>
     </div>
     <a class="nav-cta" onclick="navigate('contact')" data-i18n="nav_cta">Book a Call</a>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Menu">☰</button>
   </div>
 </nav>
 
@@ -654,20 +820,19 @@
     <!-- HERO -->
     <div class="hero">
       <div class="hero-grid"></div>
-      <div class="hero-eyebrow" data-i18n="home_eyebrow">M&A Deal Origination · Europe</div>
       <h1 data-i18n-html="home_h1">We Source the Deals <span>You Can't Find.</span></h1>
-      <p class="hero-sub" data-i18n="home_sub">Off-market acquisition targets for private equity, strategic buyers, and search funds across Europe. We do the sourcing. You do the deals.</p>
+      <p class="hero-sub" data-i18n="home_sub">Off-market deal flow for business buyers. We source, you close.</p>
       <div class="hero-actions">
         <button class="btn-primary" onclick="navigate('contact')" data-i18n="home_cta1">Schedule a Consultation →</button>
         <button class="btn-secondary" onclick="navigate('services')" data-i18n="home_cta2">View Services</button>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-num">17<span>+</span></div>
+          <div class="hero-stat-num">11<span>+</span></div>
           <div class="hero-stat-label" data-i18n="stat1">Mandates Secured</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">3<span>+</span></div>
+          <div class="hero-stat-num">9<span>+</span></div>
           <div class="hero-stat-label" data-i18n="stat2">Acquisitions Facilitated</div>
         </div>
         <div class="hero-stat">
@@ -675,7 +840,7 @@
           <div class="hero-stat-label" data-i18n="stat3">European Markets</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">15<span>mo</span></div>
+          <div class="hero-stat-num">25 <span>mo</span></div>
           <div class="hero-stat-label" data-i18n="stat4">Track Record</div>
         </div>
       </div>
@@ -687,38 +852,23 @@
         <div class="section-head">
           <div class="section-label" data-i18n="serve_label">Who We Work With</div>
           <h2 class="section-title" data-i18n="serve_title">Built for Buyers Who Acquire at Scale</h2>
-          <p class="section-sub" data-i18n="serve_sub">We work exclusively with professional acquirers who have a clear mandate and the capacity to close.</p>
+          <p class="section-sub" data-i18n="serve_sub" style="max-width: 900px; white-space: nowrap; overflow: visible;">We work exclusively with professional acquirers who have a clear mandate and the capacity to close.</p>
         </div>
-        <div class="serve-grid">
+        <div class="serve-grid" style="grid-template-columns: repeat(3, 1fr);">
           <div class="serve-card">
             <div class="serve-icon">🏦</div>
             <h3 data-i18n="serve1_title">Private Equity</h3>
-            <p data-i18n="serve1_desc">Buy-side sourcing for PE firms targeting off-market DACH, Benelux, and UK assets.</p>
+            <p data-i18n="serve1_desc">Buy-side sourcing for PE firms targeting off-market assets across DACH, Benelux, and the UK.</p>
           </div>
           <div class="serve-card">
             <div class="serve-icon">🏢</div>
             <h3 data-i18n="serve2_title">Strategic Buyers</h3>
-            <p data-i18n="serve2_desc">Corporate M&A teams seeking bolt-on acquisitions without tipping off the market.</p>
-          </div>
-          <div class="serve-card">
-            <div class="serve-icon">🔗</div>
-            <h3 data-i18n="serve3_title">Hold Companies</h3>
-            <p data-i18n="serve3_desc">Holding groups building buy-and-build strategies in specific verticals.</p>
+            <p data-i18n="serve2_desc">Corporate acquirers seeking bolt-on targets without alerting the market.</p>
           </div>
           <div class="serve-card">
             <div class="serve-icon">🔍</div>
             <h3 data-i18n="serve4_title">Search Funds</h3>
             <p data-i18n="serve4_desc">Searchers who need consistent, qualified deal flow without burning their own time on outreach.</p>
-          </div>
-          <div class="serve-card">
-            <div class="serve-icon">📋</div>
-            <h3 data-i18n="serve5_title">M&A Brokers</h3>
-            <p data-i18n="serve5_desc">Broker firms seeking mandate origination support and pipeline development at scale.</p>
-          </div>
-          <div class="serve-card">
-            <div class="serve-icon">👨‍👩‍👧</div>
-            <h3 data-i18n="serve6_title">Family Offices</h3>
-            <p data-i18n="serve6_desc">Direct acquisition mandates for family offices with a defined acquisition thesis.</p>
           </div>
         </div>
       </div>
@@ -737,14 +887,14 @@
             <div class="step-num">01</div>
             <div class="step-content">
               <h3 data-i18n="step1_title">We Learn Your Mandate</h3>
-              <p data-i18n="step1_desc">We start with your acquisition criteria — sector, geography, revenue range, EBITDA thresholds. We build a target profile and agree on KPIs before engaging a single prospect.</p>
+              <p data-i18n="step1_desc">We start with your acquisition criteria: sector, geography, revenue range, EBITDA thresholds. We build a target profile and agree on KPIs before engaging a single prospect.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">02</div>
             <div class="step-content">
-              <h3 data-i18n="step2_title">We Map and Engage the Market</h3>
-              <p data-i18n="step2_desc">Our team researches and reaches out to business owners through structured outreach — email, LinkedIn, and direct calls. We represent you professionally at every touchpoint.</p>
+              <h3 data-i18n="step2_title">We Pick Up the Phone</h3>
+              <p data-i18n="step2_desc">We engage business owners exclusively via direct phone calls. No mass email. No LinkedIn automation. Old-school, high-trust outreach, because that's what gets real sellers to the table.</p>
             </div>
           </div>
           <div class="step">
@@ -757,8 +907,15 @@
           <div class="step">
             <div class="step-num">04</div>
             <div class="step-content">
-              <h3 data-i18n="step4_title">You Take the Management Meeting</h3>
-              <p data-i18n="step4_desc">We hand you a warm, qualified opportunity. From here, you run your standard process. We track, report, and keep the pipeline flowing.</p>
+              <h3 data-i18n="step4_title">You Receive a Full Briefing</h3>
+              <p data-i18n="step4_desc">Before any meeting, you receive a structured briefing on the target: business overview, financials, owner profile, and context on their motivation to sell.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">05</div>
+            <div class="step-content">
+              <h3 data-i18n="step5_title">You Take the Management Meeting</h3>
+              <p data-i18n="step5_desc">You walk in prepared. We've done the groundwork. From here, you run your standard process, we keep the pipeline flowing.</p>
             </div>
           </div>
         </div>
@@ -780,10 +937,10 @@
             <div class="track-result" data-i18n="track1_result">✓ 3 strategic acquisitions facilitated</div>
           </div>
           <div class="track-card">
-            <span class="track-tag">Switzerland · M&A Brokers</span>
-            <h3 data-i18n="track2_title">Mandate Origination – Swiss Broker</h3>
-            <p data-i18n="track2_desc">Comprehensive mandate acquisition support for a Swiss M&A broker. Ongoing pipeline management and CRM tracking across DACH markets.</p>
-            <div class="track-result" data-i18n="track2_result">✓ 13 sell-side + 4 buy-side mandates in 15 months</div>
+            <span class="track-tag">DACH · Private Equity</span>
+            <h3 data-i18n="track2_title">Buy-Side Sourcing – Industrial Acquisition</h3>
+            <p data-i18n="track2_desc">Buy-side support for a PE fund targeting off-market industrial companies in the DACH region. 23 management meetings conducted with qualified targets across the sector.</p>
+            <div class="track-result" data-i18n="track2_result">✓ Company successfully acquired</div>
           </div>
           <div class="track-card">
             <span class="track-tag">Malta · Crypto</span>
@@ -795,27 +952,16 @@
       </div>
     </section>
 
-    <!-- TESTIMONIAL -->
-    <section class="dark">
-      <div class="section-inner">
-        <div class="testimonial-wrap">
-          <p class="testimonial-quote" data-i18n="testimonial">"MDH helped me completely change my career. Within two weeks I already had 3 conversations with private equity players who needed help with deal sourcing."</p>
-          <div class="testimonial-name">Gabriella</div>
-          <div class="testimonial-loc">Geneva, CH</div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA BAND -->
     <section class="alt">
       <div class="section-inner">
-        <div class="cta-band">
+        <div class="cta-band" style="flex-direction:column;text-align:center;align-items:center;">
           <div>
             <h2 data-i18n="cta_title">Ready to Build Your Pipeline?</h2>
             <p data-i18n="cta_sub">Let's discuss your mandate and what off-market deal flow looks like for your strategy.</p>
           </div>
-          <div class="cta-actions">
-            <button class="btn-primary" onclick="navigate('contact')" data-i18n="cta_btn1">Schedule a Consultation →</button>
+          <div class="cta-actions" style="justify-content:center;">
+            <button class="btn-primary" onclick="window.open('https://calendly.com/kaitsar-capital/new-meeting','_blank')" data-i18n="cta_btn1">Schedule a Consultation →</button>
             <button class="btn-secondary" onclick="navigate('services')" data-i18n="cta_btn2">View Services</button>
           </div>
         </div>
@@ -833,7 +979,7 @@
     <div class="page-hero">
       <div class="section-label" data-i18n="nav_services">SERVICES</div>
       <h1 data-i18n="svc_hero_title">M&A Services</h1>
-      <p data-i18n="svc_hero_sub">Professional deal origination support for private equity firms, M&A brokers, and corporate development teams across Europe.</p>
+      <p data-i18n="svc_hero_sub">Professional deal origination support for private equity firms, strategic buyers, and search funds.</p>
     </div>
 
     <!-- BUY-SIDE SUPPORT -->
@@ -850,7 +996,7 @@
           <div class="service-card">
             <div class="card-badge">1</div>
             <h3 data-i18n="bs1_title">Target Engagement</h3>
-            <p class="card-desc" data-i18n="bs1_desc">You provide the target list — we handle outreach, qualification, and management meeting facilitation.</p>
+            <p class="card-desc" data-i18n="bs1_desc">You provide the target list, we handle outreach, qualification, and management meeting facilitation.</p>
             <ul class="feature-list">
               <li data-i18n="bs1_f1">Professional market outreach</li>
               <li data-i18n="bs1_f2">Management meeting facilitation</li>
@@ -892,46 +1038,6 @@
 
         <div class="divider"></div>
 
-        <!-- M&A BROKER SUPPORT -->
-        <div class="services-tier-label">
-          <div class="tier-icon">📋</div>
-          <div>
-            <div class="tier-title" data-i18n="broker_title">M&A Broker Support</div>
-            <div class="tier-subtitle" data-i18n="broker_sub">Two tiers for mandate origination</div>
-          </div>
-        </div>
-        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-          <div class="service-card">
-            <div class="card-badge" style="background: #6b21a8;">A</div>
-            <h3 data-i18n="ma1_title">Mandate Origination</h3>
-            <p class="card-desc" data-i18n="ma1_desc">You provide the prospect list — we engage decision-makers to secure advisory mandates.</p>
-            <ul class="feature-list">
-              <li data-i18n="ma1_f1">C-suite relationship building</li>
-              <li data-i18n="ma1_f2">Mandate-focused engagement</li>
-              <li data-i18n="ma1_f3">Advisory positioning</li>
-              <li data-i18n="ma1_f4">Meeting scheduling & pre-qualification</li>
-              <li data-i18n="ma1_f5">Pipeline tracking & analysis</li>
-            </ul>
-            <button class="card-btn" onclick="navigate('contact')"><span data-i18n="learn_more">Learn More</span> →</button>
-          </div>
-          <div class="service-card">
-            <div class="card-badge" style="background: #6b21a8;">B</div>
-            <h3 data-i18n="ma2_title">Market Development</h3>
-            <p class="card-desc" data-i18n="ma2_desc">We identify prospects and build relationships from scratch to secure high-value advisory mandates.</p>
-            <ul class="feature-list">
-              <li data-i18n="ma2_f1">Market analysis & prospect identification</li>
-              <li data-i18n="ma2_f2">Executive relationship development</li>
-              <li data-i18n="ma2_f3">Strategic advisory positioning</li>
-              <li data-i18n="ma2_f4">Mandate negotiation support</li>
-              <li data-i18n="ma2_f5">Long-term client cultivation</li>
-              <li data-i18n="ma2_f6">Deal pipeline optimisation</li>
-            </ul>
-            <button class="card-btn" onclick="navigate('contact')"><span data-i18n="learn_more">Learn More</span> →</button>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
         <!-- SELL SIDE -->
         <div class="services-tier-label">
           <div class="tier-icon">↗️</div>
@@ -957,7 +1063,7 @@
             <p data-i18n="svc_cta_sub">Let's discuss how our services fit your acquisition strategy.</p>
           </div>
           <div class="cta-actions">
-            <button class="btn-primary" onclick="navigate('contact')" data-i18n="svc_cta_btn">Schedule a Consultation →</button>
+            <button class="btn-primary" onclick="window.open('https://calendly.com/kaitsar-capital/new-meeting','_blank')" data-i18n="svc_cta_btn">Schedule a Consultation →</button>
           </div>
         </div>
       </div>
@@ -966,10 +1072,8 @@
   </div><!-- /page-services -->
 
 
-  <!-- ══════════════════════════════════════════
-       PRICING PAGE (replaces Academy in nav)
-  ══════════════════════════════════════════ -->
-  <div class="page" id="page-pricing">
+  <!-- PRICING PAGE REMOVED -->
+  <div class="page" id="page-pricing" style="display:none!important">
 
     <div class="page-hero">
       <div class="section-label" data-i18n="nav_pricing">ACADEMY</div>
@@ -1020,7 +1124,7 @@
               <li data-i18n="pf_live5">Private community (free for early adopters)</li>
               <li data-i18n="pf_live6">Scripts, templates & checklists</li>
             </ul>
-            <button class="btn-primary" style="width: 100%; margin-top: 24px; justify-content: center;" onclick="navigate('contact')" data-i18n="enroll_live">Enroll Now — Save €600 →</button>
+            <button class="btn-primary" style="width: 100%; margin-top: 24px; justify-content: center;" onclick="navigate('contact')" data-i18n="enroll_live">Enroll Now, Save €600 →</button>
             <div class="urgency" data-i18n="urgency">⚡ 7 early-bird spots left · Offer ends Oct 30th</div>
           </div>
 
@@ -1043,7 +1147,7 @@
           <div class="service-card">
             <div class="card-badge">2</div>
             <h3 data-i18n="l2_title">Finance 101</h3>
-            <p class="card-desc" data-i18n="l2_desc">Key metrics — revenue, EBITDA, cash flow, multiples. Valuation basics and investor thinking.</p>
+            <p class="card-desc" data-i18n="l2_desc">Key metrics: revenue, EBITDA, cash flow, multiples. Valuation basics and investor thinking.</p>
           </div>
           <div class="service-card">
             <div class="card-badge">3</div>
@@ -1085,10 +1189,58 @@
   ══════════════════════════════════════════ -->
   <div class="page" id="page-about">
 
-    <div class="page-hero">
-      <div class="section-label" data-i18n="nav_about">ABOUT</div>
-      <h1 data-i18n="about_hero_title">About MDH</h1>
-      <p data-i18n="about_hero_sub">International M&A services team with a proven track record across European markets.</p>
+    <div class="about-hero">
+      <!-- Map background -->
+      <svg class="about-hero-map" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <g opacity="0.40" fill="rgba(255,255,255,1)">
+          <path d="M380 50 L420 40 L450 80 L440 150 L410 180 L380 160 L370 100 Z" opacity="0.20"/>
+          <path d="M180 150 L220 140 L240 180 L230 240 L200 260 L170 240 L160 190 Z" opacity="0.20"/>
+          <path d="M140 180 L170 170 L175 210 L160 230 L140 220 Z" opacity="0.20"/>
+          <path d="M220 280 L300 260 L340 300 L320 380 L260 400 L200 360 L210 300 Z" opacity="0.20"/>
+          <path d="M140 360 L240 340 L260 400 L240 480 L160 500 L100 460 L110 380 Z" opacity="0.20"/>
+          <path d="M360 340 L400 320 L420 380 L400 460 L380 500 L360 480 L350 400 Z" opacity="0.20"/>
+          <path d="M340 200 L440 180 L500 220 L520 300 L480 340 L400 320 L340 280 Z" opacity="0.20"/>
+          <path d="M500 120 L600 100 L680 180 L700 320 L640 400 L540 380 L500 280 L480 200 Z" opacity="0.20"/>
+          <path d="M480 340 L560 320 L600 400 L580 480 L520 500 L460 460 L450 380 Z" opacity="0.20"/>
+        </g>
+        <g opacity="0.35" stroke="#e85d04" stroke-width="1.5" stroke-dasharray="4 4" fill="none">
+          <line x1="200" y1="200" x2="305" y2="215"/>
+          <line x1="305" y1="215" x2="390" y2="250"/>
+          <line x1="390" y1="250" x2="400" y2="520"/>
+          <line x1="400" y1="520" x2="680" y2="480"/>
+        </g>
+        <g>
+          <path d="M180 150 L220 140 L240 180 L230 240 L200 260 L170 240 L160 190 Z" fill="#e85d04" opacity="0.20"/>
+          <circle cx="200" cy="200" r="16" fill="#e85d04" opacity="0.25"/>
+          <circle cx="200" cy="200" r="8" fill="#e85d04" opacity="0.7"/>
+        </g>
+        <g>
+          <path d="M280 180 L320 170 L340 200 L330 250 L300 260 L270 240 L275 200 Z" fill="#e85d04" opacity="0.20"/>
+          <circle cx="305" cy="215" r="16" fill="#e85d04" opacity="0.25"/>
+          <circle cx="305" cy="215" r="8" fill="#e85d04" opacity="0.7"/>
+        </g>
+        <g>
+          <path d="M340 200 L420 180 L460 220 L450 300 L400 320 L340 280 L330 240 Z" fill="#e85d04" opacity="0.20"/>
+          <circle cx="390" cy="250" r="20" fill="#e85d04" opacity="0.25"/>
+          <circle cx="390" cy="250" r="10" fill="#e85d04" opacity="0.7"/>
+        </g>
+        <g>
+          <circle cx="400" cy="520" r="18" fill="#e85d04" opacity="0.15"/>
+          <circle cx="400" cy="520" r="6" fill="#e85d04" opacity="0.7"/>
+        </g>
+        <g>
+          <circle cx="680" cy="480" r="18" fill="#e85d04" opacity="0.15"/>
+          <ellipse cx="680" cy="480" rx="25" ry="15" fill="#e85d04" opacity="0.45"/>
+          <circle cx="680" cy="480" r="6" fill="#e85d04" opacity="0.7"/>
+        </g>
+      </svg>
+      <div class="about-hero-overlay"></div>
+      <!-- Text content -->
+      <div class="about-hero-content">
+        <div class="section-label" data-i18n="nav_about">ABOUT</div>
+        <h1 style="font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-0.02em;margin:12px 0 16px;" data-i18n="about_hero_title">About MDH</h1>
+        <p style="font-size:18px;color:var(--gray);max-width:560px;margin:0 auto;" data-i18n="about_hero_sub">International M&A services team with a proven track record across European markets.</p>
+      </div>
     </div>
 
     <section class="dark">
@@ -1099,21 +1251,18 @@
           <h2 class="section-title" data-i18n="team_title">Diverse Expertise Across Finance, Technology & Strategy</h2>
         </div>
 
-        <div class="team-cards">
+        <div class="team-cards" style="grid-template-columns: repeat(2, 1fr);">
           <div class="team-card">
-            <div style="font-size: 32px; margin-bottom: 12px;">💻</div>
-            <h3 data-i18n="team1_title">Tech Founders</h3>
-            <p data-i18n="team1_desc">Serial entrepreneurs with deep technology expertise and operator mindsets.</p>
+            <div style="font-size: 40px; margin-bottom: 16px;">👤</div>
+            <h3>Nikolai Ferdinand Rutter</h3>
+            <p style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px;">Founder</p>
+            <p>Raised in an Austrian SME family, Nikolai built tech start-ups in the Netherlands before entering a joint venture with a private equity firm. He founded Kaitsar Capital to help solve Europe's business succession challenge — connecting owners ready to exit with the right buyers.</p>
           </div>
           <div class="team-card">
-            <div style="font-size: 32px; margin-bottom: 12px;">📊</div>
-            <h3 data-i18n="team2_title">Investment Bankers</h3>
-            <p data-i18n="team2_desc">Mid-market M&A experience across Europe, with deep transaction exposure.</p>
-          </div>
-          <div class="team-card">
-            <div style="font-size: 32px; margin-bottom: 12px;">🎯</div>
-            <h3 data-i18n="team3_title">BCG Consultants</h3>
-            <p data-i18n="team3_desc">Strategic advisory and operational excellence from one of the world's top firms.</p>
+            <div style="font-size: 40px; margin-bottom: 16px;">👤</div>
+            <h3>Tina Krell-Sun</h3>
+            <p style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px;">Partner / COO</p>
+            <p>Placeholder description — to be updated.</p>
           </div>
         </div>
 
@@ -1132,30 +1281,122 @@
           <div class="info-box">
             <div class="info-box-icon">🌍</div>
             <h3 data-i18n="presence_title">Global Presence</h3>
-            <p data-i18n="presence_desc">Headquartered in Cyprus. Local presence in:</p>
+            <p data-i18n="presence_desc">Headquartered in Nicosia, Cyprus. Active presence in:</p>
             <div class="tags">
               <span class="tag">Benelux</span>
               <span class="tag">DACH</span>
               <span class="tag">UK</span>
-              <span class="tag">Malta</span>
               <span class="tag">Cyprus</span>
             </div>
           </div>
         </div>
 
-        <div class="europe-coverage">
-          <div class="coverage-text">
-            <h3 data-i18n="coverage_title">European Coverage</h3>
-            <p style="font-size: 14px; color: var(--gray);" data-i18n="coverage_sub">Active presence across key European markets</p>
-            <div class="coverage-markets">
-              <div class="coverage-market">United Kingdom</div>
-              <div class="coverage-market">Benelux (Belgium, Netherlands, Luxembourg)</div>
-              <div class="coverage-market">DACH (Germany, Austria, Switzerland)</div>
-              <div class="coverage-market">Malta</div>
-              <div class="coverage-market">Cyprus</div>
-            </div>
+        <div style="margin-bottom:48px;">
+          <h3 data-i18n="coverage_title" style="font-size:22px;font-weight:700;margin-bottom:8px;">European Coverage</h3>
+          <p style="font-size:14px;color:var(--gray);margin-bottom:24px;" data-i18n="coverage_sub">Active presence across key European markets</p>
+          <div style="background:var(--gray2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+            <svg viewBox="0 0 800 600" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background -->
+              <rect width="800" height="600" fill="#111111" rx="8"/>
+
+              <!-- Grid lines -->
+              <g opacity="0.08" stroke="rgba(255,255,255,1)" stroke-width="1">
+                <line x1="0" y1="0" x2="800" y2="0"/>
+                <line x1="0" y1="75" x2="800" y2="75"/>
+                <line x1="0" y1="150" x2="800" y2="150"/>
+                <line x1="0" y1="225" x2="800" y2="225"/>
+                <line x1="0" y1="300" x2="800" y2="300"/>
+                <line x1="0" y1="375" x2="800" y2="375"/>
+                <line x1="0" y1="450" x2="800" y2="450"/>
+                <line x1="0" y1="525" x2="800" y2="525"/>
+                <line x1="0" y1="600" x2="800" y2="600"/>
+                <line x1="0" y1="0" x2="0" y2="600"/>
+                <line x1="100" y1="0" x2="100" y2="600"/>
+                <line x1="200" y1="0" x2="200" y2="600"/>
+                <line x1="300" y1="0" x2="300" y2="600"/>
+                <line x1="400" y1="0" x2="400" y2="600"/>
+                <line x1="500" y1="0" x2="500" y2="600"/>
+                <line x1="600" y1="0" x2="600" y2="600"/>
+                <line x1="700" y1="0" x2="700" y2="600"/>
+                <line x1="800" y1="0" x2="800" y2="600"/>
+              </g>
+
+              <!-- Continent shapes (grey background) -->
+              <g opacity="0.30" fill="rgba(255,255,255,1)">
+                <path d="M380 50 L420 40 L450 80 L440 150 L410 180 L380 160 L370 100 Z" opacity="0.20"/>
+                <path d="M180 150 L220 140 L240 180 L230 240 L200 260 L170 240 L160 190 Z" opacity="0.20"/>
+                <path d="M140 180 L170 170 L175 210 L160 230 L140 220 Z" opacity="0.20"/>
+                <path d="M220 280 L300 260 L340 300 L320 380 L260 400 L200 360 L210 300 Z" opacity="0.20"/>
+                <path d="M140 360 L240 340 L260 400 L240 480 L160 500 L100 460 L110 380 Z" opacity="0.20"/>
+                <path d="M360 340 L400 320 L420 380 L400 460 L380 500 L360 480 L350 400 Z" opacity="0.20"/>
+                <path d="M340 200 L440 180 L500 220 L520 300 L480 340 L400 320 L340 280 Z" opacity="0.20"/>
+                <path d="M500 120 L600 100 L680 180 L700 320 L640 400 L540 380 L500 280 L480 200 Z" opacity="0.20"/>
+                <path d="M480 340 L560 320 L600 400 L580 480 L520 500 L460 460 L450 380 Z" opacity="0.20"/>
+              </g>
+
+              <!-- Dashed connection lines -->
+              <g opacity="0.40" stroke="#e85d04" stroke-width="1.5" stroke-dasharray="4 4" fill="none">
+                <line x1="200" y1="200" x2="305" y2="215"/>
+                <line x1="305" y1="215" x2="390" y2="250"/>
+                <line x1="390" y1="250" x2="400" y2="520"/>
+                <line x1="400" y1="520" x2="680" y2="480"/>
+              </g>
+
+              <!-- UK marker -->
+              <g>
+                <path d="M180 150 L220 140 L240 180 L230 240 L200 260 L170 240 L160 190 Z" fill="#e85d04" opacity="0.25"/>
+                <circle cx="200" cy="200" r="16" fill="#e85d04" opacity="0.30"/>
+                <circle cx="200" cy="200" r="8" fill="#e85d04"/>
+              </g>
+
+              <!-- Benelux marker -->
+              <g>
+                <path d="M280 180 L320 170 L340 200 L330 250 L300 260 L270 240 L275 200 Z" fill="#e85d04" opacity="0.25"/>
+                <circle cx="305" cy="215" r="16" fill="#e85d04" opacity="0.30"/>
+                <circle cx="305" cy="215" r="8" fill="#e85d04"/>
+              </g>
+
+              <!-- DACH marker (largest) -->
+              <g>
+                <path d="M340 200 L420 180 L460 220 L450 300 L400 320 L340 280 L330 240 Z" fill="#e85d04" opacity="0.25"/>
+                <circle cx="390" cy="250" r="20" fill="#e85d04" opacity="0.30"/>
+                <circle cx="390" cy="250" r="10" fill="#e85d04"/>
+              </g>
+
+              <!-- Malta marker -->
+              <g>
+                <circle cx="400" cy="520" r="18" fill="#e85d04" opacity="0.20"/>
+                <circle cx="400" cy="520" r="12" fill="#e85d04" opacity="0.60"/>
+                <circle cx="400" cy="520" r="6" fill="#e85d04"/>
+              </g>
+
+              <!-- Cyprus marker (ellipse shape) -->
+              <g>
+                <circle cx="680" cy="480" r="18" fill="#e85d04" opacity="0.20"/>
+                <ellipse cx="680" cy="480" rx="25" ry="15" fill="#e85d04" opacity="0.60"/>
+                <circle cx="680" cy="480" r="6" fill="#e85d04"/>
+              </g>
+
+              <!-- Labels -->
+              <g font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+                <rect x="160" y="273" width="80" height="24" fill="#0a0a0a" rx="4" opacity="0.90"/>
+                <text x="200" y="290" fill="#e85d04">UK</text>
+
+                <rect x="255" y="263" width="100" height="24" fill="#0a0a0a" rx="4" opacity="0.90"/>
+                <text x="305" y="280" fill="#e85d04">Benelux</text>
+
+                <rect x="345" y="303" width="90" height="24" fill="#0a0a0a" rx="4" opacity="0.90"/>
+                <text x="390" y="320" fill="#e85d04">DACH</text>
+
+                <rect x="365" y="543" width="70" height="24" fill="#0a0a0a" rx="4" opacity="0.90"/>
+                <text x="400" y="560" fill="#e85d04">Malta</text>
+
+                <rect x="635" y="503" width="90" height="24" fill="#0a0a0a" rx="4" opacity="0.90"/>
+                <text x="680" y="520" fill="#e85d04">Cyprus</text>
+              </g>
+            </svg>
+            <p style="text-align:center;font-size:13px;color:rgba(255,255,255,0.35);padding:12px 0 16px;" data-i18n="coverage_sub">Active presence across key European markets</p>
           </div>
-          <div style="font-size: 80px; opacity: 0.15;">🗺️</div>
         </div>
 
         <div class="confidentiality-box">
@@ -1178,10 +1419,10 @@
             <div class="track-result" data-i18n="track1_result">✓ 3 strategic acquisitions facilitated</div>
           </div>
           <div class="track-card">
-            <span class="track-tag">Switzerland · M&A Brokers</span>
-            <h3 data-i18n="track2_title">Mandate Origination – Swiss Broker</h3>
-            <p data-i18n="track2_desc">Comprehensive mandate acquisition support for a Swiss M&A broker. Ongoing pipeline management and CRM tracking across DACH markets.</p>
-            <div class="track-result" data-i18n="track2_result">✓ 13 sell-side + 4 buy-side mandates in 15 months</div>
+            <span class="track-tag">DACH · Private Equity</span>
+            <h3 data-i18n="track2_title">Buy-Side Sourcing – Industrial Acquisition</h3>
+            <p data-i18n="track2_desc">Buy-side support for a PE fund targeting off-market industrial companies in the DACH region. 23 management meetings conducted with qualified targets across the sector.</p>
+            <div class="track-result" data-i18n="track2_result">✓ Company successfully acquired</div>
           </div>
           <div class="track-card">
             <span class="track-tag">Malta · Crypto</span>
@@ -1231,12 +1472,12 @@
                 <input type="email" required />
               </div>
               <div class="form-group">
-                <label data-i18n="form_phone">Phone (Optional)</label>
-                <input type="tel" />
+                <label data-i18n="form_phone">Phone</label>
+                <input type="tel" required />
               </div>
               <div class="form-group">
                 <label data-i18n="form_msg">Message</label>
-                <textarea data-i18n-placeholder="form_msg_ph">Tell us about your M&A requirements...</textarea>
+                <textarea data-i18n-placeholder="form_msg_ph" placeholder="Tell us about your M&A requirements..."></textarea>
               </div>
               <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" data-i18n="form_send">Send Message</button>
             </form>
@@ -1245,15 +1486,15 @@
           <div class="contact-info">
             <div class="contact-info-card">
               <h3 data-i18n="hq_title">🏢 Headquarters</h3>
-              <p>Cyprus</p>
+              <p>Kaitsar Capital Ltd.<br>Floor 5, Methonis 1<br>1070 Nicosia, Cyprus<br><span style="font-size:12px;color:rgba(255,255,255,0.4);">Reg: ΗΕ 473818</span></p>
             </div>
             <div class="contact-info-card">
               <h3 data-i18n="local_title">📍 Local Presence</h3>
-              <p>Benelux · DACH · UK · Malta</p>
+              <p>Benelux · DACH · UK</p>
             </div>
             <div class="contact-info-card">
               <h3 data-i18n="email_title">✉️ Email</h3>
-              <p>kaitsar.capital@gmail.com</p>
+              <p>office@kaitsar.com</p>
             </div>
             <div class="book-meeting-card">
               <h3 data-i18n="book_title">📅 Book a Meeting</h3>
@@ -1269,12 +1510,297 @@
   </div><!-- /page-contact -->
 
 
+  <!-- ACADEMY PAGE REMOVED -->
+
   <!-- ══════════════════════════════════════════
-       ACADEMY PAGE (hidden from nav)
+       CALCULATOR PAGE
   ══════════════════════════════════════════ -->
-  <div class="page" id="page-academy">
-    <!-- Redirects to pricing -->
-  </div>
+  <div class="page" id="page-calculator">
+
+    <div class="page-hero">
+      <div class="section-label" data-i18n="nav_calculator">CALCULATOR</div>
+      <h1 data-i18n="calc_hero_title">Pricing Configurator</h1>
+      <p data-i18n="calc_hero_sub">Set your parameters. See exactly what a Kaitsar engagement costs, and when it pays for itself.</p>
+    </div>
+
+    <section class="dark">
+      <div class="section-inner" style="max-width: 900px;">
+
+        <div class="calc-grid">
+
+          <!-- LEFT: SLIDERS -->
+          <div class="calc-card">
+            <div class="calc-eyebrow" data-i18n="calc_configure">Configure Engagement</div>
+
+            <div class="calc-slider-block">
+              <div class="calc-slider-header">
+                <span class="calc-s-name" data-i18n="calc_retainer">Monthly Retainer</span>
+                <span class="calc-s-val" id="retainerDisplay">€0 / mo</span>
+              </div>
+              <input type="range" class="calc-range main-range" id="retainerSlider" min="0" max="10000" step="500" value="0" oninput="calcUpdate()" />
+              <div class="calc-s-range"><span>€0 / mo</span><span>€10k / mo</span></div>
+            </div>
+
+            <div class="calc-slider-block">
+              <div class="calc-slider-header">
+                <span class="calc-s-name" data-i18n="calc_dealsize">Target Transaction Size</span>
+                <span class="calc-s-val" id="dealDisplay">€5.0M</span>
+              </div>
+              <input type="range" class="calc-range main-range" id="dealSlider" min="0" max="100" step="1" value="50" oninput="calcUpdate()" />
+              <div class="calc-s-range"><span>€500k</span><span>€50M</span></div>
+            </div>
+
+            <div class="calc-slider-block">
+              <div class="calc-slider-header">
+                <span class="calc-s-name" data-i18n="calc_duration">Expected Search Duration</span>
+                <span class="calc-s-val" id="durationDisplay" style="font-size:16px;font-weight:600;color:rgba(255,255,255,0.4);">12 months</span>
+              </div>
+              <input type="range" class="calc-range soft-range" id="durationSlider" min="1" max="18" step="1" value="12" oninput="calcUpdate()" />
+              <div class="calc-s-range"><span>1 mo</span><span>18 mo</span></div>
+            </div>
+
+            <div class="calc-insight" id="calcInsight">
+              Pure success fee: Kaitsar assumes full performance risk. No upfront cost to you.
+            </div>
+          </div>
+
+          <!-- RIGHT: RESULTS (gated) -->
+          <div class="calc-right">
+
+            <!-- Success fee card -->
+            <div class="calc-card calc-result-wrap" id="resultWrap">
+              <div class="calc-eyebrow" data-i18n="calc_fee">Success Fee</div>
+              <div class="calc-sub" data-i18n="calc_waterfall">Waterfall on transaction value</div>
+
+              <div class="calc-tier-row" id="tier1Row">
+                <div><div class="calc-t-name" data-i18n="tier1_name">First €1M</div><div class="calc-t-rate" id="tier1Rate">5.00%</div></div>
+                <div class="calc-t-fee" id="tier1Fee">€50.000</div>
+              </div>
+              <div class="calc-tier-row" id="tier2Row">
+                <div><div class="calc-t-name" data-i18n="tier2_name">€1M – €5M</div><div class="calc-t-rate" id="tier2Rate">2.00%</div></div>
+                <div class="calc-t-fee" id="tier2Fee">€80.000</div>
+              </div>
+              <div class="calc-tier-row" id="tier3Row">
+                <div><div class="calc-t-name" data-i18n="tier3_name">Above €5M</div><div class="calc-t-rate" id="tier3Rate">0.50%</div></div>
+                <div class="calc-t-fee" id="tier3Fee">€0</div>
+              </div>
+
+              <div class="calc-total-block">
+                <div>
+                  <div class="calc-total-label" data-i18n="calc_total_fee">Total Success Fee</div>
+                  <div class="calc-eff-rate" id="effectiveRate">2.60% effective rate</div>
+                </div>
+                <div class="calc-total-amt" id="totalSuccessFee">€130.000</div>
+              </div>
+
+              <!-- GATE OVERLAY -->
+              <div class="calc-gate" id="calcGate">
+                <div class="calc-gate-inner">
+                  <div class="calc-gate-icon">🔒</div>
+                  <h3 class="calc-gate-title" data-i18n="gate_title">See Your Results</h3>
+                  <p class="calc-gate-sub" data-i18n="gate_sub">Enter your details to unlock the full pricing breakdown.</p>
+                  <button class="btn-primary" onclick="openGateModal()" data-i18n="gate_btn">Unlock Results →</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary card -->
+            <div class="calc-card calc-summary calc-result-wrap">
+              <div class="calc-badge" data-i18n="calc_summary">Engagement Summary</div>
+              <div class="calc-sum-row">
+                <span id="retainerLineLabel">Retainer × 12 mo</span>
+                <span id="retainerLineCost">€0</span>
+              </div>
+              <div class="calc-sum-row">
+                <span data-i18n="calc_success_line">Success fee at close</span>
+                <span id="successLineCost">€130.000</span>
+              </div>
+              <div class="calc-grand-row">
+                <span class="calc-grand-label" data-i18n="calc_total_cost">TOTAL COST</span>
+                <span class="calc-grand-amt" id="grandTotal">€130.000</span>
+              </div>
+
+              <!-- GATE OVERLAY -->
+              <div class="calc-gate" id="calcGate2">
+                <div class="calc-gate-inner" style="padding:20px;">
+                  <p style="font-size:13px;color:rgba(255,255,255,0.5);" data-i18n="gate_sub2">Unlock to see total cost breakdown</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GATE MODAL -->
+    <div class="modal-overlay" id="gateModal" onclick="closeGateOnBg(event)">
+      <div class="modal-box">
+        <h2 class="modal-title" data-i18n="modal_title">Unlock Your Pricing</h2>
+        <p class="modal-sub" data-i18n="modal_sub">We'll send you the full breakdown and follow up within 24 hours.</p>
+        <form onsubmit="submitGate(event)">
+          <div class="form-group">
+            <label data-i18n="form_fname">First Name</label>
+            <input type="text" id="gateName" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_email">Email</label>
+            <input type="email" id="gateEmail" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_phone">Phone</label>
+            <input type="tel" id="gatePhone" required />
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;" data-i18n="modal_btn">See My Results →</button>
+        </form>
+      </div>
+    </div>
+
+  </div><!-- /page-calculator -->
+
+
+  <!-- ══════════════════════════════════════════
+       PRIVACY POLICY PAGE
+  ══════════════════════════════════════════ -->
+  <div class="page" id="page-privacy">
+    <div class="page-hero">
+      <div class="section-label">LEGAL</div>
+      <h1>Privacy Policy</h1>
+      <p>Last updated: March 2026</p>
+    </div>
+    <section class="dark">
+      <div class="section-inner" style="max-width: 760px;">
+        <div style="line-height: 1.8; color: rgba(255,255,255,0.8); font-size: 15px;">
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">1. Controller</h2>
+          <p style="margin-bottom: 24px;">Kaitsar Capital Ltd., Floor 5, Methonis 1, 1070 Nicosia, Cyprus (reg. ΗΕ 473818) is the data controller responsible for your personal data. Contact: <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a></p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">2. Data We Collect</h2>
+          <p style="margin-bottom: 12px;">We collect the following categories of personal data when you interact with our website or contact us:</p>
+          <ul style="margin: 0 0 24px 20px; display: flex; flex-direction: column; gap: 8px;">
+            <li>Contact details: name, email address, phone number</li>
+            <li>Company information and M&amp;A mandate details you provide voluntarily</li>
+            <li>Technical data: IP address, browser type, pages visited (via server logs)</li>
+          </ul>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">3. Purpose and Legal Basis</h2>
+          <p style="margin-bottom: 24px;">We process your data to respond to enquiries, provide our deal origination services, and improve our website. The legal basis is Article 6(1)(b) GDPR (contractual necessity), Article 6(1)(f) GDPR (legitimate interests), and where applicable, Article 6(1)(a) GDPR (consent).</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">4. Data Sharing</h2>
+          <p style="margin-bottom: 24px;">We do not sell or rent your personal data to third parties. Data may be shared with service providers (e.g. email, CRM) bound by data processing agreements, and where required by law.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">5. Retention</h2>
+          <p style="margin-bottom: 24px;">We retain personal data only as long as necessary for the purposes described, or as required by applicable law (typically up to 7 years for business records).</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">6. Your Rights</h2>
+          <p style="margin-bottom: 24px;">Under GDPR you have the right to access, rectify, erase, restrict processing, and port your data, as well as the right to object and to lodge a complaint with a supervisory authority. To exercise these rights, contact <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a>.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">7. Cookies</h2>
+          <p style="margin-bottom: 24px;">This website uses only essential technical cookies necessary for proper operation. No tracking or advertising cookies are used.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">8. Changes</h2>
+          <p style="margin-bottom: 24px;">We may update this policy from time to time. The current version is always available on this page.</p>
+        </div>
+        <div style="margin-top: 40px;">
+          <button class="btn-secondary" onclick="navigate('home')">← Back to Home</button>
+        </div>
+      </div>
+    </section>
+  </div><!-- /page-privacy -->
+
+
+  <!-- ══════════════════════════════════════════
+       TERMS & CONDITIONS PAGE
+  ══════════════════════════════════════════ -->
+  <div class="page" id="page-terms">
+    <div class="page-hero">
+      <div class="section-label">LEGAL</div>
+      <h1>Terms &amp; Conditions</h1>
+      <p>Last updated: March 2026</p>
+    </div>
+    <section class="dark">
+      <div class="section-inner" style="max-width: 760px;">
+        <div style="line-height: 1.8; color: rgba(255,255,255,0.8); font-size: 15px;">
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">1. Company Details</h2>
+          <p style="margin-bottom: 24px;">These Terms &amp; Conditions govern your use of the website operated by Kaitsar Capital Ltd., Floor 5, Methonis 1, 1070 Nicosia, Cyprus (reg. ΗΕ 473818). By accessing this website, you agree to these terms.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">2. Services</h2>
+          <p style="margin-bottom: 24px;">Kaitsar Capital Ltd. provides M&amp;A deal origination and sourcing services. We do not act as a financial advisor, investment intermediary, or regulated entity under applicable financial services law. Nothing on this website constitutes financial or investment advice.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">3. Website Use</h2>
+          <p style="margin-bottom: 24px;">The content on this website is provided for informational purposes only. You may not reproduce, distribute, or commercially exploit any content without written permission. We reserve the right to modify or remove content at any time.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">4. Accuracy of Information</h2>
+          <p style="margin-bottom: 24px;">While we take reasonable care to ensure the accuracy of information on this website, we make no warranties as to its completeness or fitness for any particular purpose. Past deal results referenced on this website are illustrative only and are not a guarantee of future performance.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">5. Limitation of Liability</h2>
+          <p style="margin-bottom: 24px;">To the maximum extent permitted by law, Kaitsar Capital Ltd. shall not be liable for any direct, indirect, incidental, or consequential loss arising from your use of this website or reliance on its content.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">6. Intellectual Property</h2>
+          <p style="margin-bottom: 24px;">All trademarks, logos, and content on this website are the property of Kaitsar Capital Ltd. or are used with permission. All rights reserved.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">7. Governing Law</h2>
+          <p style="margin-bottom: 24px;">These terms are governed by the laws of the Republic of Cyprus. Any disputes shall be subject to the exclusive jurisdiction of the courts of Cyprus.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">8. Contact</h2>
+          <p style="margin-bottom: 24px;">For any queries, contact us at <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a>.</p>
+        </div>
+        <div style="margin-top: 40px;">
+          <button class="btn-secondary" onclick="navigate('home')">← Back to Home</button>
+        </div>
+      </div>
+    </section>
+  </div><!-- /page-terms -->
+
+
+  <!-- ══════════════════════════════════════════
+       IMPRESSUM PAGE
+  ══════════════════════════════════════════ -->
+  <div class="page" id="page-impressum">
+    <div class="page-hero">
+      <div class="section-label">LEGAL</div>
+      <h1>Impressum</h1>
+      <p>Legal disclosure pursuant to applicable regulations</p>
+    </div>
+    <section class="dark">
+      <div class="section-inner" style="max-width: 760px;">
+        <div style="line-height: 1.8; color: rgba(255,255,255,0.8); font-size: 15px;">
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Company Information</h2>
+          <p style="margin-bottom: 24px;">
+            <strong style="color: #fff;">Kaitsar Capital Ltd.</strong><br>
+            Floor 5, Methonis 1<br>
+            1070 Nicosia, Cyprus<br>
+            Company Registration: ΗΕ 473818
+          </p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Contact</h2>
+          <p style="margin-bottom: 24px;">
+            Email: <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a><br>
+            Website: kaitsar.com
+          </p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Responsible for Content</h2>
+          <p style="margin-bottom: 24px;">Nikolai Ferdinand Rutter — Founder, Kaitsar Capital Ltd.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Regulatory Disclaimer</h2>
+          <p style="margin-bottom: 24px;">Kaitsar Capital Ltd. provides M&amp;A deal origination and business development services. The company does not act as a financial advisor, investment intermediary, or regulated entity under applicable financial services legislation. All information provided is for informational purposes only and does not constitute financial, investment, or legal advice.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Liability for Content</h2>
+          <p style="margin-bottom: 24px;">The content of this website has been compiled with the greatest possible care. However, we cannot accept liability for the accuracy, completeness, or topicality of the content. As a service provider, we are responsible for our own content on this website under general law. We are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Copyright</h2>
+          <p style="margin-bottom: 24px;">The content and works on this website are subject to copyright law. Duplication, processing, distribution, or any form of commercialisation of such material beyond the scope of the copyright law shall require the prior written consent of Kaitsar Capital Ltd.</p>
+        </div>
+        <div style="margin-top: 40px;">
+          <button class="btn-secondary" onclick="navigate('home')">← Back to Home</button>
+        </div>
+      </div>
+    </section>
+  </div><!-- /page-impressum -->
+
 
 </div><!-- /app -->
 
@@ -1285,25 +1811,26 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="logo">MDH</div>
+      <div class="logo"><img src="Kaitsar_Logo_1.png" alt="Kaitsar Capital" style="height:32px;width:auto;" /></div>
       <p data-i18n="footer_desc">Professional M&A deal origination across Europe. We source the off-market deals that move your strategy forward.</p>
       <p class="disclaimer" data-i18n="footer_legal">Kaitsar Capital Ltd. provides M&A deal sourcing services & training. The company does not act as a financial advisor or investment intermediary. All information is for informational purposes only.</p>
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer_company">Company</h4>
       <ul>
-        <li><a onclick="navigate('services')" data-i18n="nav_services">Services</a></li>
-        <li><a onclick="navigate('pricing')" data-i18n="nav_pricing">Academy</a></li>
-        <li><a onclick="navigate('about')" data-i18n="nav_about">About</a></li>
-        <li><a onclick="navigate('contact')" data-i18n="nav_contact">Contact</a></li>
+        <li><a onclick="navigate('home')" style="cursor:pointer;">Home</a></li>
+        <li><a onclick="navigate('services')" style="cursor:pointer;" data-i18n="nav_services">Services</a></li>
+        <li><a onclick="navigate('calculator')" style="cursor:pointer;" data-i18n="nav_calculator">Calculator</a></li>
+        <li><a onclick="navigate('about')" style="cursor:pointer;" data-i18n="nav_about">About</a></li>
+        <li><a onclick="navigate('contact')" style="cursor:pointer;" data-i18n="nav_contact">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer_legal_head">Legal</h4>
       <ul>
-        <li><a data-i18n="privacy">Privacy Policy</a></li>
-        <li><a data-i18n="terms">Terms & Conditions</a></li>
-        <li><a data-i18n="impressum">Impressum</a></li>
+        <li><a onclick="navigate('privacy')" style="cursor:pointer;" data-i18n="privacy">Privacy Policy</a></li>
+        <li><a onclick="navigate('terms')" style="cursor:pointer;" data-i18n="terms">Terms &amp; Conditions</a></li>
+        <li><a onclick="navigate('impressum')" style="cursor:pointer;" data-i18n="impressum">Impressum</a></li>
       </ul>
       <div style="margin-top: 24px;">
         <p style="font-size: 13px; color: var(--gray);">Kaitsar Capital Ltd.</p>
@@ -1322,14 +1849,14 @@
 // ── TRANSLATIONS ──────────────────────────────────────────────
 const t = {
   en: {
-    nav_services: 'SERVICES', nav_pricing: 'ACADEMY', nav_about: 'ABOUT',
+    nav_services: 'SERVICES', nav_calculator: 'CALCULATOR', nav_pricing: 'ACADEMY', nav_about: 'ABOUT',
     nav_contact: 'CONTACT', nav_cta: 'Book a Call',
     home_eyebrow: 'M&A Deal Origination · Europe',
     home_h1: 'We Source the Deals <span>You Can\'t Find.</span>',
-    home_sub: 'Off-market acquisition targets for private equity, strategic buyers, and search funds across Europe. We do the sourcing. You do the deals.',
+    home_sub: 'Off-market deal flow for business buyers. We source, you close.',
+    home_proof: '11 mandates secured · 9 acquisitions facilitated · 5 European markets · 25 months track record',
+    home_exclusive: 'We work exclusively with professional acquirers who have a clear mandate and the capacity to close.',
     home_cta1: 'Schedule a Consultation →', home_cta2: 'View Services',
-    stat1: 'Mandates Secured', stat2: 'Acquisitions Facilitated',
-    stat3: 'European Markets', stat4: 'Track Record',
     serve_label: 'Who We Work With',
     serve_title: 'Built for Buyers Who Acquire at Scale',
     serve_sub: 'We work exclusively with professional acquirers who have a clear mandate and the capacity to close.',
@@ -1341,27 +1868,28 @@ const t = {
     serve6_title: 'Family Offices', serve6_desc: 'Direct acquisition mandates for family offices with a defined acquisition thesis.',
     how_label: 'How It Works', how_title: 'From Mandate to Management Meeting',
     how_sub: 'A disciplined, repeatable process that converts your acquisition criteria into qualified conversations with business owners.',
-    step1_title: 'We Learn Your Mandate', step1_desc: 'We start with your acquisition criteria — sector, geography, revenue range, EBITDA thresholds. We build a target profile and agree on KPIs before engaging a single prospect.',
-    step2_title: 'We Map and Engage the Market', step2_desc: 'Our team researches and reaches out to business owners through structured outreach — email, LinkedIn, and direct calls. We represent you professionally at every touchpoint.',
+    step1_title: 'We Learn Your Mandate', step1_desc: 'We start with your acquisition criteria: sector, geography, revenue range, EBITDA thresholds. We build a target profile and agree on KPIs before engaging a single prospect.',
+    step2_title: 'We Pick Up the Phone', step2_desc: 'We engage business owners exclusively via direct phone calls. No mass email. No LinkedIn automation. Old-school, high-trust outreach, because that\'s what gets real sellers to the table.',
     step3_title: 'We Qualify and Filter', step3_desc: 'We pre-screen every lead against your criteria. You only see sellers who are genuinely open to a conversation and meet your financial thresholds.',
-    step4_title: 'You Take the Management Meeting', step4_desc: 'We hand you a warm, qualified opportunity. From here, you run your standard process. We track, report, and keep the pipeline flowing.',
+    step4_title: 'You Receive a Full Briefing', step4_desc: 'Before any meeting, you receive a structured briefing on the target: business overview, financials, owner profile, and context on their motivation to sell.',
+    step5_title: 'You Take the Management Meeting', step5_desc: 'You walk in prepared. We\'ve done the groundwork. From here, you run your standard process, we keep the pipeline flowing.',
     track_label: 'Track Record', track_title: 'Proven Across Sectors and Geographies',
     track1_title: 'Buy & Build – Family Food Business', track1_desc: 'Expansion strategy into Eastern Europe for a family-owned food business. Full target research, outreach, and management meeting facilitation.', track1_result: '✓ 3 strategic acquisitions facilitated',
-    track2_title: 'Mandate Origination – Swiss Broker', track2_desc: 'Comprehensive mandate acquisition support for a Swiss M&A broker. Ongoing pipeline management and CRM tracking across DACH markets.', track2_result: '✓ 13 sell-side + 4 buy-side mandates in 15 months',
+    track2_title: 'Buy-Side Sourcing – Industrial Acquisition', track2_desc: 'Buy-side support for a PE fund targeting off-market industrial companies in the DACH region. 23 management meetings conducted with qualified targets across the sector.', track2_result: '✓ Company successfully acquired',
     track3_title: 'License Acquisition – Crypto Brokerage', track3_desc: 'License acquisition support for a major European crypto brokerage seeking regulated entry into Malta\'s market.', track3_result: '✓ Regulatory approval and market entry facilitated',
     testimonial: '"MDH helped me completely change my career. Within two weeks I already had 3 conversations with private equity players who needed help with deal sourcing."',
     cta_title: 'Ready to Build Your Pipeline?', cta_sub: 'Let\'s discuss your mandate and what off-market deal flow looks like for your strategy.',
     cta_btn1: 'Schedule a Consultation →', cta_btn2: 'View Services',
-    svc_hero_title: 'M&A Services', svc_hero_sub: 'Professional deal origination support for private equity firms, M&A brokers, and corporate development teams across Europe.',
+    svc_hero_title: 'M&A Services', svc_hero_sub: 'Professional deal origination support for private equity firms, strategic buyers, and search funds.',
     buyside_title: 'Buy-Side Support', buyside_sub: 'Three tiers of acquisition sourcing, tailored to your workflow',
-    bs1_title: 'Target Engagement', bs1_desc: 'You provide the target list — we handle outreach, qualification, and management meeting facilitation.',
+    bs1_title: 'Target Engagement', bs1_desc: 'You provide the target list, we handle outreach, qualification, and management meeting facilitation.',
     bs1_f1: 'Professional market outreach', bs1_f2: 'Management meeting facilitation', bs1_f3: 'Opportunity qualification', bs1_f4: 'CRM management', bs1_f5: 'Weekly progress reporting',
     bs2_title: 'Complete Sourcing', bs2_desc: 'We research targets, build your pipeline, and manage the full engagement process through to management meetings.',
     bs2_f1: 'Target research & market mapping', bs2_f2: 'Strategic prospect engagement', bs2_f3: 'Management meeting facilitation', bs2_f4: 'Deal opportunity qualification', bs2_f5: 'CRM management & tracking', bs2_f6: 'Comprehensive reporting',
     bs3_title: 'Partnership Support', bs3_desc: 'Full-service support from sourcing to deal completion with ongoing relationship management.',
     bs3_f1: 'Market research & target identification', bs3_f2: 'Executive-level prospect engagement', bs3_f3: 'Management meeting facilitation', bs3_f4: 'Deal process guidance', bs3_f5: 'Long-term relationship cultivation', bs3_f6: 'Transaction advisory support',
     broker_title: 'M&A Broker Support', broker_sub: 'Two tiers for mandate origination',
-    ma1_title: 'Mandate Origination', ma1_desc: 'You provide the prospect list — we engage decision-makers to secure advisory mandates.',
+    ma1_title: 'Mandate Origination', ma1_desc: 'You provide the prospect list, we engage decision-makers to secure advisory mandates.',
     ma1_f1: 'C-suite relationship building', ma1_f2: 'Mandate-focused engagement', ma1_f3: 'Advisory positioning', ma1_f4: 'Meeting scheduling & pre-qualification', ma1_f5: 'Pipeline tracking & analysis',
     ma2_title: 'Market Development', ma2_desc: 'We identify prospects and build relationships from scratch to secure high-value advisory mandates.',
     ma2_f1: 'Market analysis & prospect identification', ma2_f2: 'Executive relationship development', ma2_f3: 'Strategic advisory positioning', ma2_f4: 'Mandate negotiation support', ma2_f5: 'Long-term client cultivation', ma2_f6: 'Deal pipeline optimisation',
@@ -1379,11 +1907,11 @@ const t = {
     includes: "What's included",
     pf1: '6 core lessons (video + workbook)', pf2: 'Ready-to-use contracts & agreements', pf3: 'Scripts, templates & checklists', pf4: 'Private community access',
     pf_live1: '3 live evening sessions per week', pf_live2: '2 lectures + 1 interactive Q&A tutorial', pf_live3: 'Ready-to-use contracts & agreements', pf_live4: 'Full brokerage setup included', pf_live5: 'Private community (free for early adopters)', pf_live6: 'Scripts, templates & checklists',
-    enroll_std: 'Enroll Now', enroll_live: 'Enroll Now — Save €600 →',
+    enroll_std: 'Enroll Now', enroll_live: 'Enroll Now, Save €600 →',
     urgency: '⚡ 7 early-bird spots left · Offer ends Oct 30th',
     curriculum_label: 'Curriculum', curriculum_title: '6 Lessons to Master Deal Sourcing',
     l1_title: 'How M&A Actually Works', l1_desc: 'Realities of M&A sourcing, common myths, and the mindset needed to succeed.',
-    l2_title: 'Finance 101', l2_desc: 'Key metrics — revenue, EBITDA, cash flow, multiples. Valuation basics and investor thinking.',
+    l2_title: 'Finance 101', l2_desc: 'Key metrics: revenue, EBITDA, cash flow, multiples. Valuation basics and investor thinking.',
     l3_title: 'Building Your Target List', l3_desc: 'How to find companies that are actually open to selling.',
     l4_title: 'Outreach Mastery', l4_desc: 'Scripts, email/LinkedIn strategy, and phone frameworks that get responses.',
     l5_title: 'Mind Hacking', l5_desc: 'Practical psychology to control conversations and win trust fast.',
@@ -1400,26 +1928,32 @@ const t = {
     disc_title: '🔒 Discretion & Confidentiality',
     disc_desc1: 'We understand the sensitive nature of M&A transactions. Our team operates with the highest levels of discretion and maintains strict confidentiality throughout all client engagements.',
     disc_desc2: 'Every client mandate is treated with absolute confidentiality. We never disclose client relationships, transaction details, or strategic information to third parties.',
-    contact_hero_title: 'Let\'s Talk', contact_hero_sub: 'Ready to accelerate your M&A activities? Get in touch with our team.',
+    contact_hero_title: 'Let\'s Talk', contact_hero_sub: 'New deal flow starts here.',
     form_title: 'Send us a Message', form_sub: 'Fill out the form below and we\'ll get back to you within 24 hours.',
-    form_fname: 'First Name', form_lname: 'Last Name', form_email: 'Email', form_phone: 'Phone (Optional)', form_msg: 'Message', form_msg_ph: 'Tell us about your M&A requirements...', form_send: 'Send Message',
+    form_fname: 'Name', form_lname: 'Last Name', form_email: 'Email', form_phone: 'Phone', form_msg: 'Message', form_msg_ph: 'Tell us about your M&A requirements...', form_send: 'Send Message',
     hq_title: '🏢 Headquarters', local_title: '📍 Local Presence', email_title: '✉️ Email',
     book_title: '📅 Book a Meeting', book_desc: 'Schedule a direct consultation to discuss your M&A requirements.', book_btn: 'Book Meeting with Nick →',
     footer_desc: 'Professional M&A deal origination across Europe. We source the off-market deals that move your strategy forward.',
     footer_legal: 'Kaitsar Capital Ltd. provides M&A deal sourcing services & training. The company does not act as a financial advisor or investment intermediary.',
     footer_company: 'Company', footer_legal_head: 'Legal',
     privacy: 'Privacy Policy', terms: 'Terms & Conditions', impressum: 'Impressum',
+    calc_hero_title: 'Pricing Configurator', calc_hero_sub: 'Set your parameters. See exactly what a Kaitsar engagement costs, and when it pays for itself.',
+    calc_configure: 'Configure Engagement', calc_retainer: 'Monthly Retainer', calc_dealsize: 'Target Transaction Size', calc_duration: 'Expected Search Duration',
+    calc_fee: 'Success Fee', calc_waterfall: 'Waterfall on transaction value',
+    tier1_name: 'First €1M', tier2_name: '€1M – €5M', tier3_name: 'Above €5M',
+    calc_total_fee: 'Total Success Fee', calc_summary: 'Engagement Summary', calc_success_line: 'Success fee at close', calc_total_cost: 'TOTAL COST',
+    gate_title: 'See Your Results', gate_sub: 'Enter your details to unlock the full pricing breakdown.', gate_btn: 'Unlock Results →', gate_sub2: 'Unlock to see total cost breakdown',
+    modal_title: 'Unlock Your Pricing', modal_sub: 'We\'ll send you the full breakdown and follow up within 24 hours.', modal_btn: 'See My Results →',
     copyright: '© 2026 Kaitsar Capital Ltd. All rights reserved.'
   },
   de: {
-    nav_services: 'LEISTUNGEN', nav_pricing: 'AKADEMIE', nav_about: 'ÜBER UNS',
+    nav_services: 'LEISTUNGEN', nav_calculator: 'KALKULATOR', nav_pricing: 'AKADEMIE', nav_about: 'ÜBER UNS',
     nav_contact: 'KONTAKT', nav_cta: 'Gespräch Buchen',
-    home_eyebrow: 'M&A Deal Origination · Europa',
     home_h1: 'Wir Finden die Deals, <span>Die Sie Nicht Finden.</span>',
-    home_sub: 'Off-Market Akquisitionsziele für Private Equity, strategische Käufer und Search Funds in ganz Europa. Wir übernehmen das Sourcing. Sie machen die Deals.',
+    home_sub: 'Off-Market Deal-Flow für Unternehmenskäufer. Wir sourcen, Sie schließen.',
+    home_proof: '11 Mandate gesichert · 9 Akquisitionen facilitiert · 5 europäische Märkte · 25 Monate Erfolgsbilanz',
+    home_exclusive: 'Wir arbeiten ausschließlich mit professionellen Käufern, die ein klares Mandat und die Kapazität zum Abschluss haben.',
     home_cta1: 'Beratung Vereinbaren →', home_cta2: 'Leistungen Ansehen',
-    stat1: 'Mandate Gesichert', stat2: 'Akquisitionen Facilitiert',
-    stat3: 'Europäische Märkte', stat4: 'Erfolgsbilanz',
     serve_label: 'Mit Wem Wir Arbeiten',
     serve_title: 'Gebaut für Käufer, Die im Großen Maßstab Akquirieren',
     serve_sub: 'Wir arbeiten ausschließlich mit professionellen Akquisiteuren, die ein klares Mandat und die Kapazität zum Abschluss haben.',
@@ -1431,27 +1965,29 @@ const t = {
     serve6_title: 'Family Offices', serve6_desc: 'Direkte Akquisitionsmandate für Family Offices mit einer definierten Akquisitionsstrategie.',
     how_label: 'Wie Es Funktioniert', how_title: 'Vom Mandat zum Management-Meeting',
     how_sub: 'Ein disziplinierter, wiederholbarer Prozess, der Ihre Akquisitionskriterien in qualifizierte Gespräche mit Unternehmern umwandelt.',
-    step1_title: 'Wir Lernen Ihr Mandat Kennen', step1_desc: 'Wir beginnen mit Ihren Akquisitionskriterien — Sektor, Geografie, Umsatzbereich, EBITDA-Schwellenwerte. Wir erstellen ein Zielprofil und einigen uns auf KPIs, bevor wir einen einzelnen Interessenten ansprechen.',
-    step2_title: 'Wir Kartieren und Engagieren den Markt', step2_desc: 'Unser Team recherchiert und kontaktiert Unternehmer durch strukturierte Ansprache — E-Mail, LinkedIn und Direktanrufe. Wir vertreten Sie professionell an jedem Kontaktpunkt.',
+    step1_title: 'Wir Lernen Ihr Mandat Kennen', step1_desc: 'Wir beginnen mit Ihren Akquisitionskriterien: Sektor, Geografie, Umsatzbereich, EBITDA-Schwellenwerte. Wir erstellen ein Zielprofil und einigen uns auf KPIs, bevor wir einen einzelnen Interessenten ansprechen.',
+    step2_title: 'Wir Greifen zum Hörer', step2_desc: 'Wir sprechen Unternehmer ausschließlich per Direktanruf an. Kein Massen-E-Mail. Keine LinkedIn-Automatisierung. Old-School, vertrauensbasierter Kontakt, weil das echte Verkäufer an den Tisch bringt.',
+    step4_title: 'Sie Erhalten ein vollständiges Briefing', step4_desc: 'Vor jedem Meeting erhalten Sie ein strukturiertes Briefing zum Zielunternehmen: Unternehmensüberblick, Finanzkennzahlen, Inhaberprofil und Hintergrund zur Verkaufsmotivation.',
+    step5_title: 'Sie Führen das Management-Meeting', step5_desc: 'Sie gehen vorbereitet rein. Wir haben die Vorarbeit geleistet. Von hier aus führen Sie Ihren Standardprozess, wir halten die Pipeline am Laufen.',
     step3_title: 'Wir Qualifizieren und Filtern', step3_desc: 'Wir prüfen jeden Lead vorab gegen Ihre Kriterien. Sie sehen nur Verkäufer, die wirklich offen für ein Gespräch sind und Ihre finanziellen Schwellenwerte erfüllen.',
     step4_title: 'Sie Führen das Management-Meeting', step4_desc: 'Wir übergeben Ihnen eine warme, qualifizierte Gelegenheit. Von hier aus führen Sie Ihren Standardprozess. Wir tracken, berichten und halten die Pipeline am Laufen.',
     track_label: 'Erfolgsbilanz', track_title: 'Bewährt in Verschiedenen Sektoren und Regionen',
     track1_title: 'Buy & Build – Familiengeführtes Lebensmittelunternehmen', track1_desc: 'Expansionsstrategie nach Osteuropa für ein familiengeführtes Lebensmittelunternehmen.', track1_result: '✓ 3 strategische Akquisitionen erfolgreich facilitiert',
-    track2_title: 'Mandatsakquisition – Schweizer M&A Makler', track2_desc: 'Umfassende Mandatsakquisitions-Unterstützung für einen Schweizer M&A Makler.', track2_result: '✓ 13 Sell-Side + 4 Buy-Side Mandate in 15 Monaten',
+    track2_title: 'Buy-Side Sourcing – Industrielle Akquisition', track2_desc: 'Buy-Side-Unterstützung für einen PE-Fonds, der Off-Market-Industrieunternehmen in der DACH-Region anvisiert. 23 Management-Meetings mit qualifizierten Zielunternehmen im Sektor durchgeführt.', track2_result: '✓ Unternehmen erfolgreich akquiriert',
     track3_title: 'Lizenzakquisition – Krypto-Brokerage', track3_desc: 'Lizenzakquisitions-Unterstützung für eine große europäische Krypto-Brokerage in Malta.', track3_result: '✓ Regulatorische Genehmigung und Markteintritt facilitiert',
     testimonial: '„MDH hat mir geholfen, meine Karriere komplett zu verändern. Innerhalb von zwei Wochen hatte ich bereits 3 Gespräche mit Private-Equity-Spielern."',
     cta_title: 'Bereit, Ihre Pipeline Aufzubauen?', cta_sub: 'Lassen Sie uns Ihr Mandat besprechen.',
     cta_btn1: 'Beratung Vereinbaren →', cta_btn2: 'Leistungen Ansehen',
-    svc_hero_title: 'M&A Dienstleistungen', svc_hero_sub: 'Professionelle Deal-Origination-Unterstützung für Private-Equity-Firmen, M&A-Makler und Corporate-Development-Teams in ganz Europa.',
+    svc_hero_title: 'M&A Dienstleistungen', svc_hero_sub: 'Professionelle Deal-Origination-Unterstützung für Private-Equity-Firmen, strategische Käufer und Search Funds.',
     buyside_title: 'Buy-Side Unterstützung', buyside_sub: 'Drei Stufen der Akquisitions-Beschaffung, angepasst an Ihren Workflow',
-    bs1_title: 'Ziel-Engagement', bs1_desc: 'Sie liefern die Zielliste — wir übernehmen Outreach, Qualifizierung und Management-Meeting-Facilitation.',
+    bs1_title: 'Ziel-Engagement', bs1_desc: 'Sie liefern die Zielliste, wir übernehmen Outreach, Qualifizierung und Management-Meeting-Facilitation.',
     bs1_f1: 'Professionelle Marktansprache', bs1_f2: 'Moderation von Management-Meetings', bs1_f3: 'Qualifizierung von Gelegenheiten', bs1_f4: 'CRM-Verwaltung', bs1_f5: 'Wöchentliche Fortschrittsberichte',
     bs2_title: 'Komplettes Sourcing', bs2_desc: 'Wir recherchieren Ziele, bauen Ihre Pipeline auf und verwalten den gesamten Engagement-Prozess.',
     bs2_f1: 'Zielrecherche & Markt-Mapping', bs2_f2: 'Strategisches Interessenten-Engagement', bs2_f3: 'Management-Meeting-Facilitation', bs2_f4: 'Deal-Opportunitäts-Qualifizierung', bs2_f5: 'CRM-Verwaltung & Tracking', bs2_f6: 'Umfassende Berichterstattung',
     bs3_title: 'Partnerschaftsunterstützung', bs3_desc: 'Full-Service-Unterstützung vom Sourcing bis zum Deal-Abschluss.',
     bs3_f1: 'Marktforschung & Zielidentifikation', bs3_f2: 'Interessenten-Engagement auf Führungsebene', bs3_f3: 'Management-Meeting-Facilitation', bs3_f4: 'Deal-Prozessberatung', bs3_f5: 'Langfristige Beziehungspflege', bs3_f6: 'Transaktionsberatung',
     broker_title: 'M&A-Maklerunterstützung', broker_sub: 'Zwei Stufen für Mandatsakquise',
-    ma1_title: 'Mandatsentwicklung', ma1_desc: 'Sie stellen die Interessentenliste bereit — wir sprechen Entscheidungsträger an.',
+    ma1_title: 'Mandatsentwicklung', ma1_desc: 'Sie stellen die Interessentenliste bereit, wir sprechen Entscheidungsträger an.',
     ma1_f1: 'Aufbau von C-Level-Beziehungen', ma1_f2: 'Mandatsfokussiertes Engagement', ma1_f3: 'Beratungspositionierung', ma1_f4: 'Meeting-Planung & Vorqualifizierung', ma1_f5: 'Pipeline-Tracking & Analyse',
     ma2_title: 'Marktentwicklung', ma2_desc: 'Wir identifizieren Interessenten und bauen Beziehungen auf, um hochwertige Mandate zu sichern.',
     ma2_f1: 'Marktanalyse & Interessentenidentifikation', ma2_f2: 'Aufbau von Führungsbeziehungen', ma2_f3: 'Strategische Beratungspositionierung', ma2_f4: 'Mandatsverhandlungsunterstützung', ma2_f5: 'Langfristige Kundenpflege', ma2_f6: 'Deal-Pipeline-Optimierung',
@@ -1469,11 +2005,11 @@ const t = {
     includes: 'Was ist enthalten',
     pf1: '6 Kernlektionen (Video + Workbook)', pf2: 'Sofort einsetzbare Verträge', pf3: 'Skripte, Vorlagen & Checklisten', pf4: 'Zugang zur privaten Community',
     pf_live1: '3 Live-Abendsitzungen pro Woche', pf_live2: '2 Vorlesungen + 1 interaktives Q&A-Tutorial', pf_live3: 'Sofort einsetzbare Verträge', pf_live4: 'Vollständiges Makler-Setup inklusive', pf_live5: 'Private Community (kostenlos für Frühbucher)', pf_live6: 'Skripte, Vorlagen & Checklisten',
-    enroll_std: 'Jetzt Anmelden', enroll_live: 'Jetzt Anmelden — €600 Sparen →',
+    enroll_std: 'Jetzt Anmelden', enroll_live: 'Jetzt Anmelden, €600 Sparen →',
     urgency: '⚡ Noch 7 Frühbucher-Plätze · Angebot endet am 30. Okt',
     curriculum_label: 'Lehrplan', curriculum_title: '6 Lektionen zur Beherrschung des Deal-Sourcings',
     l1_title: 'Wie M&A Wirklich Funktioniert', l1_desc: 'Realitäten des M&A-Sourcings, häufige Mythen und die notwendige Denkweise.',
-    l2_title: 'Finanzen 101', l2_desc: 'Wichtige Kennzahlen — Umsatz, EBITDA, Cashflow, Multiplikatoren. Bewertungsgrundlagen.',
+    l2_title: 'Finanzen 101', l2_desc: 'Wichtige Kennzahlen: Umsatz, EBITDA, Cashflow, Multiplikatoren. Bewertungsgrundlagen.',
     l3_title: 'Aufbau Ihrer Zielliste', l3_desc: 'Wie Sie Unternehmen finden, die tatsächlich verkaufsbereit sind.',
     l4_title: 'Outreach-Meisterschaft', l4_desc: 'Skripte, E-Mail-/LinkedIn-Strategie und Telefonrahmen, die Antworten erhalten.',
     l5_title: 'Mind Hacking', l5_desc: 'Praktische Psychologie zur Kontrolle von Gesprächen und schnellem Vertrauensaufbau.',
@@ -1490,15 +2026,22 @@ const t = {
     disc_title: '🔒 Diskretion & Vertraulichkeit',
     disc_desc1: 'Wir verstehen die sensible Natur von M&A-Transaktionen. Unser Team arbeitet mit höchster Diskretion.',
     disc_desc2: 'Jedes Kundenmandat wird mit absoluter Vertraulichkeit behandelt. Wir geben niemals Informationen an Dritte weiter.',
-    contact_hero_title: 'Lassen Sie Uns Sprechen', contact_hero_sub: 'Bereit, Ihre M&A-Aktivitäten zu beschleunigen? Nehmen Sie Kontakt auf.',
+    contact_hero_title: 'Lassen Sie Uns Sprechen', contact_hero_sub: 'Neuer Deal-Flow beginnt hier.',
     form_title: 'Senden Sie uns eine Nachricht', form_sub: 'Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden.',
-    form_fname: 'Vorname', form_lname: 'Nachname', form_email: 'E-Mail', form_phone: 'Telefon (Optional)', form_msg: 'Nachricht', form_msg_ph: 'Teilen Sie uns Ihre M&A-Anforderungen mit...', form_send: 'Nachricht Senden',
+    form_fname: 'Name', form_lname: 'Nachname', form_email: 'E-Mail', form_phone: 'Telefon', form_msg: 'Nachricht', form_msg_ph: 'Teilen Sie uns Ihre M&A-Anforderungen mit...', form_send: 'Nachricht Senden',
     hq_title: '🏢 Hauptsitz', local_title: '📍 Lokale Präsenz', email_title: '✉️ E-Mail',
     book_title: '📅 Meeting Buchen', book_desc: 'Vereinbaren Sie eine direkte Beratung zu Ihren M&A-Anforderungen.', book_btn: 'Meeting mit Nick Buchen →',
     footer_desc: 'Professionelle M&A Deal-Origination in ganz Europa. Wir finden die Off-Market-Deals, die Ihre Strategie voranbringen.',
     footer_legal: 'Kaitsar Capital Ltd. bietet M&A-Deal-Sourcing-Dienstleistungen an. Das Unternehmen agiert nicht als Finanzberater.',
     footer_company: 'Unternehmen', footer_legal_head: 'Rechtliches',
     privacy: 'Datenschutzrichtlinie', terms: 'AGB', impressum: 'Impressum',
+    calc_hero_title: 'Preiskonfigurator', calc_hero_sub: 'Stellen Sie Ihre Parameter ein. Sehen Sie genau, was ein Kaitsar-Engagement kostet.',
+    calc_configure: 'Engagement Konfigurieren', calc_retainer: 'Monatliches Honorar', calc_dealsize: 'Ziel-Transaktionsgröße', calc_duration: 'Erwartete Suchdauer',
+    calc_fee: 'Erfolgshonorar', calc_waterfall: 'Staffel auf Transaktionswert',
+    tier1_name: 'Erste €1M', tier2_name: '€1M – €5M', tier3_name: 'Über €5M',
+    calc_total_fee: 'Gesamtes Erfolgshonorar', calc_summary: 'Engagement-Zusammenfassung', calc_success_line: 'Erfolgshonorar bei Abschluss', calc_total_cost: 'GESAMTKOSTEN',
+    gate_title: 'Ergebnisse Ansehen', gate_sub: 'Geben Sie Ihre Daten ein, um die vollständige Preisübersicht freizuschalten.', gate_btn: 'Ergebnisse Freischalten →', gate_sub2: 'Freischalten für Gesamtkostenübersicht',
+    modal_title: 'Preise Freischalten', modal_sub: 'Wir senden Ihnen die vollständige Aufschlüsselung und melden uns innerhalb von 24 Stunden.', modal_btn: 'Meine Ergebnisse Sehen →',
     copyright: '© 2026 Kaitsar Capital Ltd. Alle Rechte vorbehalten.'
   }
 };
@@ -1507,10 +2050,26 @@ const t = {
 let currentLang = 'en';
 let currentPage = 'home';
 
+// ── MOBILE MENU ──────────────────────────────────────────────
+function toggleMenu() {
+  const links = document.getElementById('navLinks');
+  const btn = document.getElementById('hamburgerBtn');
+  const isOpen = links.classList.toggle('open');
+  btn.textContent = isOpen ? '✕' : '☰';
+}
+
+function closeMenu() {
+  const links = document.getElementById('navLinks');
+  const btn = document.getElementById('hamburgerBtn');
+  links.classList.remove('open');
+  btn.textContent = '☰';
+}
+
 // ── NAVIGATION ───────────────────────────────────────────────
 function navigate(page) {
-  // academy → pricing redirect
-  if (page === 'academy') page = 'pricing';
+  closeMenu();
+  // academy → pricing redirect (legacy)
+  if (page === 'academy' || page === 'pricing') page = 'home';
 
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = document.getElementById('page-' + page);
@@ -1536,6 +2095,7 @@ function setLang(lang) {
   document.getElementById('btnDE').classList.toggle('active', lang === 'de');
   document.documentElement.lang = lang;
   applyTranslations();
+  calcUpdate();
   history.pushState(null, '', '#/' + lang + '/' + (currentPage === 'home' ? '' : currentPage));
 }
 
@@ -1568,6 +2128,97 @@ function handleFormSubmit(e) {
   }, 3000);
 }
 
+// ── CALCULATOR ───────────────────────────────────────────────
+let calcUnlocked = false;
+
+function fmtLabel(n) {
+  if (n >= 1e6) return '€' + (n/1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return '€' + (n/1e3).toFixed(0) + 'k';
+  return '€' + Math.round(n);
+}
+function fmtFull(n) { return '€' + Math.round(n).toLocaleString('de-DE'); }
+function getDeal(v) { return Math.round(500000 * Math.pow(100, v / 100)); }
+
+function calcUpdate() {
+  const retainer = +document.getElementById('retainerSlider').value;
+  const dealV    = +document.getElementById('dealSlider').value;
+  const duration = +document.getElementById('durationSlider').value;
+  const deal     = getDeal(dealV);
+
+  const discount = 0.60 * Math.sqrt(retainer / 10000);
+  const r1 = 0.05  * (1 - discount);
+  const r2 = 0.02  * (1 - discount);
+  const r3 = 0.005 * (1 - discount);
+
+  let rem = deal;
+  const t1a = Math.min(rem, 1e6); rem -= t1a;
+  const t2a = rem > 0 ? Math.min(rem, 4e6) : 0; rem -= t2a;
+  const t3a = rem > 0 ? rem : 0;
+
+  const t1 = t1a*r1, t2 = t2a*r2, t3 = t3a*r3;
+  const totalS = t1+t2+t3;
+  const eff    = ((totalS/deal)*100).toFixed(2);
+  const totalR = retainer * duration;
+  const grand  = totalS + totalR;
+  const discPct = Math.round(discount * 100);
+
+  document.getElementById('retainerDisplay').textContent =
+    retainer === 0 ? '€0 / mo' : '€' + retainer.toLocaleString() + ' / mo';
+  document.getElementById('dealDisplay').textContent = fmtLabel(deal);
+  document.getElementById('durationDisplay').textContent = duration + ' months';
+
+  document.getElementById('tier1Rate').textContent = (r1*100).toFixed(2) + '%';
+  document.getElementById('tier2Rate').textContent = (r2*100).toFixed(2) + '%';
+  document.getElementById('tier3Rate').textContent = (r3*100).toFixed(2) + '%';
+  document.getElementById('tier1Fee').textContent = fmtFull(t1);
+  document.getElementById('tier2Fee').textContent = fmtFull(t2);
+  document.getElementById('tier3Fee').textContent = fmtFull(t3);
+
+  document.getElementById('tier1Row').className = 'calc-tier-row'      + (t1a>0 ? '' : ' inactive');
+  document.getElementById('tier2Row').className = 'calc-tier-row'      + (t2a>0 ? '' : ' inactive');
+  document.getElementById('tier3Row').className = 'calc-tier-row last' + (t3a>0 ? '' : ' inactive');
+
+  document.getElementById('totalSuccessFee').textContent  = fmtFull(totalS);
+  document.getElementById('effectiveRate').textContent    = eff + '% effective rate';
+  document.getElementById('retainerLineLabel').textContent = 'Retainer × ' + duration + ' mo';
+  document.getElementById('retainerLineCost').textContent  = fmtFull(totalR);
+  document.getElementById('successLineCost').textContent   = fmtFull(totalS);
+  document.getElementById('grandTotal').textContent        = fmtFull(grand);
+
+  const insight = document.getElementById('calcInsight');
+  if (insight) {
+    if (currentLang === 'de') {
+      insight.innerHTML = retainer === 0
+        ? 'Reines Erfolgshonorar: Kaitsar trägt das volle Performancerisiko. Keine Vorabkosten für Sie.'
+        : 'Ein Honorar von <span class="hot">€' + retainer.toLocaleString('de-DE') + '/mo</span> reduziert Ihr Erfolgshonorar um <span class="hot">' + discPct + '%</span>. Geteiltes Risiko, geteilter Vorteil.';
+    } else {
+      insight.innerHTML = retainer === 0
+        ? 'Pure success fee: Kaitsar assumes full performance risk. No upfront cost to you.'
+        : 'A retainer of <span class="hot">€' + retainer.toLocaleString() + '/mo</span> reduces your success fee by <span class="hot">' + discPct + '%</span>. Shared risk, shared upside.';
+    }
+  }
+}
+
+function openGateModal() {
+  document.getElementById('gateModal').classList.add('open');
+}
+
+function closeGateOnBg(e) {
+  if (e.target === document.getElementById('gateModal')) {
+    document.getElementById('gateModal').classList.remove('open');
+  }
+}
+
+function submitGate(e) {
+  e.preventDefault();
+  // Unlock the results
+  calcUnlocked = true;
+  document.getElementById('calcGate').classList.add('unlocked');
+  document.getElementById('calcGate2').classList.add('unlocked');
+  document.getElementById('gateModal').classList.remove('open');
+  e.target.reset();
+}
+
 // ── HASH ROUTER ───────────────────────────────────────────────
 function parseHash() {
   const hash = window.location.hash.replace('#/', '');
@@ -1592,6 +2243,7 @@ window.addEventListener('popstate', () => {
   document.getElementById('btn' + (lang === 'en' ? 'DE' : 'EN')).classList.remove('active');
   applyTranslations();
   navigate(currentPage);
+  calcUpdate();
 })();
 </script>
 </body>
