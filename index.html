@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kaitsar Capital | M&A Deal Origination Europe</title>
-  <meta name="description" content="Off-market M&A deal flow for private equity, strategic buyers, and search funds across Europe." />
+  <title>Kaitsar Capital | Off-Market M&A Deal Origination in Europe</title>
+  <meta name="description" content="Off-market M&A deal flow for private equity, strategic buyers and search funds. We call owner-managed companies across DACH, Benelux and the UK and put you in front of sellers who aren't on the market." />
+  <link rel="canonical" href="https://kaitsar.com/" />
+  <link rel="icon" type="image/png" href="Kaitsar_Logo_1.png" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kaitsar Capital" />
+  <meta property="og:title" content="Kaitsar Capital | We source the deals you can't find" />
+  <meta property="og:description" content="Off-market M&A deal flow for private equity, strategic buyers and search funds across Europe." />
+  <meta property="og:url" content="https://kaitsar.com/" />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Kaitsar Capital Ltd.","url":"https://kaitsar.com","email":"office@kaitsar.com","description":"Off-market M&A deal origination for private equity, strategic buyers and search funds across Europe.","address":{"@type":"PostalAddress","streetAddress":"Floor 5, Methonis 1","postalCode":"1070","addressLocality":"Nicosia","addressCountry":"CY"},"areaServed":["DACH","Benelux","United Kingdom","Malta","Cyprus"]}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@900&display=swap" rel="stylesheet" />
@@ -153,7 +165,7 @@
 
     .hero-sub {
       font-size: clamp(16px, 2vw, 20px);
-      color: var(--gray); max-width: 580px;
+      color: var(--gray); max-width: 660px;
       margin-bottom: 48px; line-height: 1.7;
     }
 
@@ -263,7 +275,7 @@
     .step:last-child { border-bottom: none; }
 
     .step-num {
-      font-size: 48px; font-weight: 900; color: var(--border);
+      font-size: 48px; font-weight: 900; color: rgba(232,93,4,0.55);
       line-height: 1; letter-spacing: -0.03em;
     }
 
@@ -787,17 +799,99 @@
 
     .page { display: none; }
     .page.active { display: block; }
+
+    /* ── SHARPEN v2 ── */
+    .hero-sub:empty { display: none; }
+    .ico { display: inline-flex; width: 20px; height: 20px; color: var(--orange); flex-shrink: 0; }
+    .ico svg, .serve-icon svg, .tier-icon svg, .info-box-icon svg, .calc-gate-icon svg { width: 100%; height: 100%; display: block; }
+    .serve-icon, .tier-icon { color: var(--orange); }
+    .serve-icon svg { width: 20px; height: 20px; }
+    .tier-icon svg { width: 16px; height: 16px; }
+    .info-box-icon {
+      width: 40px; height: 40px; border-radius: var(--radius-sm);
+      background: rgba(232,93,4,0.12); color: var(--orange);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+    }
+    .info-box-icon svg { width: 20px; height: 20px; }
+    .calc-gate-icon { color: var(--orange); display: flex; justify-content: center; }
+    .calc-gate-icon svg { width: 28px; height: 28px; }
+    h3.with-icon { display: flex; align-items: center; gap: 10px; }
+
+    .serve-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .team-cards.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .team-card { text-align: left; padding: 32px; }
+    .team-card h3 { color: var(--white); font-size: 18px; margin-bottom: 4px; }
+    .monogram {
+      width: 56px; height: 56px; border-radius: 50%; margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 18px; letter-spacing: 0.02em;
+      color: var(--orange); background: rgba(232,93,4,0.1); border: 1px solid var(--border-orange);
+    }
+    .team-role { font-size: 12px !important; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange) !important; margin-bottom: 14px; }
+    .team-bio { line-height: 1.75; }
+
+    section.why-section { border-top: 1px solid var(--border); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: var(--border); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .why-item { background: var(--bg); padding: 36px 32px; display: flex; flex-direction: column; }
+    .why-item .ico { width: 24px; height: 24px; margin-bottom: 20px; }
+    .why-item h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .why-item p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+    .why-item .card-btn { margin-top: 16px; padding: 0; }
+
+    .service-card { display: flex; flex-direction: column; }
+    .service-card .card-btn { margin-top: auto; padding-top: 24px; align-self: flex-start; }
+
+    .contact-info-card h3, .book-meeting-card h3 { display: flex; align-items: center; gap: 10px; }
+    .contact-info-card a { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--border-orange); }
+    .contact-info-card a:hover { color: var(--orange); }
+    .form-status { margin-top: 14px; font-size: 14px; line-height: 1.5; }
+    .form-status:empty { display: none; }
+    .form-status.ok { color: #4ade80; }
+    .form-status.err { color: #f87171; }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    button:disabled { opacity: 0.6; cursor: wait; }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--orange); outline-offset: 2px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+    }
+    @media (max-width: 900px) {
+      .serve-grid.cols-3, .why-grid, .team-cards.cols-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .hero-stat-label { font-size: 12px; line-height: 1.35; }
+      .step { grid-template-columns: 44px 1fr; gap: 16px; padding: 28px 0; }
+      .step-num { font-size: 30px; }
+      .cta-band { padding: 40px 24px; }
+      .why-item { padding: 28px 24px; }
+      .testimonial-wrap, .confidentiality-box { padding: 28px 24px; }
+      .contact-form-wrap { padding: 28px 22px; }
+    }
+
+    /* language-specific blocks (legal pages) */
+    [data-lang="de"] { display: none; }
+    html[lang="de"] [data-lang="de"] { display: block; }
+    html[lang="de"] [data-lang="en"] { display: none; }
   </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" onclick="navigate('home')"><img src="Kaitsar_Logo_1.png" alt="Kaitsar Capital" /></a>
+  <a class="nav-logo" href="#/en/" data-nav="home"><img src="data:image/png;base64,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" alt="Kaitsar Capital" /></a>
   <ul class="nav-links" id="navLinks">
-    <li><a onclick="navigate('services');closeMenu()" data-page="services" data-i18n="nav_services">SERVICES</a></li>
-    <li><a onclick="navigate('calculator');closeMenu()" data-page="calculator" data-i18n="nav_calculator">CALCULATOR</a></li>
-    <li><a onclick="navigate('about');closeMenu()" data-page="about" data-i18n="nav_about">ABOUT</a></li>
-    <li><a onclick="navigate('contact');closeMenu()" data-page="contact" data-i18n="nav_contact">CONTACT</a></li>
+    <li><a href="#/en/services" data-nav="services" data-page="services" data-i18n="nav_services">SERVICES</a></li>
+    <li><a href="#/en/calculator" data-nav="calculator" data-page="calculator" data-i18n="nav_calculator">CALCULATOR</a></li>
+    <li><a href="#/en/about" data-nav="about" data-page="about" data-i18n="nav_about">ABOUT</a></li>
+    <li><a href="#/en/contact" data-nav="contact" data-page="contact" data-i18n="nav_contact">CONTACT</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -805,7 +899,7 @@
       <span class="lang-sep">|</span>
       <button class="lang-btn" id="btnDE" onclick="setLang('de')">DE</button>
     </div>
-    <a class="nav-cta" onclick="navigate('contact')" data-i18n="nav_cta">Book a Call</a>
+    <a class="nav-cta" href="https://calendly.com/kaitsar-capital/new-meeting" target="_blank" rel="noopener" data-i18n="nav_cta">Book a Call</a>
     <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Menu">☰</button>
   </div>
 </nav>
@@ -820,10 +914,11 @@
     <!-- HERO -->
     <div class="hero">
       <div class="hero-grid"></div>
+      <div class="hero-eyebrow" data-i18n="home_eyebrow">Off-Market M&amp;A Deal Origination · Europe</div>
       <h1 data-i18n-html="home_h1">We Source the Deals <span>You Can't Find.</span></h1>
       <p class="hero-sub" data-i18n="home_sub">Off-market deal flow for business buyers. We source, you close.</p>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="navigate('contact')" data-i18n="home_cta1">Schedule a Consultation →</button>
+        <button class="btn-primary" onclick="window.open('https://calendly.com/kaitsar-capital/new-meeting','_blank')" data-i18n="home_cta1">Schedule a Consultation →</button>
         <button class="btn-secondary" onclick="navigate('services')" data-i18n="home_cta2">View Services</button>
       </div>
       <div class="hero-stats">
@@ -839,12 +934,36 @@
           <div class="hero-stat-num">5<span>+</span></div>
           <div class="hero-stat-label" data-i18n="stat3">European Markets</div>
         </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">25 <span>mo</span></div>
-          <div class="hero-stat-label" data-i18n="stat4">Track Record</div>
-        </div>
       </div>
     </div>
+
+    <!-- WHY KAITSAR -->
+    <section class="dark why-section">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="section-label" data-i18n="why_label">Why Kaitsar</div>
+          <h2 class="section-title" data-i18n="why_title">Deal Flow That Is Actually Off-Market</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-item">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <h3 data-i18n="why1_title">Phone, Not Spam</h3>
+            <p data-i18n="why1_desc"></p>
+          </div>
+          <div class="why-item">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <h3 data-i18n="why2_title">Qualified, Not Listed</h3>
+            <p data-i18n="why2_desc"></p>
+          </div>
+          <div class="why-item">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span>
+            <h3 data-i18n="why3_title">Paid on Results</h3>
+            <p data-i18n="why3_desc"></p>
+            <a class="card-btn" href="#/en/calculator" data-nav="calculator"><span data-i18n="why3_link">Open the Calculator</span> →</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- WHO WE SERVE -->
     <section class="alt">
@@ -854,19 +973,19 @@
           <h2 class="section-title" data-i18n="serve_title">Built for Buyers Who Acquire at Scale</h2>
           <p class="section-sub" data-i18n="serve_sub" style="max-width: 900px;">We work exclusively with professional acquirers who have a clear mandate and the capacity to close.</p>
         </div>
-        <div class="serve-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="serve-grid cols-3">
           <div class="serve-card">
-            <div class="serve-icon">🏦</div>
+            <div class="serve-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18M12 3l9 5H3z"/></svg></div>
             <h3 data-i18n="serve1_title">Private Equity</h3>
             <p data-i18n="serve1_desc">Buy-side sourcing for PE firms targeting off-market assets across DACH, Benelux, and the UK.</p>
           </div>
           <div class="serve-card">
-            <div class="serve-icon">🏢</div>
+            <div class="serve-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l5 3V8l5 3V5h4v16"/></svg></div>
             <h3 data-i18n="serve2_title">Strategic Buyers</h3>
             <p data-i18n="serve2_desc">Corporate acquirers seeking bolt-on targets without alerting the market.</p>
           </div>
           <div class="serve-card">
-            <div class="serve-icon">🔍</div>
+            <div class="serve-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
             <h3 data-i18n="serve4_title">Search Funds</h3>
             <p data-i18n="serve4_desc">Searchers who need consistent, qualified deal flow without burning their own time on outreach.</p>
           </div>
@@ -931,19 +1050,19 @@
         </div>
         <div class="track-grid">
           <div class="track-card">
-            <span class="track-tag">Benelux · Food</span>
+            <span class="track-tag" data-i18n="tt_food">Benelux · Food</span>
             <h3 data-i18n="track1_title">Buy & Build – Family Food Business</h3>
             <p data-i18n="track1_desc">Expansion strategy into Eastern Europe for a family-owned food business. Full target research, outreach, and management meeting facilitation.</p>
             <div class="track-result" data-i18n="track1_result">✓ 3 strategic acquisitions facilitated</div>
           </div>
           <div class="track-card">
-            <span class="track-tag">DACH · Private Equity</span>
+            <span class="track-tag" data-i18n="tt_pe">DACH · Private Equity</span>
             <h3 data-i18n="track2_title">Buy-Side Sourcing – Industrial Acquisition</h3>
             <p data-i18n="track2_desc">Buy-side support for a PE fund targeting off-market industrial companies in the DACH region. 23 management meetings conducted with qualified targets across the sector.</p>
             <div class="track-result" data-i18n="track2_result">✓ Company successfully acquired</div>
           </div>
           <div class="track-card">
-            <span class="track-tag">Malta · Crypto</span>
+            <span class="track-tag" data-i18n="tt_crypto">Malta · Crypto</span>
             <h3 data-i18n="track3_title">License Acquisition – Crypto Brokerage</h3>
             <p data-i18n="track3_desc">License acquisition support for a major European crypto brokerage seeking regulated entry into Malta's market.</p>
             <div class="track-result" data-i18n="track3_result">✓ Regulatory approval and market entry facilitated</div>
@@ -986,7 +1105,7 @@
     <section class="dark">
       <div class="section-inner">
         <div class="services-tier-label">
-          <div class="tier-icon">🎯</div>
+          <div class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
           <div>
             <div class="tier-title" data-i18n="buyside_title">Buy-Side Support</div>
             <div class="tier-subtitle" data-i18n="buyside_sub">Three tiers of acquisition sourcing, tailored to your workflow</div>
@@ -1040,7 +1159,7 @@
 
         <!-- SELL SIDE -->
         <div class="services-tier-label">
-          <div class="tier-icon">↗️</div>
+          <div class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
           <div>
             <div class="tier-title" data-i18n="sell_title">Sell-Side Services</div>
             <div class="tier-subtitle" data-i18n="sell_sub">Selective support for sell-side engagements</div>
@@ -1072,116 +1191,7 @@
   </div><!-- /page-services -->
 
 
-  <!-- PRICING PAGE REMOVED -->
-  <div class="page" id="page-pricing" style="display:none!important">
 
-    <div class="page-hero">
-      <div class="section-label" data-i18n="nav_pricing">ACADEMY</div>
-      <h1 data-i18n="pricing_hero_title">Making Deals Happen.</h1>
-      <p data-i18n="pricing_hero_sub">Learn how to sell companies. From your first call to your first closed deal, in just 4 weeks.</p>
-    </div>
-
-    <section class="dark">
-      <div class="section-inner">
-        <div class="section-head" style="text-align: center; max-width: 600px; margin: 0 auto 64px;">
-          <div class="section-label" data-i18n="pricing_label">Pricing & Enrollment</div>
-          <h2 class="section-title" data-i18n="pricing_title">One Program. Everything You Need.</h2>
-          <p class="section-sub" data-i18n="pricing_sub">Intensive 4-week program with live sessions, community access, and everything to get your first deal done.</p>
-        </div>
-
-        <div class="pricing-grid" style="max-width: 900px; margin: 0 auto;">
-
-          <div class="pricing-card">
-            <h3 data-i18n="price1_name">Standard Access</h3>
-            <p class="price-sub" data-i18n="price1_sub">Full program, self-paced</p>
-            <div class="price-amount"><span>€</span>799</div>
-            <div class="price-period" data-i18n="price_once">one-time payment</div>
-            <div class="pricing-divider"></div>
-            <div class="pricing-includes" data-i18n="includes">What's included</div>
-            <ul class="feature-list">
-              <li data-i18n="pf1">6 core lessons (video + workbook)</li>
-              <li data-i18n="pf2">Ready-to-use contracts & agreements</li>
-              <li data-i18n="pf3">Scripts, templates & checklists</li>
-              <li data-i18n="pf4">Private community access</li>
-            </ul>
-            <button class="btn-secondary" style="width: 100%; margin-top: 24px; justify-content: center;" onclick="navigate('contact')" data-i18n="enroll_std">Enroll Now</button>
-          </div>
-
-          <div class="pricing-card featured">
-            <div class="pricing-badge" data-i18n="early_badge">Early Access</div>
-            <h3 data-i18n="price2_name">Live Cohort</h3>
-            <p class="price-sub" data-i18n="price2_sub">3 live sessions per week + community</p>
-            <div class="price-amount"><span>€</span>399</div>
-            <div class="price-period" data-i18n="price_once">one-time payment</div>
-            <div class="price-was">€999 regular price</div>
-            <div class="pricing-divider"></div>
-            <div class="pricing-includes" data-i18n="includes">What's included</div>
-            <ul class="feature-list">
-              <li data-i18n="pf_live1">3 live evening sessions per week</li>
-              <li data-i18n="pf_live2">2 lectures + 1 interactive Q&A tutorial</li>
-              <li data-i18n="pf_live3">Ready-to-use contracts & agreements</li>
-              <li data-i18n="pf_live4">Full brokerage setup included</li>
-              <li data-i18n="pf_live5">Private community (free for early adopters)</li>
-              <li data-i18n="pf_live6">Scripts, templates & checklists</li>
-            </ul>
-            <button class="btn-primary" style="width: 100%; margin-top: 24px; justify-content: center;" onclick="navigate('contact')" data-i18n="enroll_live">Enroll Now, Save €600 →</button>
-            <div class="urgency" data-i18n="urgency">⚡ 7 early-bird spots left · Offer ends Oct 30th</div>
-          </div>
-
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- WHAT YOU'LL LEARN -->
-        <div class="section-head" style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
-          <div class="section-label" data-i18n="curriculum_label">Curriculum</div>
-          <h2 class="section-title" data-i18n="curriculum_title">6 Lessons to Master Deal Sourcing</h2>
-        </div>
-
-        <div class="cards-grid">
-          <div class="service-card">
-            <div class="card-badge">1</div>
-            <h3 data-i18n="l1_title">How M&A Actually Works</h3>
-            <p class="card-desc" data-i18n="l1_desc">Realities of M&A sourcing, common myths, and the mindset needed to succeed.</p>
-          </div>
-          <div class="service-card">
-            <div class="card-badge">2</div>
-            <h3 data-i18n="l2_title">Finance 101</h3>
-            <p class="card-desc" data-i18n="l2_desc">Key metrics: revenue, EBITDA, cash flow, multiples. Valuation basics and investor thinking.</p>
-          </div>
-          <div class="service-card">
-            <div class="card-badge">3</div>
-            <h3 data-i18n="l3_title">Building Your Target List</h3>
-            <p class="card-desc" data-i18n="l3_desc">How to find companies that are actually open to selling.</p>
-          </div>
-          <div class="service-card">
-            <div class="card-badge">4</div>
-            <h3 data-i18n="l4_title">Outreach Mastery</h3>
-            <p class="card-desc" data-i18n="l4_desc">Scripts, email/LinkedIn strategy, and phone frameworks that get responses.</p>
-          </div>
-          <div class="service-card">
-            <div class="card-badge">5</div>
-            <h3 data-i18n="l5_title">Mind Hacking</h3>
-            <p class="card-desc" data-i18n="l5_desc">Practical psychology to control conversations and win trust fast.</p>
-          </div>
-          <div class="service-card">
-            <div class="card-badge">6</div>
-            <h3 data-i18n="l6_title">From First Call to Deal</h3>
-            <p class="card-desc" data-i18n="l6_desc">Handling objections, qualifying leads, and handing them to advisors.</p>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div style="text-align: center;">
-          <p style="font-size: 15px; color: var(--gray); margin-bottom: 24px;" data-i18n="not_sure">Not sure if Kaitsar is right for you?</p>
-          <button class="btn-primary" onclick="navigate('contact')" data-i18n="book_nick">Book a 15-min Call with Nick →</button>
-        </div>
-
-      </div>
-    </section>
-
-  </div><!-- /page-pricing -->
 
 
   <!-- ══════════════════════════════════════════
@@ -1239,7 +1249,7 @@
       <div class="about-hero-content">
         <div class="section-label" data-i18n="nav_about">ABOUT</div>
         <h1 style="font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-0.02em;margin:12px 0 16px;" data-i18n="about_hero_title">About Kaitsar</h1>
-        <p style="font-size:18px;color:var(--gray);max-width:560px;margin:0 auto;" data-i18n="about_hero_sub">International M&A services team with a proven track record across European markets.</p>
+        <p style="font-size:18px;color:var(--gray);max-width:560px;margin:0 auto;" data-i18n="about_hero_sub">A team from the Mittelstand, private equity and SME research. We know how owners think, and what buyers need to see.</p>
       </div>
     </div>
 
@@ -1251,43 +1261,42 @@
           <h2 class="section-title" data-i18n="team_title">Diverse Expertise Across Finance, Technology & Strategy</h2>
         </div>
 
-        <div class="team-cards" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="team-cards cols-2">
           <div class="team-card">
-            <div style="font-size: 40px; margin-bottom: 16px;">👤</div>
+            <div class="monogram" aria-hidden="true">NR</div>
             <h3>Nikolai Ferdinand Rutter</h3>
-            <p style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px;">Founder</p>
-            <p>Raised in an Austrian SME family, Nikolai built tech start-ups in the Netherlands before entering a joint venture with a private equity firm. He founded Kaitsar Capital to help solve Europe's business succession challenge — connecting owners ready to exit with the right buyers.</p>
+            <p class="team-role" data-i18n="team_nik_role">Founder</p>
+            <p class="team-bio" data-i18n="team_nik_bio">Raised in an Austrian SME family, Nikolai built tech start-ups in the Netherlands before entering a joint venture with a private equity firm. He founded Kaitsar Capital to help solve Europe's business succession challenge — connecting owners ready to exit with the right buyers.</p>
           </div>
           <div class="team-card">
-            <div style="font-size: 40px; margin-bottom: 16px;">👤</div>
+            <div class="monogram" aria-hidden="true">TK</div>
             <h3>Tina Krell-Sun</h3>
-            <p style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px;">Partner / COO</p>
-            <p>Leaving research in entrepreneurship for hands-on M&A, Tina took an unconventional path into Germany's SME landscape. Through her work on SMEs with the German Ministry of Finance, she recognized succession as a critical bottleneck. Driven by a lack of optionality for business owners, she now initiates off-market connections that would not exist otherwise.</p>
+            <p class="team-role" data-i18n="team_tina_role">Partner / COO</p>
+            <p class="team-bio" data-i18n="team_tina_bio">Leaving research in entrepreneurship for hands-on M&A, Tina took an unconventional path into Germany's SME landscape. Through her work on SMEs with the German Ministry of Finance, she recognized succession as a critical bottleneck. Driven by a lack of optionality for business owners, she now initiates off-market connections that would not exist otherwise.</p>
           </div>
         </div>
 
         <div class="two-col">
           <div class="info-box">
-            <div class="info-box-icon">🎓</div>
+            <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
             <h3 data-i18n="edu_title">Education</h3>
             <p data-i18n="edu_desc">Our team brings world-class education from leading institutions across:</p>
             <div class="tags">
-              <span class="tag">Switzerland</span>
-              <span class="tag">Hong Kong</span>
-              <span class="tag">UK</span>
-              <span class="tag">Netherlands</span>
-              <span class="tag">Germany</span>
+              <span class="tag" data-i18n="tag_ch">Switzerland</span>
+              <span class="tag" data-i18n="tag_hk">Hong Kong</span>
+              <span class="tag" data-i18n="tag_uk">UK</span>
+              <span class="tag" data-i18n="tag_nl">Netherlands</span>
+              <span class="tag" data-i18n="tag_de">Germany</span>
             </div>
           </div>
           <div class="info-box">
-            <div class="info-box-icon">🌍</div>
+            <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
             <h3 data-i18n="presence_title">Global Presence</h3>
-            <p data-i18n="presence_desc">Headquartered in Nicosia, Cyprus. Active presence in:</p>
+            <p data-i18n="presence_desc">Active in:</p>
             <div class="tags">
-              <span class="tag">Benelux</span>
-              <span class="tag">DACH</span>
-              <span class="tag">UK</span>
-              <span class="tag">Cyprus</span>
+              <span class="tag" data-i18n="tag_benelux">Benelux</span>
+              <span class="tag" data-i18n="tag_dach">DACH</span>
+              <span class="tag" data-i18n="tag_uk">UK</span>
             </div>
           </div>
         </div>
@@ -1381,7 +1390,7 @@
               <!-- Labels -->
               <g font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
                 <rect x="160" y="273" width="80" height="24" fill="#0a0a0a" rx="4" opacity="0.90"/>
-                <text x="200" y="290" fill="#e85d04">UK</text>
+                <text x="200" y="290" fill="#e85d04" data-i18n="map_uk">UK</text>
 
                 <rect x="255" y="263" width="100" height="24" fill="#0a0a0a" rx="4" opacity="0.90"/>
                 <text x="305" y="280" fill="#e85d04">Benelux</text>
@@ -1393,7 +1402,7 @@
                 <text x="400" y="560" fill="#e85d04">Malta</text>
 
                 <rect x="635" y="503" width="90" height="24" fill="#0a0a0a" rx="4" opacity="0.90"/>
-                <text x="680" y="520" fill="#e85d04">Cyprus</text>
+                <text x="680" y="520" fill="#e85d04" data-i18n="map_cy">Cyprus</text>
               </g>
             </svg>
             <p style="text-align:center;font-size:13px;color:rgba(255,255,255,0.35);padding:12px 0 16px;" data-i18n="coverage_sub">Active presence across key European markets</p>
@@ -1401,7 +1410,7 @@
         </div>
 
         <div class="confidentiality-box">
-          <h3 data-i18n="disc_title">🔒 Discretion & Confidentiality</h3>
+          <h3 class="with-icon"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span data-i18n="disc_title">Discretion &amp; Confidentiality</span></h3>
           <p data-i18n="disc_desc1">We understand the sensitive nature of M&A transactions. Our team operates with the highest levels of discretion and maintains strict confidentiality throughout all client engagements.</p>
           <br/>
           <p data-i18n="disc_desc2">Every client mandate is treated with absolute confidentiality. We never disclose client relationships, transaction details, or strategic information to third parties.</p>
@@ -1414,19 +1423,19 @@
 
         <div class="track-grid">
           <div class="track-card">
-            <span class="track-tag">Benelux · Food</span>
+            <span class="track-tag" data-i18n="tt_food">Benelux · Food</span>
             <h3 data-i18n="track1_title">Buy & Build – Family Food Business</h3>
             <p data-i18n="track1_desc">Expansion strategy into Eastern Europe for a family-owned food business. Full target research, outreach, and management meeting facilitation.</p>
             <div class="track-result" data-i18n="track1_result">✓ 3 strategic acquisitions facilitated</div>
           </div>
           <div class="track-card">
-            <span class="track-tag">DACH · Private Equity</span>
+            <span class="track-tag" data-i18n="tt_pe">DACH · Private Equity</span>
             <h3 data-i18n="track2_title">Buy-Side Sourcing – Industrial Acquisition</h3>
             <p data-i18n="track2_desc">Buy-side support for a PE fund targeting off-market industrial companies in the DACH region. 23 management meetings conducted with qualified targets across the sector.</p>
             <div class="track-result" data-i18n="track2_result">✓ Company successfully acquired</div>
           </div>
           <div class="track-card">
-            <span class="track-tag">Malta · Crypto</span>
+            <span class="track-tag" data-i18n="tt_crypto">Malta · Crypto</span>
             <h3 data-i18n="track3_title">License Acquisition – Crypto Brokerage</h3>
             <p data-i18n="track3_desc">License acquisition support for a major European crypto brokerage seeking regulated entry into Malta's market.</p>
             <div class="track-result" data-i18n="track3_result">✓ Regulatory approval and market entry facilitated</div>
@@ -1457,50 +1466,58 @@
           <div class="contact-form-wrap">
             <h2 data-i18n="form_title">Send us a Message</h2>
             <p data-i18n="form_sub">Fill out the form below and we'll get back to you within 24 hours.</p>
-            <form onsubmit="handleFormSubmit(event)">
+            <form id="contactForm" onsubmit="handleFormSubmit(event)">
               <div class="form-row">
                 <div class="form-group">
-                  <label data-i18n="form_fname">First Name</label>
-                  <input type="text" required />
+                  <label for="cfFirst" data-i18n="form_fname">First Name</label>
+                  <input type="text" id="cfFirst" name="first_name" autocomplete="given-name" required />
                 </div>
                 <div class="form-group">
-                  <label data-i18n="form_lname">Last Name</label>
-                  <input type="text" required />
+                  <label for="cfLast" data-i18n="form_lname">Last Name</label>
+                  <input type="text" id="cfLast" name="last_name" autocomplete="family-name" required />
                 </div>
               </div>
               <div class="form-group">
-                <label data-i18n="form_email">Email</label>
-                <input type="email" required />
+                <label for="cfCompany" data-i18n="form_company">Company</label>
+                <input type="text" id="cfCompany" name="company" autocomplete="organization" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cfEmail" data-i18n="form_email">Email</label>
+                  <input type="email" id="cfEmail" name="email" autocomplete="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="cfPhone" data-i18n="form_phone">Phone</label>
+                  <input type="tel" id="cfPhone" name="phone" autocomplete="tel" required />
+                </div>
               </div>
               <div class="form-group">
-                <label data-i18n="form_phone">Phone</label>
-                <input type="tel" required />
+                <label for="cfMsg" data-i18n="form_msg">Your Mandate</label>
+                <textarea id="cfMsg" name="message" data-i18n-placeholder="form_msg_ph" placeholder="Sector, geography, revenue or EBITDA range, timeline..."></textarea>
               </div>
-              <div class="form-group">
-                <label data-i18n="form_msg">Message</label>
-                <textarea data-i18n-placeholder="form_msg_ph" placeholder="Tell us about your M&A requirements..."></textarea>
-              </div>
+              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
               <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" data-i18n="form_send">Send Message</button>
+              <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
             </form>
           </div>
 
           <div class="contact-info">
             <div class="contact-info-card">
-              <h3 data-i18n="hq_title">🏢 Headquarters</h3>
-              <p>Kaitsar Capital Ltd.<br>Floor 5, Methonis 1<br>1070 Nicosia, Cyprus<br><span style="font-size:12px;color:rgba(255,255,255,0.4);">Reg: ΗΕ 473818</span></p>
+              <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l5 3V8l5 3V5h4v16"/></svg></span><span data-i18n="hq_title">Headquarters</span></h3>
+              <p>Kaitsar Capital Ltd.<br>Floor 5, Methonis 1<br><span data-i18n="addr_city">1070 Nicosia, Cyprus</span><br><span style="font-size:12px;color:rgba(255,255,255,0.4);" data-i18n="addr_reg">Reg: ΗΕ 473818</span></p>
             </div>
             <div class="contact-info-card">
-              <h3 data-i18n="local_title">📍 Local Presence</h3>
-              <p>Benelux · DACH · UK</p>
+              <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span data-i18n="local_title">Local Presence</span></h3>
+              <p data-i18n="local_markets">Benelux · DACH · UK</p>
             </div>
             <div class="contact-info-card">
-              <h3 data-i18n="email_title">✉️ Email</h3>
-              <p>office@kaitsar.com</p>
+              <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span data-i18n="email_title">Email</span></h3>
+              <p><a href="mailto:office@kaitsar.com">office@kaitsar.com</a></p>
             </div>
             <div class="book-meeting-card">
-              <h3 data-i18n="book_title">📅 Book a Meeting</h3>
+              <h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span data-i18n="book_title">Book a Meeting</span></h3>
               <p data-i18n="book_desc">Schedule a direct consultation to discuss your M&A requirements.</p>
-              <a class="btn-primary" href="https://calendly.com/kaitsar-capital/new-meeting" target="_blank" data-i18n="book_btn">Book Meeting with Nick →</a>
+              <a class="btn-primary" href="https://calendly.com/kaitsar-capital/new-meeting" target="_blank" rel="noopener" data-i18n="book_btn">Book Meeting with Nick →</a>
             </div>
           </div>
 
@@ -1539,7 +1556,7 @@
                 <span class="calc-s-val" id="retainerDisplay">€0 / mo</span>
               </div>
               <input type="range" class="calc-range main-range" id="retainerSlider" min="0" max="10000" step="500" value="0" oninput="calcUpdate()" />
-              <div class="calc-s-range"><span>€0 / mo</span><span>€10k / mo</span></div>
+              <div class="calc-s-range"><span data-i18n="rng_ret_min">€0 / mo</span><span data-i18n="rng_ret_max">€10k / mo</span></div>
             </div>
 
             <div class="calc-slider-block">
@@ -1548,7 +1565,7 @@
                 <span class="calc-s-val" id="dealDisplay">€5.0M</span>
               </div>
               <input type="range" class="calc-range main-range" id="dealSlider" min="0" max="100" step="1" value="50" oninput="calcUpdate()" />
-              <div class="calc-s-range"><span>€500k</span><span>€50M</span></div>
+              <div class="calc-s-range"><span data-i18n="rng_deal_min">€500k</span><span data-i18n="rng_deal_max">€50M</span></div>
             </div>
 
             <div class="calc-slider-block">
@@ -1557,7 +1574,7 @@
                 <span class="calc-s-val" id="durationDisplay" style="font-size:16px;font-weight:600;color:rgba(255,255,255,0.4);">12 months</span>
               </div>
               <input type="range" class="calc-range soft-range" id="durationSlider" min="1" max="18" step="1" value="12" oninput="calcUpdate()" />
-              <div class="calc-s-range"><span>1 mo</span><span>18 mo</span></div>
+              <div class="calc-s-range"><span data-i18n="rng_dur_min">1 mo</span><span data-i18n="rng_dur_max">18 mo</span></div>
             </div>
 
             <div class="calc-insight" id="calcInsight">
@@ -1597,7 +1614,7 @@
               <!-- GATE OVERLAY -->
               <div class="calc-gate" id="calcGate">
                 <div class="calc-gate-inner">
-                  <div class="calc-gate-icon">🔒</div>
+                  <div class="calc-gate-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
                   <h3 class="calc-gate-title" data-i18n="gate_title">See Your Results</h3>
                   <p class="calc-gate-sub" data-i18n="gate_sub">Enter your details to unlock the full pricing breakdown.</p>
                   <button class="btn-primary" onclick="openGateModal()" data-i18n="gate_btn">Unlock Results →</button>
@@ -1642,16 +1659,16 @@
         <p class="modal-sub" data-i18n="modal_sub">We'll send you the full breakdown and follow up within 24 hours.</p>
         <form onsubmit="submitGate(event)">
           <div class="form-group">
-            <label data-i18n="form_fname">First Name</label>
-            <input type="text" id="gateName" required />
+            <label for="gateName" data-i18n="gate_name">Name</label>
+            <input type="text" id="gateName" name="name" autocomplete="name" required />
           </div>
           <div class="form-group">
-            <label data-i18n="form_email">Email</label>
-            <input type="email" id="gateEmail" required />
+            <label for="gateEmail" data-i18n="form_email">Email</label>
+            <input type="email" id="gateEmail" name="email" autocomplete="email" required />
           </div>
           <div class="form-group">
-            <label data-i18n="form_phone">Phone</label>
-            <input type="tel" id="gatePhone" required />
+            <label for="gatePhone" data-i18n="form_phone">Phone</label>
+            <input type="tel" id="gatePhone" name="phone" autocomplete="tel" required />
           </div>
           <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;" data-i18n="modal_btn">See My Results →</button>
         </form>
@@ -1666,13 +1683,14 @@
   ══════════════════════════════════════════ -->
   <div class="page" id="page-privacy">
     <div class="page-hero">
-      <div class="section-label">LEGAL</div>
-      <h1>Privacy Policy</h1>
-      <p>Last updated: March 2026</p>
+      <div class="section-label" data-i18n="legal_label">LEGAL</div>
+      <h1 data-i18n="privacy_h1">Privacy Policy</h1>
+      <p data-i18n="legal_updated">Last updated: March 2026</p>
     </div>
     <section class="dark">
       <div class="section-inner" style="max-width: 760px;">
         <div style="line-height: 1.8; color: rgba(255,255,255,0.8); font-size: 15px;">
+        <div data-lang="en">
 
           <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">1. Controller</h2>
           <p style="margin-bottom: 24px;">Kaitsar Capital Ltd., Floor 5, Methonis 1, 1070 Nicosia, Cyprus (reg. ΗΕ 473818) is the data controller responsible for your personal data. Contact: <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a></p>
@@ -1703,8 +1721,41 @@
           <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">8. Changes</h2>
           <p style="margin-bottom: 24px;">We may update this policy from time to time. The current version is always available on this page.</p>
         </div>
+        <div data-lang="de">
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">1. Verantwortlicher</h2>
+          <p style="margin-bottom: 24px;">Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten ist die Kaitsar Capital Ltd., Floor 5, Methonis 1, 1070 Nikosia, Zypern (Reg.-Nr. ΗΕ 473818). Kontakt: <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a></p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">2. Welche Daten wir verarbeiten</h2>
+          <p style="margin-bottom: 12px;">Wenn Sie unsere Website nutzen oder mit uns Kontakt aufnehmen, verarbeiten wir folgende Daten:</p>
+          <ul style="margin: 0 0 24px 20px; display: flex; flex-direction: column; gap: 8px;">
+            <li>Kontaktdaten: Name, E-Mail-Adresse, Telefonnummer</li>
+            <li>Angaben zu Ihrem Unternehmen und Ihrem Suchprofil, sofern Sie uns diese freiwillig mitteilen</li>
+            <li>Technische Daten: IP-Adresse, Browsertyp, aufgerufene Seiten (Server-Logfiles)</li>
+          </ul>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">3. Zweck und Rechtsgrundlage</h2>
+          <p style="margin-bottom: 24px;">Wir verarbeiten Ihre Daten, um Ihre Anfrage zu beantworten, unsere Leistungen im Deal-Sourcing zu erbringen und unsere Website zu verbessern. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung und -erfüllung), Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) sowie – soweit erforderlich – Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">4. Weitergabe von Daten</h2>
+          <p style="margin-bottom: 24px;">Wir verkaufen oder vermieten Ihre Daten nicht an Dritte. Eine Weitergabe erfolgt nur an Dienstleister (z.&nbsp;B. für E-Mail oder CRM), die wir per Auftragsverarbeitungsvertrag verpflichtet haben, oder wenn wir gesetzlich dazu verpflichtet sind.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">5. Speicherdauer</h2>
+          <p style="margin-bottom: 24px;">Wir speichern personenbezogene Daten nur so lange, wie es für die genannten Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen es verlangen (bei Geschäftsunterlagen in der Regel bis zu sieben Jahre).</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">6. Ihre Rechte</h2>
+          <p style="margin-bottom: 24px;">Nach der DSGVO haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit sowie ein Widerspruchsrecht. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren. Um Ihre Rechte auszuüben, schreiben Sie uns an <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a>.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">7. Cookies</h2>
+          <p style="margin-bottom: 24px;">Diese Website verwendet ausschließlich technisch notwendige Cookies. Tracking- oder Werbe-Cookies setzen wir nicht ein.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">8. Änderungen</h2>
+          <p style="margin-bottom: 24px;">Wir passen diese Datenschutzerklärung bei Bedarf an. Die jeweils aktuelle Fassung finden Sie immer auf dieser Seite.</p>
+
+        </div>
+        </div>
         <div style="margin-top: 40px;">
-          <button class="btn-secondary" onclick="navigate('home')">← Back to Home</button>
+          <button class="btn-secondary" onclick="navigate('home')" data-i18n="back_home">← Back to Home</button>
         </div>
       </div>
     </section>
@@ -1716,13 +1767,14 @@
   ══════════════════════════════════════════ -->
   <div class="page" id="page-terms">
     <div class="page-hero">
-      <div class="section-label">LEGAL</div>
-      <h1>Terms &amp; Conditions</h1>
-      <p>Last updated: March 2026</p>
+      <div class="section-label" data-i18n="legal_label">LEGAL</div>
+      <h1 data-i18n="terms_h1">Terms &amp; Conditions</h1>
+      <p data-i18n="legal_updated">Last updated: March 2026</p>
     </div>
     <section class="dark">
       <div class="section-inner" style="max-width: 760px;">
         <div style="line-height: 1.8; color: rgba(255,255,255,0.8); font-size: 15px;">
+        <div data-lang="en">
 
           <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">1. Company Details</h2>
           <p style="margin-bottom: 24px;">These Terms &amp; Conditions govern your use of the website operated by Kaitsar Capital Ltd., Floor 5, Methonis 1, 1070 Nicosia, Cyprus (reg. ΗΕ 473818). By accessing this website, you agree to these terms.</p>
@@ -1748,8 +1800,36 @@
           <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">8. Contact</h2>
           <p style="margin-bottom: 24px;">For any queries, contact us at <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a>.</p>
         </div>
+        <div data-lang="de">
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">1. Anbieter</h2>
+          <p style="margin-bottom: 24px;">Diese Nutzungsbedingungen gelten für die Website der Kaitsar Capital Ltd., Floor 5, Methonis 1, 1070 Nikosia, Zypern (Reg.-Nr. ΗΕ 473818). Mit der Nutzung der Website erkennen Sie diese Bedingungen an.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">2. Leistungen</h2>
+          <p style="margin-bottom: 24px;">Die Kaitsar Capital Ltd. erbringt Leistungen im Bereich M&amp;A-Deal-Sourcing. Wir sind weder Finanz- oder Anlageberater noch Finanzvermittler und kein nach finanzaufsichtsrechtlichen Vorschriften reguliertes Unternehmen. Die Inhalte dieser Website stellen keine Finanz- oder Anlageberatung dar.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">3. Nutzung der Website</h2>
+          <p style="margin-bottom: 24px;">Die Inhalte dieser Website dienen ausschließlich der allgemeinen Information. Vervielfältigung, Verbreitung oder kommerzielle Nutzung sind ohne unsere schriftliche Zustimmung nicht gestattet. Wir behalten uns vor, Inhalte jederzeit zu ändern oder zu entfernen.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">4. Richtigkeit der Angaben</h2>
+          <p style="margin-bottom: 24px;">Wir erstellen die Inhalte dieser Website mit größtmöglicher Sorgfalt, übernehmen jedoch keine Gewähr für Vollständigkeit oder Eignung für einen bestimmten Zweck. Die genannten Transaktionsergebnisse dienen der Veranschaulichung und sind keine Garantie für künftige Ergebnisse.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">5. Haftungsbeschränkung</h2>
+          <p style="margin-bottom: 24px;">Soweit gesetzlich zulässig, haftet die Kaitsar Capital Ltd. nicht für unmittelbare oder mittelbare Schäden oder Folgeschäden, die aus der Nutzung dieser Website oder dem Vertrauen auf ihre Inhalte entstehen.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">6. Geistiges Eigentum</h2>
+          <p style="margin-bottom: 24px;">Alle Marken, Logos und Inhalte dieser Website sind Eigentum der Kaitsar Capital Ltd. oder werden mit Genehmigung der Rechteinhaber verwendet. Alle Rechte vorbehalten.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">7. Anwendbares Recht</h2>
+          <p style="margin-bottom: 24px;">Es gilt das Recht der Republik Zypern. Ausschließlicher Gerichtsstand sind die Gerichte Zyperns.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">8. Kontakt</h2>
+          <p style="margin-bottom: 24px;">Bei Fragen erreichen Sie uns unter <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a>.</p>
+
+        </div>
+        </div>
         <div style="margin-top: 40px;">
-          <button class="btn-secondary" onclick="navigate('home')">← Back to Home</button>
+          <button class="btn-secondary" onclick="navigate('home')" data-i18n="back_home">← Back to Home</button>
         </div>
       </div>
     </section>
@@ -1761,19 +1841,22 @@
   ══════════════════════════════════════════ -->
   <div class="page" id="page-impressum">
     <div class="page-hero">
-      <div class="section-label">LEGAL</div>
+      <div class="section-label" data-i18n="legal_label">LEGAL</div>
       <h1>Impressum</h1>
-      <p>Legal disclosure pursuant to applicable regulations</p>
+      <p data-i18n="impressum_sub">Legal disclosure pursuant to applicable regulations</p>
     </div>
     <section class="dark">
       <div class="section-inner" style="max-width: 760px;">
         <div style="line-height: 1.8; color: rgba(255,255,255,0.8); font-size: 15px;">
+        <div data-lang="en">
 
           <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Company Information</h2>
           <p style="margin-bottom: 24px;">
             <strong style="color: #fff;">Kaitsar Capital Ltd.</strong><br>
             Floor 5, Methonis 1<br>
             1070 Nicosia, Cyprus<br>
+            Represented by: Nikolai Ferdinand Rutter, Managing Director<br>
+            Registrar: Department of Registrar of Companies and Intellectual Property, Nicosia<br>
             Company Registration: ΗΕ 473818
           </p>
 
@@ -1795,8 +1878,40 @@
           <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Copyright</h2>
           <p style="margin-bottom: 24px;">The content and works on this website are subject to copyright law. Duplication, processing, distribution, or any form of commercialisation of such material beyond the scope of the copyright law shall require the prior written consent of Kaitsar Capital Ltd.</p>
         </div>
+        <div data-lang="de">
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Anbieter</h2>
+          <p style="margin-bottom: 24px;">
+            <strong style="color: #fff;">Kaitsar Capital Ltd.</strong><br>
+            Floor 5, Methonis 1<br>
+            1070 Nikosia, Zypern<br>
+            Vertreten durch: Nikolai Ferdinand Rutter, Managing Director<br>
+            Registerbehörde: Department of Registrar of Companies and Intellectual Property, Nikosia<br>
+            Registernummer: ΗΕ 473818
+          </p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Kontakt</h2>
+          <p style="margin-bottom: 24px;">
+            E-Mail: <a href="mailto:office@kaitsar.com" style="color: var(--orange);">office@kaitsar.com</a><br>
+            Website: kaitsar.com
+          </p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Inhaltlich verantwortlich</h2>
+          <p style="margin-bottom: 24px;">Nikolai Ferdinand Rutter, Anschrift wie oben</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Regulatorischer Hinweis</h2>
+          <p style="margin-bottom: 24px;">Die Kaitsar Capital Ltd. erbringt Leistungen im Bereich M&amp;A-Deal-Sourcing und Geschäftsentwicklung. Sie ist weder Finanz- oder Anlageberater noch Finanzvermittler und kein nach finanzaufsichtsrechtlichen Vorschriften reguliertes Unternehmen. Sämtliche Angaben dienen ausschließlich der Information und stellen keine Finanz-, Anlage- oder Rechtsberatung dar.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Haftung für Inhalte</h2>
+          <p style="margin-bottom: 24px;">Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir für eigene Inhalte nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
+          <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 16px; color: #fff;">Urheberrecht</h2>
+          <p style="margin-bottom: 24px;">Die Inhalte und Werke auf dieser Website unterliegen dem Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der vorherigen schriftlichen Zustimmung der Kaitsar Capital Ltd.</p>
+
+        </div>
+        </div>
         <div style="margin-top: 40px;">
-          <button class="btn-secondary" onclick="navigate('home')">← Back to Home</button>
+          <button class="btn-secondary" onclick="navigate('home')" data-i18n="back_home">← Back to Home</button>
         </div>
       </div>
     </section>
@@ -1812,30 +1927,30 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="logo"><img src="Kaitsar_Logo_1.png" alt="Kaitsar Capital" style="height:32px;width:auto;" /></div>
+      <div class="logo"><img src="data:image/png;base64,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" alt="Kaitsar Capital" style="height:32px;width:auto;" /></div>
       <p data-i18n="footer_desc">Professional M&A deal origination across Europe. We source the off-market deals that move your strategy forward.</p>
-      <p class="disclaimer" data-i18n="footer_legal">Kaitsar Capital Ltd. provides M&A deal sourcing services & training. The company does not act as a financial advisor or investment intermediary. All information is for informational purposes only.</p>
+      <p class="disclaimer" data-i18n="footer_legal">Kaitsar Capital Ltd. provides M&A deal sourcing services. The company does not act as a financial advisor or investment intermediary. All information is for informational purposes only.</p>
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer_company">Company</h4>
       <ul>
-        <li><a onclick="navigate('home')" style="cursor:pointer;" data-i18n="nav_home">HOME</a></li>
-        <li><a onclick="navigate('services')" style="cursor:pointer;" data-i18n="nav_services">SERVICES</a></li>
-        <li><a onclick="navigate('calculator')" style="cursor:pointer;" data-i18n="nav_calculator">CALCULATOR</a></li>
-        <li><a onclick="navigate('about')" style="cursor:pointer;" data-i18n="nav_about">ABOUT</a></li>
-        <li><a onclick="navigate('contact')" style="cursor:pointer;" data-i18n="nav_contact">CONTACT</a></li>
+        <li><a href="#/en/" data-nav="home" style="cursor:pointer;" data-i18n="nav_home">HOME</a></li>
+        <li><a href="#/en/services" data-nav="services" style="cursor:pointer;" data-i18n="nav_services">SERVICES</a></li>
+        <li><a href="#/en/calculator" data-nav="calculator" style="cursor:pointer;" data-i18n="nav_calculator">CALCULATOR</a></li>
+        <li><a href="#/en/about" data-nav="about" style="cursor:pointer;" data-i18n="nav_about">ABOUT</a></li>
+        <li><a href="#/en/contact" data-nav="contact" style="cursor:pointer;" data-i18n="nav_contact">CONTACT</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer_legal_head">Legal</h4>
       <ul>
-        <li><a onclick="navigate('privacy')" style="cursor:pointer;" data-i18n="privacy">Privacy Policy</a></li>
-        <li><a onclick="navigate('terms')" style="cursor:pointer;" data-i18n="terms">Terms &amp; Conditions</a></li>
-        <li><a onclick="navigate('impressum')" style="cursor:pointer;" data-i18n="impressum">Impressum</a></li>
+        <li><a href="#/en/privacy" data-nav="privacy" style="cursor:pointer;" data-i18n="privacy">Privacy Policy</a></li>
+        <li><a href="#/en/terms" data-nav="terms" style="cursor:pointer;" data-i18n="terms">Terms &amp; Conditions</a></li>
+        <li><a href="#/en/impressum" data-nav="impressum" style="cursor:pointer;" data-i18n="impressum">Impressum</a></li>
       </ul>
       <div style="margin-top: 24px;">
         <p style="font-size: 13px; color: var(--gray);">Kaitsar Capital Ltd.</p>
-        <p style="font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 4px;">Floor 5, Methonis 1<br>1070 Nicosia, Cyprus<br>Reg: ΗΕ 473818</p>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 4px;">Floor 5, Methonis 1<br><span data-i18n="addr_city">1070 Nicosia, Cyprus</span><br><span data-i18n="addr_reg">Reg: ΗΕ 473818</span></p>
       </div>
     </div>
   </div>
@@ -1849,203 +1964,444 @@
 <script>
 // ── TRANSLATIONS ──────────────────────────────────────────────
 const t = {
-  en: {
-    nav_home: 'HOME', nav_services: 'SERVICES', nav_calculator: 'CALCULATOR', nav_pricing: 'ACADEMY', nav_about: 'ABOUT',
-    nav_contact: 'CONTACT', nav_cta: 'Book a Call',
-    home_eyebrow: 'M&A Deal Origination · Europe',
-    home_h1: 'We Source the Deals <span>You Can\'t Find.</span>',
-    home_sub: 'Off-market deal flow for business buyers. We source, you close.',
-    home_proof: '11 mandates secured · 9 acquisitions facilitated · 5 European markets · 25 months track record',
-    home_exclusive: 'We work exclusively with professional acquirers who have a clear mandate and the capacity to close.',
-    home_cta1: 'Schedule a Consultation →', home_cta2: 'View Services',
-    serve_label: 'Who We Work With',
-    serve_title: 'Built for Buyers Who Acquire at Scale',
-    serve_sub: 'We work exclusively with professional acquirers who have a clear mandate and the capacity to close.',
-    serve1_title: 'Private Equity', serve1_desc: 'Buy-side sourcing for PE firms targeting off-market DACH, Benelux, and UK assets.',
-    serve2_title: 'Strategic Buyers', serve2_desc: 'Corporate M&A teams seeking bolt-on acquisitions without tipping off the market.',
-    serve3_title: 'Hold Companies', serve3_desc: 'Holding groups building buy-and-build strategies in specific verticals.',
-    serve4_title: 'Search Funds', serve4_desc: 'Searchers who need consistent, qualified deal flow without burning their own time on outreach.',
-    serve5_title: 'M&A Brokers', serve5_desc: 'Broker firms seeking mandate origination support and pipeline development at scale.',
-    serve6_title: 'Family Offices', serve6_desc: 'Direct acquisition mandates for family offices with a defined acquisition thesis.',
-    how_label: 'How It Works', how_title: 'From Mandate to Management Meeting',
-    how_sub: 'A disciplined, repeatable process that converts your acquisition criteria into qualified conversations with business owners.',
-    step1_title: 'We Learn Your Mandate', step1_desc: 'We start with your acquisition criteria: sector, geography, revenue range, EBITDA thresholds. We build a target profile and agree on KPIs before engaging a single prospect.',
-    step2_title: 'We Pick Up the Phone', step2_desc: 'We engage business owners exclusively via direct phone calls. No mass email. No LinkedIn automation. Old-school, high-trust outreach, because that\'s what gets real sellers to the table.',
-    step3_title: 'We Qualify and Filter', step3_desc: 'We pre-screen every lead against your criteria. You only see sellers who are genuinely open to a conversation and meet your financial thresholds.',
-    step4_title: 'You Receive a Full Briefing', step4_desc: 'Before any meeting, you receive a structured briefing on the target: business overview, financials, owner profile, and context on their motivation to sell.',
-    step5_title: 'You Take the Management Meeting', step5_desc: 'You walk in prepared. We\'ve done the groundwork. From here, you run your standard process, we keep the pipeline flowing.',
-    track_label: 'Track Record', track_title: 'Proven Across Sectors and Geographies',
-    track1_title: 'Buy & Build – Family Food Business', track1_desc: 'Expansion strategy into Eastern Europe for a family-owned food business. Full target research, outreach, and management meeting facilitation.', track1_result: '✓ 3 strategic acquisitions facilitated',
-    track2_title: 'Buy-Side Sourcing – Industrial Acquisition', track2_desc: 'Buy-side support for a PE fund targeting off-market industrial companies in the DACH region. 23 management meetings conducted with qualified targets across the sector.', track2_result: '✓ Company successfully acquired',
-    track3_title: 'License Acquisition – Crypto Brokerage', track3_desc: 'License acquisition support for a major European crypto brokerage seeking regulated entry into Malta\'s market.', track3_result: '✓ Regulatory approval and market entry facilitated',
-    testimonial: '"Kaitsar helped me completely change my career. Within two weeks I already had 3 conversations with private equity players who needed help with deal sourcing."',
-    cta_title: 'Ready to Build Your Pipeline?', cta_sub: 'Let\'s discuss your mandate and what off-market deal flow looks like for your strategy.',
-    cta_btn1: 'Schedule a Consultation →', cta_btn2: 'View Services',
-    svc_hero_title: 'M&A Services', svc_hero_sub: 'Professional deal origination support for private equity firms, strategic buyers, and search funds.',
-    buyside_title: 'Buy-Side Support', buyside_sub: 'Three tiers of acquisition sourcing, tailored to your workflow',
-    bs1_title: 'Target Engagement', bs1_desc: 'You provide the target list, we handle outreach, qualification, and management meeting facilitation.',
-    bs1_f1: 'Professional market outreach', bs1_f2: 'Management meeting facilitation', bs1_f3: 'Opportunity qualification', bs1_f4: 'CRM management', bs1_f5: 'Weekly progress reporting',
-    bs2_title: 'Complete Sourcing', bs2_desc: 'We research targets, build your pipeline, and manage the full engagement process through to management meetings.',
-    bs2_f1: 'Target research & market mapping', bs2_f2: 'Strategic prospect engagement', bs2_f3: 'Management meeting facilitation', bs2_f4: 'Deal opportunity qualification', bs2_f5: 'CRM management & tracking', bs2_f6: 'Comprehensive reporting',
-    bs3_title: 'Partnership Support', bs3_desc: 'Full-service support from sourcing to deal completion with ongoing relationship management.',
-    bs3_f1: 'Market research & target identification', bs3_f2: 'Executive-level prospect engagement', bs3_f3: 'Management meeting facilitation', bs3_f4: 'Deal process guidance', bs3_f5: 'Long-term relationship cultivation', bs3_f6: 'Transaction advisory support',
-    broker_title: 'M&A Broker Support', broker_sub: 'Two tiers for mandate origination',
-    ma1_title: 'Mandate Origination', ma1_desc: 'You provide the prospect list, we engage decision-makers to secure advisory mandates.',
-    ma1_f1: 'C-suite relationship building', ma1_f2: 'Mandate-focused engagement', ma1_f3: 'Advisory positioning', ma1_f4: 'Meeting scheduling & pre-qualification', ma1_f5: 'Pipeline tracking & analysis',
-    ma2_title: 'Market Development', ma2_desc: 'We identify prospects and build relationships from scratch to secure high-value advisory mandates.',
-    ma2_f1: 'Market analysis & prospect identification', ma2_f2: 'Executive relationship development', ma2_f3: 'Strategic advisory positioning', ma2_f4: 'Mandate negotiation support', ma2_f5: 'Long-term client cultivation', ma2_f6: 'Deal pipeline optimisation',
-    sell_title: 'Sell-Side Services', sell_sub: 'Selective support for sell-side engagements',
-    sell_card_title: 'Custom Sell-Side Support', sell_card_desc: 'We collaborate with Europe\'s top sell-side advisors. Each opportunity is evaluated individually based on requirements, market conditions, and strategic fit.',
-    sell_cta: 'Discuss Your Requirements →',
-    svc_cta_title: 'Ready to Accelerate Your Deals?', svc_cta_sub: 'Let\'s discuss how our services fit your acquisition strategy.',
-    svc_cta_btn: 'Schedule a Consultation →', learn_more: 'Learn More',
-    pricing_hero_title: 'Making Deals Happen.', pricing_hero_sub: 'Learn how to sell companies. From your first call to your first closed deal, in just 4 weeks.',
-    pricing_label: 'Pricing & Enrollment', pricing_title: 'One Program. Everything You Need.',
-    pricing_sub: 'Intensive 4-week program with live sessions, community access, and everything to get your first deal done.',
-    price1_name: 'Standard Access', price1_sub: 'Full program, self-paced',
-    price2_name: 'Live Cohort', price2_sub: '3 live sessions per week + community',
-    price_once: 'one-time payment', early_badge: 'Early Access',
-    includes: "What's included",
-    pf1: '6 core lessons (video + workbook)', pf2: 'Ready-to-use contracts & agreements', pf3: 'Scripts, templates & checklists', pf4: 'Private community access',
-    pf_live1: '3 live evening sessions per week', pf_live2: '2 lectures + 1 interactive Q&A tutorial', pf_live3: 'Ready-to-use contracts & agreements', pf_live4: 'Full brokerage setup included', pf_live5: 'Private community (free for early adopters)', pf_live6: 'Scripts, templates & checklists',
-    enroll_std: 'Enroll Now', enroll_live: 'Enroll Now, Save €600 →',
-    urgency: '⚡ 7 early-bird spots left · Offer ends Oct 30th',
-    curriculum_label: 'Curriculum', curriculum_title: '6 Lessons to Master Deal Sourcing',
-    l1_title: 'How M&A Actually Works', l1_desc: 'Realities of M&A sourcing, common myths, and the mindset needed to succeed.',
-    l2_title: 'Finance 101', l2_desc: 'Key metrics: revenue, EBITDA, cash flow, multiples. Valuation basics and investor thinking.',
-    l3_title: 'Building Your Target List', l3_desc: 'How to find companies that are actually open to selling.',
-    l4_title: 'Outreach Mastery', l4_desc: 'Scripts, email/LinkedIn strategy, and phone frameworks that get responses.',
-    l5_title: 'Mind Hacking', l5_desc: 'Practical psychology to control conversations and win trust fast.',
-    l6_title: 'From First Call to Deal', l6_desc: 'Handling objections, qualifying leads, and handing them to advisors.',
-    not_sure: 'Not sure if Kaitsar is right for you?', book_nick: 'Book a 15-min Call with Nick →',
-    about_hero_title: 'About Kaitsar', about_hero_sub: 'International M&A services team with a proven track record across European markets.',
-    team_label: 'Contact Persons', team_title: 'Diverse Expertise Across Finance, Technology & Strategy',
-    team1_title: 'Tech Founders', team1_desc: 'Serial entrepreneurs with deep technology expertise and operator mindsets.',
-    team2_title: 'Investment Bankers', team2_desc: 'Mid-market M&A experience across Europe, with deep transaction exposure.',
-    team3_title: 'BCG Consultants', team3_desc: 'Strategic advisory and operational excellence from one of the world\'s top firms.',
-    edu_title: 'Education', edu_desc: 'Our team brings world-class education from leading institutions across:',
-    presence_title: 'Global Presence', presence_desc: 'Headquartered in Cyprus. Local presence in:',
-    coverage_title: 'European Coverage', coverage_sub: 'Active presence across key European markets',
-    disc_title: '🔒 Discretion & Confidentiality',
-    disc_desc1: 'We understand the sensitive nature of M&A transactions. Our team operates with the highest levels of discretion and maintains strict confidentiality throughout all client engagements.',
-    disc_desc2: 'Every client mandate is treated with absolute confidentiality. We never disclose client relationships, transaction details, or strategic information to third parties.',
-    contact_hero_title: 'Let\'s Talk', contact_hero_sub: 'New deal flow starts here.',
-    form_title: 'Send us a Message', form_sub: 'Fill out the form below and we\'ll get back to you within 24 hours.',
-    form_fname: 'Name', form_lname: 'Last Name', form_email: 'Email', form_phone: 'Phone', form_msg: 'Message', form_msg_ph: 'Tell us about your M&A requirements...', form_send: 'Send Message',
-    hq_title: '🏢 Headquarters', local_title: '📍 Local Presence', email_title: '✉️ Email',
-    book_title: '📅 Book a Meeting', book_desc: 'Schedule a direct consultation to discuss your M&A requirements.', book_btn: 'Book Meeting with Nick →',
-    footer_desc: 'Professional M&A deal origination across Europe. We source the off-market deals that move your strategy forward.',
-    footer_legal: 'Kaitsar Capital Ltd. provides M&A deal sourcing services & training. The company does not act as a financial advisor or investment intermediary.',
-    footer_company: 'Company', footer_legal_head: 'Legal',
-    privacy: 'Privacy Policy', terms: 'Terms & Conditions', impressum: 'Impressum',
-    calc_hero_title: 'Pricing Configurator', calc_hero_sub: 'Set your parameters. See exactly what a Kaitsar engagement costs, and when it pays for itself.',
-    calc_configure: 'Configure Engagement', calc_retainer: 'Monthly Retainer', calc_dealsize: 'Target Transaction Size', calc_duration: 'Expected Search Duration',
-    calc_fee: 'Success Fee', calc_waterfall: 'Waterfall on transaction value',
-    tier1_name: 'First €1M', tier2_name: '€1M – €5M', tier3_name: 'Above €5M',
-    calc_total_fee: 'Total Success Fee', calc_summary: 'Engagement Summary', calc_success_line: 'Success fee at close', calc_total_cost: 'TOTAL COST',
-    gate_title: 'See Your Results', gate_sub: 'Enter your details to unlock the full pricing breakdown.', gate_btn: 'Unlock Results →', gate_sub2: 'Unlock to see total cost breakdown',
-    modal_title: 'Unlock Your Pricing', modal_sub: 'We\'ll send you the full breakdown and follow up within 24 hours.', modal_btn: 'See My Results →',
-    copyright: '© 2026 Kaitsar Capital Ltd. All rights reserved.'
-  },
-  de: {
-    nav_home: 'HOME', nav_services: 'LEISTUNGEN', nav_calculator: 'KALKULATOR', nav_pricing: 'AKADEMIE', nav_about: 'ÜBER UNS',
-    nav_contact: 'KONTAKT', nav_cta: 'Gespräch Buchen',
-    home_h1: 'Wir Finden die Deals, <span>Die Sie Nicht Finden.</span>',
-    home_sub: 'Off-Market Deal-Flow für Unternehmenskäufer. Wir sourcen, Sie schließen.',
-    home_proof: '11 Mandate gesichert · 9 Akquisitionen facilitiert · 5 europäische Märkte · 25 Monate Erfolgsbilanz',
-    home_exclusive: 'Wir arbeiten ausschließlich mit professionellen Käufern, die ein klares Mandat und die Kapazität zum Abschluss haben.',
-    home_cta1: 'Beratung Vereinbaren →', home_cta2: 'Leistungen Ansehen',
-    serve_label: 'Mit Wem Wir Arbeiten',
-    serve_title: 'Gebaut für Käufer, Die im Großen Maßstab Akquirieren',
-    serve_sub: 'Wir arbeiten ausschließlich mit professionellen Akquisiteuren, die ein klares Mandat und die Kapazität zum Abschluss haben.',
-    serve1_title: 'Private Equity', serve1_desc: 'Buy-Side Sourcing für PE-Firmen, die Off-Market DACH-, Benelux- und UK-Assets anvisieren.',
-    serve2_title: 'Strategische Käufer', serve2_desc: 'Corporate M&A Teams, die Bolt-on Akquisitionen suchen, ohne den Markt zu alarmieren.',
-    serve3_title: 'Holdinggesellschaften', serve3_desc: 'Holding-Gruppen, die Buy-and-Build-Strategien in spezifischen Vertikalen aufbauen.',
-    serve4_title: 'Search Funds', serve4_desc: 'Searcher, die konsistenten, qualifizierten Deal-Flow benötigen, ohne ihre Zeit für Outreach zu verschwenden.',
-    serve5_title: 'M&A Makler', serve5_desc: 'Maklerunternehmen, die Mandatsakquisitions-Unterstützung und Pipeline-Entwicklung suchen.',
-    serve6_title: 'Family Offices', serve6_desc: 'Direkte Akquisitionsmandate für Family Offices mit einer definierten Akquisitionsstrategie.',
-    how_label: 'Wie Es Funktioniert', how_title: 'Vom Mandat zum Management-Meeting',
-    how_sub: 'Ein disziplinierter, wiederholbarer Prozess, der Ihre Akquisitionskriterien in qualifizierte Gespräche mit Unternehmern umwandelt.',
-    step1_title: 'Wir Lernen Ihr Mandat Kennen', step1_desc: 'Wir beginnen mit Ihren Akquisitionskriterien: Sektor, Geografie, Umsatzbereich, EBITDA-Schwellenwerte. Wir erstellen ein Zielprofil und einigen uns auf KPIs, bevor wir einen einzelnen Interessenten ansprechen.',
-    step2_title: 'Wir Greifen zum Hörer', step2_desc: 'Wir sprechen Unternehmer ausschließlich per Direktanruf an. Kein Massen-E-Mail. Keine LinkedIn-Automatisierung. Old-School, vertrauensbasierter Kontakt, weil das echte Verkäufer an den Tisch bringt.',
-    step4_title: 'Sie Erhalten ein vollständiges Briefing', step4_desc: 'Vor jedem Meeting erhalten Sie ein strukturiertes Briefing zum Zielunternehmen: Unternehmensüberblick, Finanzkennzahlen, Inhaberprofil und Hintergrund zur Verkaufsmotivation.',
-    step5_title: 'Sie Führen das Management-Meeting', step5_desc: 'Sie gehen vorbereitet rein. Wir haben die Vorarbeit geleistet. Von hier aus führen Sie Ihren Standardprozess, wir halten die Pipeline am Laufen.',
-    step3_title: 'Wir Qualifizieren und Filtern', step3_desc: 'Wir prüfen jeden Lead vorab gegen Ihre Kriterien. Sie sehen nur Verkäufer, die wirklich offen für ein Gespräch sind und Ihre finanziellen Schwellenwerte erfüllen.',
-    step4_title: 'Sie Führen das Management-Meeting', step4_desc: 'Wir übergeben Ihnen eine warme, qualifizierte Gelegenheit. Von hier aus führen Sie Ihren Standardprozess. Wir tracken, berichten und halten die Pipeline am Laufen.',
-    track_label: 'Erfolgsbilanz', track_title: 'Bewährt in Verschiedenen Sektoren und Regionen',
-    track1_title: 'Buy & Build – Familiengeführtes Lebensmittelunternehmen', track1_desc: 'Expansionsstrategie nach Osteuropa für ein familiengeführtes Lebensmittelunternehmen.', track1_result: '✓ 3 strategische Akquisitionen erfolgreich facilitiert',
-    track2_title: 'Buy-Side Sourcing – Industrielle Akquisition', track2_desc: 'Buy-Side-Unterstützung für einen PE-Fonds, der Off-Market-Industrieunternehmen in der DACH-Region anvisiert. 23 Management-Meetings mit qualifizierten Zielunternehmen im Sektor durchgeführt.', track2_result: '✓ Unternehmen erfolgreich akquiriert',
-    track3_title: 'Lizenzakquisition – Krypto-Brokerage', track3_desc: 'Lizenzakquisitions-Unterstützung für eine große europäische Krypto-Brokerage in Malta.', track3_result: '✓ Regulatorische Genehmigung und Markteintritt facilitiert',
-    testimonial: '„Kaitsar hat mir geholfen, meine Karriere komplett zu verändern. Innerhalb von zwei Wochen hatte ich bereits 3 Gespräche mit Private-Equity-Spielern."',
-    cta_title: 'Bereit, Ihre Pipeline Aufzubauen?', cta_sub: 'Lassen Sie uns Ihr Mandat besprechen.',
-    cta_btn1: 'Beratung Vereinbaren →', cta_btn2: 'Leistungen Ansehen',
-    svc_hero_title: 'M&A Dienstleistungen', svc_hero_sub: 'Professionelle Deal-Origination-Unterstützung für Private-Equity-Firmen, strategische Käufer und Search Funds.',
-    buyside_title: 'Buy-Side Unterstützung', buyside_sub: 'Drei Stufen der Akquisitions-Beschaffung, angepasst an Ihren Workflow',
-    bs1_title: 'Ziel-Engagement', bs1_desc: 'Sie liefern die Zielliste, wir übernehmen Outreach, Qualifizierung und Management-Meeting-Facilitation.',
-    bs1_f1: 'Professionelle Marktansprache', bs1_f2: 'Moderation von Management-Meetings', bs1_f3: 'Qualifizierung von Gelegenheiten', bs1_f4: 'CRM-Verwaltung', bs1_f5: 'Wöchentliche Fortschrittsberichte',
-    bs2_title: 'Komplettes Sourcing', bs2_desc: 'Wir recherchieren Ziele, bauen Ihre Pipeline auf und verwalten den gesamten Engagement-Prozess.',
-    bs2_f1: 'Zielrecherche & Markt-Mapping', bs2_f2: 'Strategisches Interessenten-Engagement', bs2_f3: 'Management-Meeting-Facilitation', bs2_f4: 'Deal-Opportunitäts-Qualifizierung', bs2_f5: 'CRM-Verwaltung & Tracking', bs2_f6: 'Umfassende Berichterstattung',
-    bs3_title: 'Partnerschaftsunterstützung', bs3_desc: 'Full-Service-Unterstützung vom Sourcing bis zum Deal-Abschluss.',
-    bs3_f1: 'Marktforschung & Zielidentifikation', bs3_f2: 'Interessenten-Engagement auf Führungsebene', bs3_f3: 'Management-Meeting-Facilitation', bs3_f4: 'Deal-Prozessberatung', bs3_f5: 'Langfristige Beziehungspflege', bs3_f6: 'Transaktionsberatung',
-    broker_title: 'M&A-Maklerunterstützung', broker_sub: 'Zwei Stufen für Mandatsakquise',
-    ma1_title: 'Mandatsentwicklung', ma1_desc: 'Sie stellen die Interessentenliste bereit, wir sprechen Entscheidungsträger an.',
-    ma1_f1: 'Aufbau von C-Level-Beziehungen', ma1_f2: 'Mandatsfokussiertes Engagement', ma1_f3: 'Beratungspositionierung', ma1_f4: 'Meeting-Planung & Vorqualifizierung', ma1_f5: 'Pipeline-Tracking & Analyse',
-    ma2_title: 'Marktentwicklung', ma2_desc: 'Wir identifizieren Interessenten und bauen Beziehungen auf, um hochwertige Mandate zu sichern.',
-    ma2_f1: 'Marktanalyse & Interessentenidentifikation', ma2_f2: 'Aufbau von Führungsbeziehungen', ma2_f3: 'Strategische Beratungspositionierung', ma2_f4: 'Mandatsverhandlungsunterstützung', ma2_f5: 'Langfristige Kundenpflege', ma2_f6: 'Deal-Pipeline-Optimierung',
-    sell_title: 'Sell-Side Dienstleistungen', sell_sub: 'Selektive Unterstützung für Sell-Side Engagements',
-    sell_card_title: 'Maßgeschneiderte Sell-Side Unterstützung', sell_card_desc: 'Wir arbeiten mit Europas besten Sell-Side-Beratern zusammen. Jede Gelegenheit wird individuell bewertet.',
-    sell_cta: 'Anforderungen Besprechen →',
-    svc_cta_title: 'Bereit, Ihre Deals zu Beschleunigen?', svc_cta_sub: 'Lassen Sie uns besprechen, wie unsere Leistungen zu Ihrer Akquisitionsstrategie passen.',
-    svc_cta_btn: 'Beratung Vereinbaren →', learn_more: 'Mehr Erfahren',
-    pricing_hero_title: 'Deals Verwirklichen.', pricing_hero_sub: 'Lernen Sie, Unternehmen zu verkaufen. Vom ersten Gespräch bis zum ersten abgeschlossenen Deal – in nur 4 Wochen.',
-    pricing_label: 'Preise & Anmeldung', pricing_title: 'Ein Programm. Alles, Was Sie Brauchen.',
-    pricing_sub: 'Intensives 4-Wochen-Programm mit Live-Sitzungen, Community-Zugang und allem, was Sie für Ihren ersten Deal brauchen.',
-    price1_name: 'Standard-Zugang', price1_sub: 'Vollprogramm, selbst gestaltet',
-    price2_name: 'Live-Kohorte', price2_sub: '3 Live-Sitzungen pro Woche + Community',
-    price_once: 'Einmalige Zahlung', early_badge: 'Früher Zugang',
-    includes: 'Was ist enthalten',
-    pf1: '6 Kernlektionen (Video + Workbook)', pf2: 'Sofort einsetzbare Verträge', pf3: 'Skripte, Vorlagen & Checklisten', pf4: 'Zugang zur privaten Community',
-    pf_live1: '3 Live-Abendsitzungen pro Woche', pf_live2: '2 Vorlesungen + 1 interaktives Q&A-Tutorial', pf_live3: 'Sofort einsetzbare Verträge', pf_live4: 'Vollständiges Makler-Setup inklusive', pf_live5: 'Private Community (kostenlos für Frühbucher)', pf_live6: 'Skripte, Vorlagen & Checklisten',
-    enroll_std: 'Jetzt Anmelden', enroll_live: 'Jetzt Anmelden, €600 Sparen →',
-    urgency: '⚡ Noch 7 Frühbucher-Plätze · Angebot endet am 30. Okt',
-    curriculum_label: 'Lehrplan', curriculum_title: '6 Lektionen zur Beherrschung des Deal-Sourcings',
-    l1_title: 'Wie M&A Wirklich Funktioniert', l1_desc: 'Realitäten des M&A-Sourcings, häufige Mythen und die notwendige Denkweise.',
-    l2_title: 'Finanzen 101', l2_desc: 'Wichtige Kennzahlen: Umsatz, EBITDA, Cashflow, Multiplikatoren. Bewertungsgrundlagen.',
-    l3_title: 'Aufbau Ihrer Zielliste', l3_desc: 'Wie Sie Unternehmen finden, die tatsächlich verkaufsbereit sind.',
-    l4_title: 'Outreach-Meisterschaft', l4_desc: 'Skripte, E-Mail-/LinkedIn-Strategie und Telefonrahmen, die Antworten erhalten.',
-    l5_title: 'Mind Hacking', l5_desc: 'Praktische Psychologie zur Kontrolle von Gesprächen und schnellem Vertrauensaufbau.',
-    l6_title: 'Vom Ersten Anruf zum Deal', l6_desc: 'Umgang mit Einwänden, Qualifizierung von Leads und Übergabe an Berater.',
-    not_sure: 'Nicht sicher, ob Kaitsar das Richtige für Sie ist?', book_nick: '15-min Gespräch mit Nick Buchen →',
-    about_hero_title: 'Über Kaitsar', about_hero_sub: 'Internationales M&A-Dienstleistungsteam mit nachgewiesener Erfolgsbilanz in europäischen Märkten.',
-    team_label: 'Kontaktpersonen', team_title: 'Vielfältige Expertise in Finanzen, Technologie & Strategie',
-    team1_title: 'Tech-Gründer', team1_desc: 'Serienunternehmer mit tiefer Technologieexpertise und Operator-Mentalität.',
-    team2_title: 'Investment-Banker', team2_desc: 'Mittelstands-M&A-Erfahrung in ganz Europa, mit tiefer Transaktionsexposition.',
-    team3_title: 'BCG-Berater', team3_desc: 'Strategische Beratung und operative Exzellenz von einer der weltweit führenden Firmen.',
-    edu_title: 'Ausbildung', edu_desc: 'Unser Team bringt erstklassige Ausbildung von führenden Institutionen:',
-    presence_title: 'Globale Präsenz', presence_desc: 'Hauptsitz in Zypern. Lokale Präsenz in:',
-    coverage_title: 'Europäische Abdeckung', coverage_sub: 'Aktive Präsenz in wichtigen europäischen Märkten',
-    disc_title: '🔒 Diskretion & Vertraulichkeit',
-    disc_desc1: 'Wir verstehen die sensible Natur von M&A-Transaktionen. Unser Team arbeitet mit höchster Diskretion.',
-    disc_desc2: 'Jedes Kundenmandat wird mit absoluter Vertraulichkeit behandelt. Wir geben niemals Informationen an Dritte weiter.',
-    contact_hero_title: 'Lassen Sie Uns Sprechen', contact_hero_sub: 'Neuer Deal-Flow beginnt hier.',
-    form_title: 'Senden Sie uns eine Nachricht', form_sub: 'Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden.',
-    form_fname: 'Name', form_lname: 'Nachname', form_email: 'E-Mail', form_phone: 'Telefon', form_msg: 'Nachricht', form_msg_ph: 'Teilen Sie uns Ihre M&A-Anforderungen mit...', form_send: 'Nachricht Senden',
-    hq_title: '🏢 Hauptsitz', local_title: '📍 Lokale Präsenz', email_title: '✉️ E-Mail',
-    book_title: '📅 Meeting Buchen', book_desc: 'Vereinbaren Sie eine direkte Beratung zu Ihren M&A-Anforderungen.', book_btn: 'Meeting mit Nick Buchen →',
-    footer_desc: 'Professionelle M&A Deal-Origination in ganz Europa. Wir finden die Off-Market-Deals, die Ihre Strategie voranbringen.',
-    footer_legal: 'Kaitsar Capital Ltd. bietet M&A-Deal-Sourcing-Dienstleistungen an. Das Unternehmen agiert nicht als Finanzberater.',
-    footer_company: 'Unternehmen', footer_legal_head: 'Rechtliches',
-    privacy: 'Datenschutzrichtlinie', terms: 'AGB', impressum: 'Impressum',
-    calc_hero_title: 'Preiskonfigurator', calc_hero_sub: 'Stellen Sie Ihre Parameter ein. Sehen Sie genau, was ein Kaitsar-Engagement kostet.',
-    calc_configure: 'Engagement Konfigurieren', calc_retainer: 'Monatliches Honorar', calc_dealsize: 'Ziel-Transaktionsgröße', calc_duration: 'Erwartete Suchdauer',
-    calc_fee: 'Erfolgshonorar', calc_waterfall: 'Staffel auf Transaktionswert',
-    tier1_name: 'Erste €1M', tier2_name: '€1M – €5M', tier3_name: 'Über €5M',
-    calc_total_fee: 'Gesamtes Erfolgshonorar', calc_summary: 'Engagement-Zusammenfassung', calc_success_line: 'Erfolgshonorar bei Abschluss', calc_total_cost: 'GESAMTKOSTEN',
-    gate_title: 'Ergebnisse Ansehen', gate_sub: 'Geben Sie Ihre Daten ein, um die vollständige Preisübersicht freizuschalten.', gate_btn: 'Ergebnisse Freischalten →', gate_sub2: 'Freischalten für Gesamtkostenübersicht',
-    modal_title: 'Preise Freischalten', modal_sub: 'Wir senden Ihnen die vollständige Aufschlüsselung und melden uns innerhalb von 24 Stunden.', modal_btn: 'Meine Ergebnisse Sehen →',
-    copyright: '© 2026 Kaitsar Capital Ltd. Alle Rechte vorbehalten.'
-  }
+ "en": {
+  "impressum_sub": "Legal disclosure pursuant to applicable regulations",
+  "legal_updated": "Last updated: March 2026",
+  "terms_h1": "Terms & Conditions",
+  "privacy_h1": "Privacy Policy",
+  "back_home": "← Back to Home",
+  "legal_label": "LEGAL",
+  "local_markets": "Benelux · DACH · UK",
+  "addr_reg": "Reg: ΗΕ 473818",
+  "addr_city": "1070 Nicosia, Cyprus",
+  "map_cy": "Cyprus",
+  "map_uk": "UK",
+  "rng_dur_max": "18 mo",
+  "rng_dur_min": "1 mo",
+  "rng_deal_max": "€50M",
+  "rng_deal_min": "€500k",
+  "rng_ret_max": "€10k / mo",
+  "rng_ret_min": "€0 / mo",
+  "meta_desc": "Off-market M&A deal flow for private equity, strategic buyers and search funds. We call owner-managed companies across DACH, Benelux and the UK and put you in front of sellers who aren't on the market.",
+  "meta_title": "Kaitsar Capital | Off-Market M&A Deal Origination in Europe",
+  "nav_home": "HOME",
+  "nav_services": "SERVICES",
+  "nav_calculator": "CALCULATOR",
+  "nav_about": "ABOUT",
+  "nav_contact": "CONTACT",
+  "nav_cta": "Book a Call",
+  "home_eyebrow": "Off-Market M&A Deal Origination · Europe",
+  "home_h1": "We Source the Deals <span>You Can't Find.</span>",
+  "home_sub": "We call owner-managed companies across DACH, Benelux and the UK on your behalf and put you in front of sellers who aren't on the market. We source, you close.",
+  "home_cta1": "Book a Consultation →",
+  "home_cta2": "View Services",
+  "stat1": "Mandates Secured",
+  "stat2": "Acquisitions Facilitated",
+  "stat3": "European Markets",
+  "stat4": "Track Record",
+  "why_label": "Why Kaitsar",
+  "why_title": "Deal Flow That Is Actually Off-Market",
+  "why1_title": "Phone, Not Spam",
+  "why1_desc": "Every owner is approached personally, by phone. No mass email, no LinkedIn automation. That is why real sellers take the call.",
+  "why2_title": "Qualified, Not Listed",
+  "why2_desc": "You don't get a spreadsheet of names. You meet owners who agreed to a conversation and fit your criteria, with a briefing in hand.",
+  "why3_title": "Paid on Results",
+  "why3_desc": "Engagements can run on a pure success fee, so we carry the performance risk. Check the numbers yourself.",
+  "why3_link": "Open the Calculator",
+  "serve_label": "Who We Work With",
+  "serve_title": "Built for Buyers Who Acquire at Scale",
+  "serve_sub": "We work exclusively with professional acquirers who have a clear mandate and the capacity to close.",
+  "serve1_title": "Private Equity",
+  "serve1_desc": "Buy-side sourcing for PE funds hunting off-market platforms and add-ons across DACH, Benelux and the UK.",
+  "serve2_title": "Strategic Buyers",
+  "serve2_desc": "Corporate acquirers looking for bolt-on targets without alerting the market or their competitors.",
+  "serve4_title": "Search Funds",
+  "serve4_desc": "Searchers who need a steady flow of qualified owners without spending their own time on cold outreach.",
+  "how_label": "How It Works",
+  "how_title": "From Mandate to Management Meeting",
+  "how_sub": "A disciplined, repeatable process that turns your acquisition criteria into qualified conversations with business owners.",
+  "step1_title": "We Learn Your Mandate",
+  "step1_desc": "We start with your acquisition criteria: sector, geography, revenue range, EBITDA thresholds. We build a target profile and agree on KPIs before engaging a single prospect.",
+  "step2_title": "We Pick Up the Phone",
+  "step2_desc": "We engage business owners exclusively through direct phone calls. No mass email. No LinkedIn automation. Old-school, high-trust outreach, because that's what gets real sellers to the table.",
+  "step3_title": "We Qualify and Filter",
+  "step3_desc": "We pre-screen every lead against your criteria. You only see sellers who are genuinely open to a conversation and meet your financial thresholds.",
+  "step4_title": "You Receive a Full Briefing",
+  "step4_desc": "Before any meeting, you receive a structured briefing on the target: business overview, financials, owner profile and context on their motivation to sell.",
+  "step5_title": "You Take the Management Meeting",
+  "step5_desc": "You walk in prepared. The groundwork is done. From here you run your standard process, and we keep the pipeline flowing.",
+  "track_label": "Track Record",
+  "track_title": "Proven Across Sectors and Geographies",
+  "track1_title": "Buy & Build – Family Food Business",
+  "track1_desc": "Expansion strategy into Eastern Europe for a family-owned food business. Full target research, outreach and management meeting set-up.",
+  "track1_result": "✓ 3 strategic acquisitions facilitated",
+  "track2_title": "Buy-Side Sourcing – Industrial Acquisition",
+  "track2_desc": "Buy-side support for a PE fund targeting off-market industrial companies in the DACH region. 23 management meetings held with qualified targets across the sector.",
+  "track2_result": "✓ Company successfully acquired",
+  "track3_title": "License Acquisition – Crypto Brokerage",
+  "track3_desc": "License acquisition support for a major European crypto brokerage seeking regulated entry into Malta's market.",
+  "track3_result": "✓ Regulatory approval and market entry achieved",
+  "cta_title": "Tell Us What You Want to Buy.",
+  "cta_sub": "One call is enough to see whether we can fill your pipeline, and how fast.",
+  "cta_btn1": "Book a Consultation →",
+  "cta_btn2": "View Services",
+  "svc_hero_title": "M&A Services",
+  "svc_hero_sub": "Deal origination for private equity, strategic buyers and search funds. You decide how much of the sourcing to hand over.",
+  "buyside_title": "Buy-Side Support",
+  "buyside_sub": "Three levels of sourcing, depending on how much you want to hand over",
+  "bs1_title": "Target Engagement",
+  "bs1_desc": "You bring the target list. We run outreach, qualification and management meeting set-up.",
+  "bs1_f1": "Direct phone outreach to owners",
+  "bs1_f2": "Management meeting set-up",
+  "bs1_f3": "Opportunity qualification",
+  "bs1_f4": "CRM management",
+  "bs1_f5": "Weekly progress reporting",
+  "bs2_title": "Complete Sourcing",
+  "bs2_desc": "We map the market, build the target list and run the full engagement through to management meetings.",
+  "bs2_f1": "Target research & market mapping",
+  "bs2_f2": "Owner outreach & engagement",
+  "bs2_f3": "Management meeting set-up",
+  "bs2_f4": "Qualification against your criteria",
+  "bs2_f5": "CRM management & tracking",
+  "bs2_f6": "Full pipeline reporting",
+  "bs3_title": "Partnership Support",
+  "bs3_desc": "End-to-end support from sourcing to closing, with ongoing relationship management.",
+  "bs3_f1": "Market research & target identification",
+  "bs3_f2": "Executive-level owner engagement",
+  "bs3_f3": "Management meeting set-up",
+  "bs3_f4": "Deal process guidance",
+  "bs3_f5": "Long-term relationship management",
+  "bs3_f6": "Transaction advisory support",
+  "learn_more": "Discuss This Scope",
+  "sell_title": "Sell-Side Services",
+  "sell_sub": "Selective support for sell-side engagements",
+  "sell_card_title": "Custom Sell-Side Support",
+  "sell_card_desc": "We work alongside established European sell-side advisors. Each opportunity is assessed individually on requirements, market conditions and strategic fit.",
+  "sell_cta": "Discuss Your Requirements →",
+  "svc_cta_title": "Ready to Accelerate Your Deals?",
+  "svc_cta_sub": "Let's discuss how our services fit your acquisition strategy.",
+  "svc_cta_btn": "Book a Consultation →",
+  "about_hero_title": "About Kaitsar",
+  "about_hero_sub": "A team from the Mittelstand, private equity and SME research. We know how owners think, and what buyers need to see.",
+  "team_label": "Your Contacts",
+  "team_title": "The People Who Run Your Mandate",
+  "team_nik_role": "Founder",
+  "team_nik_bio": "Raised in an Austrian SME family, Nikolai built tech start-ups in the Netherlands before entering a joint venture with a private equity firm. He founded Kaitsar Capital to help solve Europe's business succession challenge, connecting owners ready to exit with the right buyers.",
+  "team_tina_role": "Partner / COO",
+  "team_tina_bio": "Leaving research in entrepreneurship for hands-on M&A, Tina took an unconventional path into Germany's SME landscape. Through her work on SMEs with the German Ministry of Finance, she recognised succession as a critical bottleneck. Driven by the lack of options for business owners, she now initiates off-market connections that would not exist otherwise.",
+  "edu_title": "Education",
+  "edu_desc": "Our team was educated at leading institutions in:",
+  "presence_title": "Where We Operate",
+  "presence_desc": "Active in:",
+  "coverage_title": "European Coverage",
+  "coverage_sub": "Active presence across key European markets",
+  "disc_title": "Discretion & Confidentiality",
+  "disc_desc1": "We understand the sensitive nature of M&A transactions. Our team operates with the highest level of discretion and maintains strict confidentiality throughout every engagement.",
+  "disc_desc2": "Every client mandate is treated with absolute confidentiality. We never disclose client relationships, transaction details or strategic information to third parties.",
+  "contact_hero_title": "Let's Talk",
+  "contact_hero_sub": "New deal flow starts here.",
+  "form_title": "Send Us a Message",
+  "form_sub": "Tell us about your mandate. We reply within 24 hours.",
+  "form_fname": "First Name",
+  "form_lname": "Last Name",
+  "form_company": "Company",
+  "form_email": "Email",
+  "form_phone": "Phone",
+  "form_msg": "Your Mandate",
+  "form_msg_ph": "Sector, geography, revenue or EBITDA range, timeline...",
+  "form_send": "Send Message",
+  "form_sending": "Sending…",
+  "form_sent": "✓ Message sent. We'll be in touch within 24 hours.",
+  "form_error": "Something went wrong. Please email us at office@kaitsar.com.",
+  "form_mailto": "Your email app has opened with your message. Just hit send.",
+  "hq_title": "Headquarters",
+  "local_title": "Local Presence",
+  "email_title": "Email",
+  "book_title": "Book a Meeting",
+  "book_desc": "Skip the form and pick a time directly.",
+  "book_btn": "Book a Meeting with Nick →",
+  "calc_hero_title": "Pricing Configurator",
+  "calc_hero_sub": "Set your parameters. See exactly what a Kaitsar engagement costs, and when it pays for itself.",
+  "calc_configure": "Configure Engagement",
+  "calc_retainer": "Monthly Retainer",
+  "calc_dealsize": "Target Transaction Size",
+  "calc_duration": "Expected Search Duration",
+  "calc_fee": "Success Fee",
+  "calc_waterfall": "Waterfall on transaction value",
+  "tier1_name": "First €1M",
+  "tier2_name": "€1M – €5M",
+  "tier3_name": "Above €5M",
+  "calc_total_fee": "Total Success Fee",
+  "calc_summary": "Engagement Summary",
+  "calc_success_line": "Success fee at close",
+  "calc_total_cost": "TOTAL COST",
+  "gate_title": "See Your Results",
+  "gate_sub": "Enter your details to unlock the full pricing breakdown.",
+  "gate_btn": "Unlock Results →",
+  "gate_sub2": "Unlock to see the total cost breakdown",
+  "modal_title": "Unlock Your Pricing",
+  "modal_sub": "We'll send you the full breakdown and follow up within 24 hours.",
+  "modal_btn": "See My Results →",
+  "gate_name": "Name",
+  "footer_desc": "Professional M&A deal origination across Europe. We source the off-market deals that move your strategy forward.",
+  "footer_legal": "Kaitsar Capital Ltd. provides M&A deal sourcing services. The company does not act as a financial advisor or investment intermediary.",
+  "footer_company": "Company",
+  "footer_legal_head": "Legal",
+  "privacy": "Privacy Policy",
+  "terms": "Terms & Conditions",
+  "impressum": "Impressum",
+  "copyright": "© 2026 Kaitsar Capital Ltd. All rights reserved.",
+  "u_mo": "mo",
+  "u_months": "months",
+  "u_eff": "effective rate",
+  "u_ret": "Retainer",
+  "insight_zero": "Pure success fee: Kaitsar assumes full performance risk. No upfront cost to you.",
+  "insight_a": "A retainer of ",
+  "insight_b": " reduces your success fee by ",
+  "insight_c": ". Shared risk, shared upside.",
+  "tag_ch": "Switzerland",
+  "tag_hk": "Hong Kong",
+  "tag_uk": "UK",
+  "tag_nl": "Netherlands",
+  "tag_de": "Germany",
+  "tag_benelux": "Benelux",
+  "tag_dach": "DACH",
+  "tag_cy": "Cyprus",
+  "tt_food": "Benelux · Food",
+  "tt_pe": "DACH · Private Equity",
+  "tt_crypto": "Malta · Crypto"
+ },
+ "de": {
+  "impressum_sub": "Anbieterkennzeichnung",
+  "legal_updated": "Stand: März 2026",
+  "terms_h1": "Nutzungsbedingungen",
+  "privacy_h1": "Datenschutzerklärung",
+  "back_home": "← Zur Startseite",
+  "legal_label": "RECHTLICHES",
+  "local_markets": "Benelux · DACH · Großbritannien",
+  "addr_reg": "Reg.-Nr.: ΗΕ 473818",
+  "addr_city": "1070 Nikosia, Zypern",
+  "map_cy": "Zypern",
+  "map_uk": "UK",
+  "rng_dur_max": "18 Mon.",
+  "rng_dur_min": "1 Mon.",
+  "rng_deal_max": "50 Mio. €",
+  "rng_deal_min": "500 Tsd. €",
+  "rng_ret_max": "10 Tsd. € / Mon.",
+  "rng_ret_min": "0 € / Mon.",
+  "meta_desc": "Off-Market-Deal-Flow für Private Equity, strategische Käufer und Search Funds. Wir sprechen inhabergeführte Unternehmen in DACH, Benelux und Großbritannien telefonisch an und bringen Sie mit Verkäufern zusammen, deren Unternehmen nirgends angeboten wird.",
+  "meta_title": "Kaitsar Capital | Off-Market-Deal-Sourcing für Unternehmenskäufer in Europa",
+  "nav_home": "START",
+  "nav_services": "LEISTUNGEN",
+  "nav_calculator": "HONORARRECHNER",
+  "nav_about": "ÜBER UNS",
+  "nav_contact": "KONTAKT",
+  "nav_cta": "Gespräch vereinbaren",
+  "home_eyebrow": "Off-Market-Deal-Sourcing · Europa",
+  "home_h1": "Wir finden die Deals, <span>die Sie selbst nicht finden.</span>",
+  "home_sub": "Wir rufen inhabergeführte Unternehmen in DACH, Benelux und Großbritannien in Ihrem Auftrag an und bringen Sie mit Verkäufern zusammen, deren Unternehmen nirgends angeboten wird. Wir öffnen die Tür – den Deal machen Sie.",
+  "home_cta1": "Erstgespräch vereinbaren →",
+  "home_cta2": "Unsere Leistungen",
+  "stat1": "Gewonnene Mandate",
+  "stat2": "Begleitete Übernahmen",
+  "stat3": "Märkte in Europa",
+  "stat4": "Track Record",
+  "why_label": "Warum Kaitsar",
+  "why_title": "Deal Flow, den sonst niemand sieht.",
+  "why1_title": "Anrufen statt anschreiben",
+  "why1_desc": "Wir sprechen jeden Inhaber persönlich am Telefon an. Keine Massenmails, keine automatisierten LinkedIn-Nachrichten. Deshalb nehmen sich verkaufsbereite Unternehmer Zeit für ein Gespräch.",
+  "why2_title": "Termine statt Namenslisten",
+  "why2_desc": "Sie bekommen keine Excel-Liste mit Firmennamen, sondern Termine mit Inhabern, die offen für ein Gespräch sind und zu Ihren Kriterien passen – inklusive Briefing.",
+  "why3_title": "Vergütung nach Erfolg",
+  "why3_desc": "Auf Wunsch arbeiten wir rein erfolgsbasiert. Das Risiko liegt dann bei uns. Rechnen Sie selbst nach.",
+  "why3_link": "Zum Honorarrechner",
+  "serve_label": "Für wen wir arbeiten",
+  "serve_title": "Für Käufer mit klarer Akquisitionsstrategie",
+  "serve_sub": "Wir arbeiten ausschließlich für professionelle Käufer mit konkretem Suchprofil und den Mitteln, eine Transaktion auch abzuschließen.",
+  "serve1_title": "Private Equity",
+  "serve1_desc": "Plattform-Investments und Add-ons in DACH, Benelux und Großbritannien – gezielt gesucht, abseits laufender Verkaufsprozesse.",
+  "serve2_title": "Strategische Käufer",
+  "serve2_desc": "Unternehmen, die zukaufen wollen, ohne dass Markt und Wettbewerb davon erfahren.",
+  "serve4_title": "Search Funds",
+  "serve4_desc": "Searcher, die laufend gesprächsbereite Inhaber brauchen, ohne ihre eigene Zeit in Kaltakquise zu stecken.",
+  "how_label": "Ablauf",
+  "how_title": "Vom Suchprofil zum Inhabergespräch",
+  "how_sub": "Ein klarer, wiederholbarer Prozess: Aus Ihren Kriterien werden konkrete Gespräche mit verkaufsbereiten Unternehmern.",
+  "step1_title": "Wir schärfen Ihr Suchprofil",
+  "step1_desc": "Branche, Region, Umsatz, EBITDA: Wir übersetzen Ihre Kriterien in ein klares Zielprofil und legen gemeinsam KPIs fest – bevor der erste Anruf erfolgt.",
+  "step2_title": "Wir greifen zum Telefon",
+  "step2_desc": "Wir sprechen Inhaber ausschließlich direkt am Telefon an. Keine Massenmails, keine LinkedIn-Automatisierung. Persönlich und auf Vertrauensbasis – nur so kommen echte Verkäufer an den Tisch.",
+  "step3_title": "Wir prüfen und filtern",
+  "step3_desc": "Jeder Kontakt wird an Ihren Kriterien gemessen. Sie sprechen nur mit Inhabern, die wirklich gesprächsbereit sind und Ihre finanziellen Vorgaben erfüllen.",
+  "step4_title": "Sie erhalten ein fundiertes Briefing",
+  "step4_desc": "Vor jedem Termin bekommen Sie ein strukturiertes Briefing: Geschäftsmodell, Kennzahlen, Inhaberprofil und die Gründe für einen möglichen Verkauf.",
+  "step5_title": "Sie führen das Gespräch",
+  "step5_desc": "Sie gehen bestens vorbereitet in den Termin. Danach läuft Ihr gewohnter Prozess weiter – und wir sorgen für Nachschub in der Pipeline.",
+  "track_label": "Ausgewählte Mandate",
+  "track_title": "Erfolgreich über Branchen und Ländergrenzen hinweg",
+  "track1_title": "Buy & Build – Familienunternehmen im Lebensmittelsektor",
+  "track1_desc": "Expansion nach Osteuropa für ein familiengeführtes Lebensmittelunternehmen: Zielrecherche, Direktansprache und Organisation der Inhabergespräche.",
+  "track1_result": "✓ Drei strategische Zukäufe begleitet",
+  "track2_title": "Buy-Side-Mandat – Industrieunternehmen",
+  "track2_desc": "Für einen PE-Fonds haben wir in der DACH-Region gezielt Industrieunternehmen angesprochen, die nicht im Verkaufsprozess waren. Ergebnis: 23 Gespräche mit qualifizierten Inhabern.",
+  "track2_result": "✓ Übernahme erfolgreich abgeschlossen",
+  "track3_title": "Lizenzerwerb – Krypto-Broker",
+  "track3_desc": "Begleitung eines großen europäischen Krypto-Brokers beim Erwerb einer Lizenz für den regulierten Markteintritt in Malta.",
+  "track3_result": "✓ Lizenz erteilt, Markteintritt vollzogen",
+  "cta_title": "Sagen Sie uns, was Sie kaufen wollen.",
+  "cta_sub": "Ein Gespräch genügt, um zu klären, ob und wie schnell wir Ihre Pipeline füllen können.",
+  "cta_btn1": "Erstgespräch vereinbaren →",
+  "cta_btn2": "Unsere Leistungen",
+  "svc_hero_title": "Leistungen",
+  "svc_hero_sub": "Deal-Sourcing für Private Equity, strategische Käufer und Search Funds. Sie bestimmen, wie viel Sie an uns abgeben.",
+  "buyside_title": "Buy-Side",
+  "buyside_sub": "Drei Leistungsstufen – je nachdem, wie viel Sie selbst übernehmen möchten",
+  "bs1_title": "Direktansprache",
+  "bs1_desc": "Sie liefern die Zielliste, wir übernehmen Ansprache, Qualifizierung und Terminvereinbarung.",
+  "bs1_f1": "Telefonische Direktansprache der Inhaber",
+  "bs1_f2": "Vereinbarung der Inhabergespräche",
+  "bs1_f3": "Qualifizierung jedes Kontakts",
+  "bs1_f4": "CRM-Pflege",
+  "bs1_f5": "Wöchentlicher Statusbericht",
+  "bs2_title": "Komplettes Sourcing",
+  "bs2_desc": "Wir analysieren den Markt, erstellen die Zielliste und begleiten den gesamten Prozess bis zum Inhabergespräch.",
+  "bs2_f1": "Marktanalyse und Zielrecherche",
+  "bs2_f2": "Ansprache und Betreuung der Inhaber",
+  "bs2_f3": "Vereinbarung der Inhabergespräche",
+  "bs2_f4": "Prüfung anhand Ihrer Kriterien",
+  "bs2_f5": "CRM-Pflege und Tracking",
+  "bs2_f6": "Laufendes Pipeline-Reporting",
+  "bs3_title": "Partnerschaft",
+  "bs3_desc": "Wir begleiten Sie vom ersten Kontakt bis zum Closing und pflegen die Beziehungen langfristig.",
+  "bs3_f1": "Marktanalyse und Zielidentifikation",
+  "bs3_f2": "Ansprache auf Geschäftsführungsebene",
+  "bs3_f3": "Vereinbarung der Inhabergespräche",
+  "bs3_f4": "Begleitung des Transaktionsprozesses",
+  "bs3_f5": "Langfristige Beziehungspflege",
+  "bs3_f6": "Unterstützung bei Transaktionsfragen",
+  "learn_more": "Unverbindlich anfragen",
+  "sell_title": "Sell-Side",
+  "sell_sub": "Ausgewählte Verkaufsmandate",
+  "sell_card_title": "Unterstützung auf der Verkäuferseite",
+  "sell_card_desc": "Wir arbeiten mit etablierten Sell-Side-Beratern in ganz Europa zusammen und prüfen jede Anfrage einzeln: nach Anforderungen, Marktlage und strategischem Fit.",
+  "sell_cta": "Anfrage besprechen →",
+  "svc_cta_title": "Bereit für mehr Deal Flow?",
+  "svc_cta_sub": "Lassen Sie uns besprechen, wie wir Ihre Akquisitionsstrategie unterstützen können.",
+  "svc_cta_btn": "Erstgespräch vereinbaren →",
+  "about_hero_title": "Über Kaitsar",
+  "about_hero_sub": "Ein Team aus Mittelstand, Private Equity und Mittelstandsforschung. Wir wissen, wie Inhaber denken und was Käufer sehen wollen.",
+  "team_label": "Ansprechpartner",
+  "team_title": "Wer Ihr Mandat betreut",
+  "team_nik_role": "Gründer",
+  "team_nik_bio": "Nikolai stammt aus einer österreichischen Unternehmerfamilie. Er gründete Tech-Start-ups in den Niederlanden und ging anschließend ein Joint Venture mit einer Private-Equity-Gesellschaft ein. Mit Kaitsar Capital setzt er dort an, wo der Mittelstand ein echtes Problem hat: bei der Nachfolge. Er bringt Inhaber, die übergeben wollen, mit den passenden Käufern zusammen.",
+  "team_tina_role": "Partnerin & COO",
+  "team_tina_bio": "Tina wechselte aus der Gründungsforschung ins M&A – ein ungewöhnlicher Weg in den deutschen Mittelstand. In ihrer Arbeit mit dem Bundesministerium der Finanzen zum Thema Mittelstand wurde ihr klar: Die Nachfolge ist zum Engpass geworden. Weil vielen Inhabern schlicht die Optionen fehlen, stellt sie heute Kontakte her, die über den regulären Markt nie zustande kämen.",
+  "edu_title": "Ausbildung",
+  "edu_desc": "Unser Team hat an renommierten Hochschulen studiert, unter anderem in:",
+  "presence_title": "Wo wir aktiv sind",
+  "presence_desc": "Aktiv in:",
+  "coverage_title": "Unsere Märkte",
+  "coverage_sub": "Präsenz in den wichtigsten Märkten Europas",
+  "disc_title": "Diskretion",
+  "disc_desc1": "M&A ist Vertrauenssache. Wir arbeiten mit größter Diskretion und behandeln jedes Mandat streng vertraulich.",
+  "disc_desc2": "Kundenbeziehungen, Transaktionsdetails und strategische Informationen geben wir niemals an Dritte weiter.",
+  "contact_hero_title": "Sprechen wir.",
+  "contact_hero_sub": "Hier beginnt Ihr Deal Flow.",
+  "form_title": "Nachricht senden",
+  "form_sub": "Schildern Sie uns kurz Ihr Suchprofil. Wir melden uns innerhalb von 24 Stunden.",
+  "form_fname": "Vorname",
+  "form_lname": "Nachname",
+  "form_company": "Unternehmen",
+  "form_email": "E-Mail",
+  "form_phone": "Telefon",
+  "form_msg": "Ihr Suchprofil",
+  "form_msg_ph": "Branche, Region, Umsatz bzw. EBITDA, Zeitrahmen …",
+  "form_send": "Absenden",
+  "form_sending": "Wird gesendet …",
+  "form_sent": "✓ Vielen Dank! Wir melden uns innerhalb von 24 Stunden.",
+  "form_error": "Das hat leider nicht geklappt. Bitte schreiben Sie uns an office@kaitsar.com.",
+  "form_mailto": "Ihr E-Mail-Programm wurde mit Ihrer Nachricht geöffnet – Sie müssen nur noch auf „Senden“ klicken.",
+  "hq_title": "Hauptsitz",
+  "local_title": "Präsenz vor Ort",
+  "email_title": "E-Mail",
+  "book_title": "Termin buchen",
+  "book_desc": "Lieber gleich sprechen? Wählen Sie einfach einen passenden Termin.",
+  "book_btn": "Termin mit Nikolai Rutter buchen →",
+  "calc_hero_title": "Honorarrechner",
+  "calc_hero_sub": "Stellen Sie Ihre Parameter ein und sehen Sie sofort, was ein Mandat kostet – und ab wann es sich rechnet.",
+  "calc_configure": "Ihre Parameter",
+  "calc_retainer": "Monatlicher Retainer",
+  "calc_dealsize": "Angestrebter Transaktionswert",
+  "calc_duration": "Erwartete Suchdauer",
+  "calc_fee": "Erfolgshonorar",
+  "calc_waterfall": "Gestaffelt nach Transaktionswert",
+  "tier1_name": "Bis 1 Mio. €",
+  "tier2_name": "1 bis 5 Mio. €",
+  "tier3_name": "Über 5 Mio. €",
+  "calc_total_fee": "Erfolgshonorar gesamt",
+  "calc_summary": "Übersicht",
+  "calc_success_line": "Erfolgshonorar bei Abschluss",
+  "calc_total_cost": "GESAMTKOSTEN",
+  "gate_title": "Ergebnis anzeigen",
+  "gate_sub": "Geben Sie Ihre Kontaktdaten ein, um die vollständige Kalkulation zu sehen.",
+  "gate_btn": "Ergebnis freischalten →",
+  "gate_sub2": "Freischalten, um die Gesamtkosten zu sehen",
+  "modal_title": "Kalkulation freischalten",
+  "modal_sub": "Wir schicken Ihnen die Aufstellung und melden uns innerhalb von 24 Stunden.",
+  "modal_btn": "Ergebnis anzeigen →",
+  "gate_name": "Name",
+  "footer_desc": "M&A-Deal-Sourcing in ganz Europa. Wir finden Unternehmen, die nirgends zum Verkauf stehen – und Ihre Strategie voranbringen.",
+  "footer_legal": "Kaitsar Capital Ltd. ist im M&A-Deal-Sourcing tätig und erbringt weder Finanz- noch Anlageberatung oder -vermittlung.",
+  "footer_company": "Unternehmen",
+  "footer_legal_head": "Rechtliches",
+  "privacy": "Datenschutz",
+  "terms": "AGB",
+  "impressum": "Impressum",
+  "copyright": "© 2026 Kaitsar Capital Ltd. Alle Rechte vorbehalten.",
+  "u_mo": "Mon.",
+  "u_months": "Monate",
+  "u_eff": "effektiv",
+  "u_ret": "Retainer",
+  "insight_zero": "Rein erfolgsbasiert: Kaitsar trägt das volle Risiko. Für Sie fallen keine Vorabkosten an.",
+  "insight_a": "Mit einem Retainer von ",
+  "insight_b": " sinkt Ihr Erfolgshonorar um ",
+  "insight_c": ". Geteiltes Risiko, geteilter Erfolg.",
+  "tag_ch": "Schweiz",
+  "tag_hk": "Hongkong",
+  "tag_uk": "Großbritannien",
+  "tag_nl": "Niederlande",
+  "tag_de": "Deutschland",
+  "tag_benelux": "Benelux",
+  "tag_dach": "DACH",
+  "tag_cy": "Zypern",
+  "tt_food": "Benelux · Lebensmittel",
+  "tt_pe": "DACH · Private Equity",
+  "tt_crypto": "Malta · Krypto"
+ }
 };
+
+// ── LEAD CAPTURE ─────────────────────────────────────────────
+// Paste a free Web3Forms access key (web3forms.com, enter office@kaitsar.com) to receive
+// every contact form and calculator unlock by email. Without a key the contact form falls back
+// to opening the visitor's email app; calculator unlocks are NOT captured.
+const FORM_ENDPOINT = 'https://api.web3forms.com/submit';
+const FORM_ACCESS_KEY = '';
+const LEAD_EMAIL = 'office@kaitsar.com';
+const CALENDLY = 'https://calendly.com/kaitsar-capital/new-meeting';
+
+async function sendLead(type, data, replyTo) {
+  if (FORM_ACCESS_KEY) {
+    const payload = Object.assign({ access_key: FORM_ACCESS_KEY, subject: 'Kaitsar website: ' + type, from_name: 'kaitsar.com', replyto: replyTo || '' }, data);
+    const res = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload) });
+    const j = await res.json().catch(() => ({}));
+    if (!res.ok || j.success === false) throw new Error('send failed');
+    return 'sent';
+  }
+  if (type !== 'Contact form') return 'skipped';
+  const body = Object.entries(data).map(([k, v]) => k + ': ' + v).join('\n');
+  window.location.href = 'mailto:' + LEAD_EMAIL + '?subject=' + encodeURIComponent('Kaitsar website: ' + type) + '&body=' + encodeURIComponent(body);
+  return 'mailto';
+}
 
 // ── STATE ────────────────────────────────────────────────────
 let currentLang = 'en';
@@ -2102,6 +2458,10 @@ function setLang(lang) {
 
 function applyTranslations() {
   const strings = t[currentLang];
+  document.documentElement.lang = currentLang;
+  if (strings.meta_title) document.title = strings.meta_title;
+  const md = document.querySelector('meta[name="description"]');
+  if (md && strings.meta_desc) md.setAttribute('content', strings.meta_desc);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (strings[key] !== undefined) el.textContent = strings[key];
@@ -2110,6 +2470,9 @@ function applyTranslations() {
     const key = el.dataset.i18nHtml;
     if (strings[key] !== undefined) el.innerHTML = strings[key];
   });
+  document.querySelectorAll('[data-nav]').forEach(a => {
+    a.setAttribute('href', '#/' + currentLang + '/' + (a.dataset.nav === 'home' ? '' : a.dataset.nav));
+  });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.dataset.i18nPlaceholder;
     if (strings[key] !== undefined) el.placeholder = strings[key];
@@ -2117,27 +2480,48 @@ function applyTranslations() {
 }
 
 // ── FORM ─────────────────────────────────────────────────────
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = currentLang === 'en' ? '✓ Message Sent!' : '✓ Nachricht Gesendet!';
-  btn.style.background = '#16a34a';
-  setTimeout(() => {
-    btn.textContent = t[currentLang]['form_send'];
-    btn.style.background = '';
-    e.target.reset();
-  }, 3000);
+  const form = e.target, L = t[currentLang];
+  const btn = form.querySelector('button[type="submit"]');
+  const status = document.getElementById('contactStatus');
+  const fd = new FormData(form);
+  if (fd.get('botcheck')) return;
+  const data = {
+    Name: (fd.get('first_name') + ' ' + fd.get('last_name')).trim(),
+    Company: fd.get('company') || '-',
+    Email: fd.get('email'),
+    Phone: fd.get('phone'),
+    Mandate: fd.get('message') || '-',
+    Language: currentLang.toUpperCase()
+  };
+  btn.disabled = true; btn.textContent = L.form_sending;
+  status.className = 'form-status'; status.textContent = '';
+  try {
+    const mode = await sendLead('Contact form', data, data.Email);
+    status.textContent = mode === 'mailto' ? L.form_mailto : L.form_sent;
+    status.classList.add('ok');
+    if (mode === 'sent') form.reset();
+  } catch (err) {
+    status.textContent = L.form_error;
+    status.classList.add('err');
+  }
+  btn.disabled = false; btn.textContent = L.form_send;
 }
 
 // ── CALCULATOR ───────────────────────────────────────────────
 let calcUnlocked = false;
 
+function loc() { return currentLang === 'de' ? 'de-DE' : 'en-GB'; }
+function isDE() { return currentLang === 'de'; }
+function eur(s) { return isDE() ? s + '\u00a0€' : '€' + s; }
 function fmtLabel(n) {
-  if (n >= 1e6) return '€' + (n/1e6).toFixed(1) + 'M';
-  if (n >= 1e3) return '€' + (n/1e3).toFixed(0) + 'k';
-  return '€' + Math.round(n);
+  if (n >= 1e6) return isDE() ? (n/1e6).toFixed(1).replace('.', ',') + '\u00a0Mio.\u00a0€' : '€' + (n/1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return isDE() ? Math.round(n/1e3) + '\u00a0Tsd.\u00a0€' : '€' + (n/1e3).toFixed(0) + 'k';
+  return eur(String(Math.round(n)));
 }
-function fmtFull(n) { return '€' + Math.round(n).toLocaleString('de-DE'); }
+function fmtFull(n) { return eur(Math.round(n).toLocaleString(loc())); }
+function pct(x) { const s = x.toFixed(2); return isDE() ? s.replace('.', ',') + '\u00a0%' : s + '%'; }
 function getDeal(v) { return Math.round(500000 * Math.pow(100, v / 100)); }
 
 function calcUpdate() {
@@ -2158,19 +2542,19 @@ function calcUpdate() {
 
   const t1 = t1a*r1, t2 = t2a*r2, t3 = t3a*r3;
   const totalS = t1+t2+t3;
-  const eff    = ((totalS/deal)*100).toFixed(2);
+  const eff    = pct((totalS/deal)*100);
   const totalR = retainer * duration;
   const grand  = totalS + totalR;
   const discPct = Math.round(discount * 100);
 
   document.getElementById('retainerDisplay').textContent =
-    retainer === 0 ? '€0 / mo' : '€' + retainer.toLocaleString() + ' / mo';
+    eur(retainer.toLocaleString(loc())) + ' / ' + t[currentLang].u_mo;
   document.getElementById('dealDisplay').textContent = fmtLabel(deal);
-  document.getElementById('durationDisplay').textContent = duration + ' months';
+  document.getElementById('durationDisplay').textContent = duration + ' ' + t[currentLang].u_months;
 
-  document.getElementById('tier1Rate').textContent = (r1*100).toFixed(2) + '%';
-  document.getElementById('tier2Rate').textContent = (r2*100).toFixed(2) + '%';
-  document.getElementById('tier3Rate').textContent = (r3*100).toFixed(2) + '%';
+  document.getElementById('tier1Rate').textContent = pct(r1*100);
+  document.getElementById('tier2Rate').textContent = pct(r2*100);
+  document.getElementById('tier3Rate').textContent = pct(r3*100);
   document.getElementById('tier1Fee').textContent = fmtFull(t1);
   document.getElementById('tier2Fee').textContent = fmtFull(t2);
   document.getElementById('tier3Fee').textContent = fmtFull(t3);
@@ -2180,23 +2564,18 @@ function calcUpdate() {
   document.getElementById('tier3Row').className = 'calc-tier-row last' + (t3a>0 ? '' : ' inactive');
 
   document.getElementById('totalSuccessFee').textContent  = fmtFull(totalS);
-  document.getElementById('effectiveRate').textContent    = eff + '% effective rate';
-  document.getElementById('retainerLineLabel').textContent = 'Retainer × ' + duration + ' mo';
+  document.getElementById('effectiveRate').textContent    = eff + ' ' + t[currentLang].u_eff;
+  document.getElementById('retainerLineLabel').textContent = t[currentLang].u_ret + ' × ' + duration + ' ' + t[currentLang].u_mo;
   document.getElementById('retainerLineCost').textContent  = fmtFull(totalR);
   document.getElementById('successLineCost').textContent   = fmtFull(totalS);
   document.getElementById('grandTotal').textContent        = fmtFull(grand);
 
   const insight = document.getElementById('calcInsight');
   if (insight) {
-    if (currentLang === 'de') {
-      insight.innerHTML = retainer === 0
-        ? 'Reines Erfolgshonorar: Kaitsar trägt das volle Performancerisiko. Keine Vorabkosten für Sie.'
-        : 'Ein Honorar von <span class="hot">€' + retainer.toLocaleString('de-DE') + '/mo</span> reduziert Ihr Erfolgshonorar um <span class="hot">' + discPct + '%</span>. Geteiltes Risiko, geteilter Vorteil.';
-    } else {
-      insight.innerHTML = retainer === 0
-        ? 'Pure success fee: Kaitsar assumes full performance risk. No upfront cost to you.'
-        : 'A retainer of <span class="hot">€' + retainer.toLocaleString() + '/mo</span> reduces your success fee by <span class="hot">' + discPct + '%</span>. Shared risk, shared upside.';
-    }
+    const L = t[currentLang];
+    insight.innerHTML = retainer === 0
+      ? L.insight_zero
+      : L.insight_a + '<span class="hot">' + eur(retainer.toLocaleString(loc())) + '/' + L.u_mo + '</span>' + L.insight_b + '<span class="hot">' + discPct + (isDE() ? '\u00a0%' : '%') + '</span>' + L.insight_c;
   }
 }
 
@@ -2210,14 +2589,26 @@ function closeGateOnBg(e) {
   }
 }
 
-function submitGate(e) {
+async function submitGate(e) {
   e.preventDefault();
-  // Unlock the results
+  const form = e.target, fd = new FormData(form);
+  const btn = form.querySelector('button[type="submit"]');
+  const data = {
+    Name: fd.get('name'), Email: fd.get('email'), Phone: fd.get('phone'),
+    'Retainer / month': document.getElementById('retainerDisplay').textContent,
+    'Target deal size': document.getElementById('dealDisplay').textContent,
+    'Search duration': document.getElementById('durationDisplay').textContent,
+    'Quoted total cost': document.getElementById('grandTotal').textContent,
+    Language: currentLang.toUpperCase()
+  };
+  btn.disabled = true;
+  try { await sendLead('Calculator unlock', data, data.Email); } catch (err) { console.warn('Lead not sent', err); }
+  btn.disabled = false;
   calcUnlocked = true;
   document.getElementById('calcGate').classList.add('unlocked');
   document.getElementById('calcGate2').classList.add('unlocked');
   document.getElementById('gateModal').classList.remove('open');
-  e.target.reset();
+  form.reset();
 }
 
 // ── HASH ROUTER ───────────────────────────────────────────────
@@ -2229,6 +2620,16 @@ function parseHash() {
   return { lang, page };
 }
 
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-nav]');
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault();
+  navigate(a.dataset.nav);
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('gateModal').classList.remove('open');
+});
+
 // ── INIT ──────────────────────────────────────────────────────
 window.addEventListener('popstate', () => {
   const { lang, page } = parseHash();
@@ -2239,7 +2640,7 @@ window.addEventListener('popstate', () => {
 (function init() {
   const { lang, page } = parseHash();
   currentLang = lang;
-  currentPage = page === 'academy' ? 'pricing' : page;
+  currentPage = page;
   document.getElementById('btn' + lang.toUpperCase()).classList.add('active');
   document.getElementById('btn' + (lang === 'en' ? 'DE' : 'EN')).classList.remove('active');
   applyTranslations();
